@@ -1,0 +1,35 @@
+.container {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  /* border: 2px solid yellow; */
+  margin-top: 2rem;
+}
+
+.textContainer {
+  width: 85%;
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+  /* border: 2px solid green; */
+}
+.spacer {
+  width: 5%;
+}
+.column {
+  width: 50%;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shortAbout {
+  font-size: 48px;
+  margin: 0;
+  text-align: right;
+}
+
+.longAbout {
+  font-size: 20px;
+}
