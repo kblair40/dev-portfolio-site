@@ -1,23 +1,11 @@
+.container {
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+}
+
 .homeContainer {
-  height: 100vh;
-  background-image: url(../assets/images/vscode_background.png);
-  background-position: center;
-  background-size: cover;
 }
 
-.bgOverlay {
-  z-index: 10;
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  background: rgba(21, 21, 21, 0.8);
-}
-
-.myName {
-  position: absolute;
-  top: 2rem;
-  left: 1rem;
-  color: white;
-  font-family: Josefin Sans;
-  font-size: 32px;
+.aboutContainer {
 }
