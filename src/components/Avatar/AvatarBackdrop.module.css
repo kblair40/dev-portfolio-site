@@ -1,0 +1,21 @@
+.backdropContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.circle {
+  margin-top: 4rem;
+  height: 18.75rem;
+  width: 18.75rem;
+  min-width: 18.75rem;
+  border-radius: 50%;
+  /* background: transparent; */
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 15px 21px 0px rgb(100, 100, 100);
+  box-shadow: 0px 15px 21px 0px rgb(100, 100, 100);
+}

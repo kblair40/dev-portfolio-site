@@ -1,0 +1,20 @@
+.neck {
+  z-index: 1;
+  position: absolute;
+  top: 8.25rem;
+  left: 26.25px;
+  height: 72px;
+  width: 97.5px;
+  background: #ffd7b3;
+}
+
+.shirtCutout {
+  position: absolute;
+  top: 11.25rem;
+  left: 26.25px;
+  height: 15px;
+  width: 97.5px;
+  border-radius: 50%;
+  background-color: #ffd7b3;
+  z-index: 2;
+}

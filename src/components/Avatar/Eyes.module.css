@@ -1,0 +1,87 @@
+.eye {
+  z-index: 5;
+  position: absolute;
+  height: 1.05rem;
+  /* width: 1.75rem; */
+  width: 2.05rem;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leftEye {
+  /* left: 1.875rem; */
+  left: 2.025rem;
+}
+.rightEye {
+  /* right: 1.875rem; */
+  right: 2.025rem;
+}
+
+.iris {
+  height: 0.95rem;
+  width: 0.975rem;
+  border-radius: 50%;
+  background: #7fb4be;
+  position: relative;
+  top: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pupil {
+  background-color: black;
+  height: 0.3rem;
+  width: 0.3rem;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  /* align-items: flex-end; */
+}
+.pupilDetail {
+  background-color: rgba(255, 255, 255, 0.2);
+  height: 2px;
+  width: 100%;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+}
+
+.eyebrow {
+  position: absolute;
+  height: 0.2625rem;
+  width: 2.25rem;
+  background: #734935;
+  top: -0.375rem;
+  border-radius: 50% 50% 0 0;
+}
+.leftEyebrow {
+  left: 1.95rem;
+  transform: rotate(-2deg);
+}
+.rightEyebrow {
+  right: 1.95rem;
+  transform: rotate(2deg);
+}
+
+.eyebrowRounded {
+  z-index: 6;
+  position: absolute;
+  height: 3px;
+  width: 2.25rem;
+  border-radius: 50%;
+  top: -3px;
+  background: #ffd7b3;
+}
+.leftEyebrowRounded {
+  left: 1.8rem;
+  transform: rotate(-3deg);
+}
+.rightEyebrowRounded {
+  right: 1.8rem;
+  transform: rotate(3deg);
+}

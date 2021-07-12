@@ -1,0 +1,17 @@
+.ear {
+  z-index: 5;
+  position: absolute;
+  top: 32%;
+  width: 10%;
+  height: 24%;
+  background: rgb(260, 217, 184);
+  border-radius: 50%;
+}
+
+.earRight {
+  right: -4%;
+}
+
+.earLeft {
+  left: -4%;
+}
