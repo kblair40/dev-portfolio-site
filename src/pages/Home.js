@@ -14,24 +14,8 @@ import AboutPage from "../components/component-pages/AboutPage";
 import classes from "./Home.module.css";
 
 const Home = () => {
-  // const homeIsHidden = useSelector((state) => state.hidden.home);
-  // const aboutIsHidden = useSelector((state) => state.hidden.about);
-
-  const [homeIsHidden, setHomeIsHidden] = useState(false);
-  const [aboutIsHidden, setAboutIsHidden] = useState(true);
-
-  const hideHomePage = () => {
-    setHomeIsHidden(true);
-    setAboutIsHidden(false);
-  };
-
-  const unhideAboutPage = () => {
-    setAboutIsHidden(false);
-  };
-
-  const hideAboutPage = () => {
-    setAboutIsHidden(true);
-  };
+  const homeIsHidden = useSelector((state) => state.hidden.home);
+  const aboutIsHidden = useSelector((state) => state.hidden.about);
 
   return (
     <div className={classNames(classes.container)}>
@@ -42,7 +26,7 @@ const Home = () => {
           homeIsHidden && classes.slideOutBottomToTop
         )}
       >
-        <HomePage hidePage={hideHomePage} />
+        <HomePage />
       </div>
       <div
         className={classNames(
@@ -50,7 +34,6 @@ const Home = () => {
           aboutIsHidden && classes.offPageBottom,
           aboutIsHidden && classes.hidden,
           !aboutIsHidden && classes.slideInBottomToTop
-          // aboutIsHidden && classes.hidden
         )}
       >
         <AboutPage />
@@ -60,3 +43,54 @@ const Home = () => {
 };
 
 export default Home;
+
+//
+//
+// WORKING SETUP - REPLACE WITH ABOVE IF NEEDED
+// const Home = () => {
+//   // const homeIsHidden = useSelector((state) => state.hidden.home);
+//   // const aboutIsHidden = useSelector((state) => state.hidden.about);
+
+//   const [homeIsHidden, setHomeIsHidden] = useState(false);
+//   const [aboutIsHidden, setAboutIsHidden] = useState(true);
+
+//   const hideHomePage = () => {
+//     setHomeIsHidden(true);
+//     setAboutIsHidden(false);
+//   };
+
+//   const unhideAboutPage = () => {
+//     setAboutIsHidden(false);
+//   };
+
+//   const hideAboutPage = () => {
+//     setAboutIsHidden(true);
+//   };
+
+//   return (
+//     <div className={classNames(classes.container)}>
+//       <div
+//         className={classNames(
+//           classes.homeContainer,
+//           !homeIsHidden && classes.slideInBottomToTop,
+//           homeIsHidden && classes.slideOutBottomToTop
+//         )}
+//       >
+//         <HomePage hidePage={hideHomePage} />
+//       </div>
+//       <div
+//         className={classNames(
+//           classes.aboutContainer,
+//           aboutIsHidden && classes.offPageBottom,
+//           aboutIsHidden && classes.hidden,
+//           !aboutIsHidden && classes.slideInBottomToTop
+//           // aboutIsHidden && classes.hidden
+//         )}
+//       >
+//         <AboutPage />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Home;
