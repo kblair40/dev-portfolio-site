@@ -10,7 +10,7 @@ import { hiddenActions } from "../../store/hiddenSlice";
 
 import classes from "./AboutPage.module.css";
 
-const AboutPage = ({ aboutIsAbove, currentPage }) => {
+const AboutPage = () => {
   const dispatch = useDispatch();
   const aboutIsHidden = useSelector((state) => state.hidden.about);
   const slideDirection = useSelector(

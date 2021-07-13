@@ -10,7 +10,7 @@ import DownArrow from "../UI/Arrows/DownArrow";
 
 import classes from "./HomePage.module.css";
 
-const HomePage = ({ currentPage }) => {
+const HomePage = () => {
   const homeIsHidden = useSelector((state) => state.hidden.home);
   const slideDirection = useSelector(
     (state) => state.hidden.homeSlideDirection

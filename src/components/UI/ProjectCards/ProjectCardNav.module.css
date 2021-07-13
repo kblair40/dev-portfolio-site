@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+  /* min-width: 300px; */
+  height: 2rem;
+  background: #ddd;
+  display: flex;
+  align-items: center;
+  border-radius: 2% 2% 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.btnContainer {
+  display: flex;
+  width: 100%;
+  margin-left: 1rem;
+}
+
+.button {
+  height: 0.8rem;
+  width: 0.8rem;
+  border-radius: 50%;
+  margin: 0 0.2rem;
+}
+
+.close {
+  background: #ff5f57;
+}
+.minus {
+  background: #ffbd2e;
+}
+.expand {
+  background: #28ca41;
+}

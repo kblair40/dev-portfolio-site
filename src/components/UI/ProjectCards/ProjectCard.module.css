@@ -1,0 +1,34 @@
+.container {
+  width: 32%;
+  min-width: 18rem;
+}
+.projectCard {
+  padding: 1rem;
+  position: relative;
+}
+.cardTitle {
+  color: #0c0c0d !important;
+  text-align: left !important;
+  margin-top: 2rem !important;
+  font-family: Josefin Sans;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.linkContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.iconLink {
+  margin-right: 0.5rem;
+}
+
+.cardContent {
+  margin-top: 1rem;
+  font-family: Josefin Sans;
+}

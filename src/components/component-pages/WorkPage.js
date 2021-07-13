@@ -3,6 +3,7 @@ import Slide from "@material-ui/core/Slide";
 import { useSelector } from "react-redux";
 
 import UpArrow from "../UI/Arrows/UpArrow";
+import ProjectCards from "../UI/ProjectCards/ProjectCards";
 import classes from "./WorkPage.module.css";
 
 const WorkPage = () => {
@@ -18,7 +19,7 @@ const WorkPage = () => {
         direction="up"
       >
         <div className={classes.container}>
-          <h1>Work Page</h1>
+          <ProjectCards />
           <UpArrow curPage="work" />
         </div>
       </Slide>
