@@ -4,8 +4,11 @@
   background-color: #333;
   color: white;
   overflow: hidden;
-  /* border: 1px solid orange; */
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.hidden {
+  display: none;
 }

@@ -5,6 +5,8 @@ const hiddenSlice = createSlice({
   initialState: {
     home: false,
     about: true,
+    work: true,
+    currentPage: "home",
   },
   reducers: {
     hideHome(state) {
@@ -12,31 +14,22 @@ const hiddenSlice = createSlice({
     },
     unhideHome(state) {
       state.home = false;
+      state.currentPage = "home";
     },
-
     hideAbout(state) {
       state.about = true;
     },
-
     unhideAbout(state) {
       state.about = false;
+      state.currentPage = "about";
     },
-    // hide(state, action) {
-    //   const { page } = action.payload;
-    //   console.log("PAGE HIDE:", page);
-    //   console.log("HIDE BOOL:", !state[page]);
-    //   if (!state[page]) {
-    //     state[page] = true;
-    //   }
-    // },
-    // unhide(state, action) {
-    //   const { page } = action.payload;
-    //   console.log("PAGE UNHIDE:", page);
-    //   console.log("UNHIDE BOOL:", state[page]);
-    //   if (state[page]) {
-    //     state[page] = false;
-    //   }
-    // },
+    hideWork(state) {
+      state.work = true;
+    },
+    unhideWork(state) {
+      state.work = false;
+      state.currentPage = "work";
+    },
   },
 });
 

@@ -1,22 +1,25 @@
-import React, { useEffect } from "react";
+import React from "react";
 import IconButton from "@material-ui/core/IconButton";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 // import classNames from "classnames";
-import { useDispatch, useSelector } from "react-redux";
-import { scroller } from "react-scroll";
+import { useDispatch } from "react-redux";
 
 import { hiddenActions } from "../../../store/hiddenSlice";
 import classes from "./DownArrow.module.css";
 
-const DownArrow = ({ curPage, nextPage, prevPage }) => {
+const DownArrow = ({ curPage, nextPage, prevPage, endAction }) => {
   const dispatch = useDispatch();
-  const homeIsHidden = useSelector((state) => state.hidden.home);
-  const aboutIsHidden = useSelector((state) => state.hidden.about);
 
   const hidePage = () => {
     if (curPage === "home") {
       dispatch(hiddenActions.hideHome());
       dispatch(hiddenActions.unhideAbout());
+    } else if (curPage === "about") {
+      dispatch(hiddenActions.hideAbout());
+      dispatch(hiddenActions.unhideWork());
+    }
+    if (endAction) {
+      endAction();
     }
   };
 
