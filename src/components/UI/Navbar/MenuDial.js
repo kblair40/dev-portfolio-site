@@ -8,9 +8,6 @@ import ResumeIcon from "@material-ui/icons/Description";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import RingVolumeIcon from "@material-ui/icons/RingVolume";
-import PrintIcon from "@material-ui/icons/Print";
-import ShareIcon from "@material-ui/icons/Share";
-import FavoriteIcon from "@material-ui/icons/Favorite";
 
 import classes from "./MenuDial.module.css";
 

@@ -6,13 +6,14 @@ import { scroller } from "react-scroll";
 
 import classes from "./DownArrow.module.css";
 
-const DownArrow = () => {
+const DownArrow = ({ to, handleClick }) => {
   const scrollToAbout = () => {
-    scroller.scrollTo("scrollToAbout", {
+    scroller.scrollTo(to, {
       duration: 1500,
       delay: 50,
       smooth: true,
     });
+    handleClick();
   };
 
   return (

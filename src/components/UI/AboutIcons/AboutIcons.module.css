@@ -6,7 +6,6 @@
 }
 
 .iconContainer {
-  /* margin-top: 8rem; */
   width: 80%;
   display: flex;
   justify-content: space-between;
@@ -19,4 +18,9 @@
   flex-direction: column;
   align-items: center;
   /* border: 2px solid red; */
+}
+
+.item p {
+  font-weight: 700;
+  font-family: Josefin Sans;
 }

@@ -1,0 +1,10 @@
+.container {
+  position: fixed;
+  height: 5rem;
+  top: 0;
+  z-index: 20;
+  width: 100vw;
+  /* margin-top: 2rem; */
+  display: flex;
+  justify-content: space-between;
+}

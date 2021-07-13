@@ -1,18 +1,12 @@
 .container {
-  position: fixed;
-  height: 10vh;
-  width: 10vw;
-  top: 0;
-  right: 0;
   transform: translateZ(0px);
   z-index: 6 !important;
+  background-color: transparent;
 }
 
 /* SPEED DIAL */
 .speedDial {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  margin: 1.5rem 1.5rem 0 0;
 }
 
 .fab {

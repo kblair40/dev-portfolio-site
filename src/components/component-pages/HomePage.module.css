@@ -13,11 +13,6 @@
   background: rgba(21, 21, 21, 0.8);
 }
 
-.myName {
-  position: fixed;
-  top: 2rem;
-  left: 1rem;
-  color: white;
-  font-family: Josefin Sans;
-  font-size: 32px;
+.hidden {
+  display: none;
 }
