@@ -1,0 +1,49 @@
+.container {
+  position: absolute;
+  width: 100vw;
+  height: 10vh;
+  top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.arrowContainer {
+  z-index: 20;
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  animation: arrow-movement 2s ease-in-out infinite;
+}
+
+.iconBtnRoot {
+  color: white !important;
+  width: 3.5rem;
+  height: 3.5rem;
+  /* border: 1px solid white !important; */
+}
+.iconBtnRoot:hover {
+  background-color: transparent !important;
+}
+
+@media screen and (max-width: 600px) {
+  .arrowContainer {
+    width: 50%;
+  }
+}
+
+@keyframes arrow-movement {
+  0% {
+    /* bottom: 0; */
+    top: 0;
+  }
+  50% {
+    /* bottom: 0.5rem; */
+    top: 0.5rem;
+  }
+  100% {
+    /* bottom: 0; */
+    top: 0;
+  }
+}

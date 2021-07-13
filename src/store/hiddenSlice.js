@@ -7,6 +7,9 @@ const hiddenSlice = createSlice({
     about: true,
     work: true,
     currentPage: "home",
+    homeSlideDirection: "down",
+    aboutSlideDirection: "up",
+    workSlideDirection: "up",
   },
   reducers: {
     hideHome(state) {
@@ -15,6 +18,7 @@ const hiddenSlice = createSlice({
     unhideHome(state) {
       state.home = false;
       state.currentPage = "home";
+      // state.aboutSlideDirection = "up";
     },
     hideAbout(state) {
       state.about = true;
@@ -29,6 +33,20 @@ const hiddenSlice = createSlice({
     unhideWork(state) {
       state.work = false;
       state.currentPage = "work";
+      // state.aboutSlideDirection = "down";
+    },
+    setHomeDirection(state, action) {
+      const { direction } = action.payload;
+      state.homeSlideDirection = direction;
+    },
+    setAboutDirection(state, action) {
+      const { direction } = action.payload;
+      console.log("set about direction received", direction);
+      state.aboutSlideDirection = direction;
+    },
+    setWorkDirection(state, action) {
+      const { direction } = action.payload;
+      state.workSlideDirection = direction;
     },
   },
 });

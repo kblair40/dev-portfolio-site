@@ -1,22 +1,21 @@
 import React from "react";
 import IconButton from "@material-ui/core/IconButton";
-import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
-// import classNames from "classnames";
+import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import { useDispatch } from "react-redux";
 
 import { hiddenActions } from "../../../store/hiddenSlice";
-import classes from "./DownArrow.module.css";
+import classes from "./UpArrow.module.css";
 
-const DownArrow = ({ curPage }) => {
+const UpArrow = ({ curPage }) => {
   const dispatch = useDispatch();
 
   const hidePage = () => {
-    if (curPage === "home") {
-      dispatch(hiddenActions.hideHome());
-      dispatch(hiddenActions.unhideAbout());
-    } else if (curPage === "about") {
+    if (curPage === "about") {
       dispatch(hiddenActions.hideAbout());
-      dispatch(hiddenActions.unhideWork());
+      dispatch(hiddenActions.unhideHome());
+    } else if (curPage === "work") {
+      dispatch(hiddenActions.hideWork());
+      dispatch(hiddenActions.unhideAbout());
     }
   };
 
@@ -24,11 +23,11 @@ const DownArrow = ({ curPage }) => {
     <div className={classes.container}>
       <div className={classes.arrowContainer}>
         <IconButton onClick={hidePage} className={classes.iconBtnRoot}>
-          <ArrowDownwardIcon fontSize="large" />
+          <ArrowUpwardIcon fontSize="large" />
         </IconButton>
       </div>
     </div>
   );
 };
 
-export default DownArrow;
+export default UpArrow;

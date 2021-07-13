@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classNames from "classnames";
 import Slide from "@material-ui/core/Slide";
 
@@ -7,35 +7,31 @@ import { useSelector, useDispatch } from "react-redux";
 import Avatar from "../Avatar/Head";
 import HomeContent from "../Content/HomeContent";
 import DownArrow from "../UI/DownArrow/DownArrow";
-import classes from "./HomePage.module.css";
 import { hiddenActions } from "../../store/hiddenSlice";
 
-const HomePage = () => {
-  const homeIsHidden = useSelector((state) => state.hidden.home);
-  console.log("HOME IS HIDDEN:", homeIsHidden);
-  const dispatch = useDispatch();
+import classes from "./HomePage.module.css";
 
-  const hideHome = () => {
-    dispatch(hiddenActions.hideHome());
-    dispatch(hiddenActions.unhideAbout());
-  };
+const HomePage = ({ currentPage }) => {
+  const dispatch = useDispatch();
+  const homeIsHidden = useSelector((state) => state.hidden.home);
+  const slideDirection = useSelector(
+    (state) => state.hidden.homeSlideDirection
+  );
+
   return (
     <div>
       <Slide
+        mountOnEnter
+        unmountOnExit
         in={!homeIsHidden}
         timeout={1000}
-        direction={homeIsHidden ? "down" : "up"}
+        direction={slideDirection}
       >
         <div className={classNames(classes.container)}>
           <div className={classes.bgOverlay}>
             <Avatar />
             <HomeContent />
-            <DownArrow
-              curPage="home"
-              nextPage="about"
-              prevPage={null}
-              endAction={hideHome}
-            />
+            <DownArrow curPage="home" />
           </div>
         </div>
       </Slide>

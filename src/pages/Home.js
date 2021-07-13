@@ -15,13 +15,8 @@ import classes from "./Home.module.css";
 const PAGE_ORDER = ["home", "about", "work"];
 
 const Home = () => {
-  const dispatch = useDispatch();
-  // const homeIsHidden = useSelector((state) => state.hidden.home);
-  // const aboutIsHidden = useSelector((state) => state.hidden.about);
-  // const workIsHidden = useSelector((state) => state.hidden.work);
   const currentPage = useSelector((state) => state.hidden.currentPage);
 
-  // console.log("\nCURRENT PAGE:", currentPage);
   let currentIndex = 0;
   let aboutIsAbove, homeIsAbove, workIsAbove;
   useEffect(() => {
@@ -31,7 +26,7 @@ const Home = () => {
     homeIsAbove = PAGE_ORDER.indexOf("home") < currentIndex;
     // console.log("homeIsAbove:", homeIsAbove);
 
-    aboutIsAbove = PAGE_ORDER.indexOf("about") < currentIndex;
+    aboutIsAbove = PAGE_ORDER.indexOf("about") <= currentIndex;
     // console.log("aboutIsAbove:", aboutIsAbove);
 
     workIsAbove = PAGE_ORDER.indexOf("work") < currentIndex;
@@ -44,7 +39,7 @@ const Home = () => {
         <HomePage isAbove={homeIsAbove} />
       </div>
       <div className={classNames(classes.aboutContainer)}>
-        <AboutPage isAbove={aboutIsAbove} />
+        <AboutPage isAbove={aboutIsAbove} currentPage={currentPage} />
       </div>
       <div className={classNames(classes.aboutContainer)}>
         <WorkPage isAbove={workIsAbove} />
