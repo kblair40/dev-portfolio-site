@@ -1,24 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Slide from "@material-ui/core/Slide";
 
 import AboutIcons from "../UI/AboutIcons/AboutIcons";
 import AboutText from "../UI/AboutIcons/AboutText";
-import DownArrow from "../UI/DownArrow/DownArrow";
-import UpArrow from "../UI/UpArrow/UpArrow";
+import DownArrow from "../UI/Arrows/DownArrow";
+import UpArrow from "../UI/Arrows/UpArrow";
 import { hiddenActions } from "../../store/hiddenSlice";
 
 import classes from "./AboutPage.module.css";
 
 const AboutPage = ({ aboutIsAbove, currentPage }) => {
+  const dispatch = useDispatch();
   const aboutIsHidden = useSelector((state) => state.hidden.about);
-  console.log("about IS HIDDEN:", aboutIsHidden);
   const slideDirection = useSelector(
     (state) => state.hidden.aboutSlideDirection
   );
-  const dispatch = useDispatch();
-
-  console.log("ABOUT SLIDE DIRECTION:", slideDirection);
 
   const setDirectionDown = () => {
     dispatch(hiddenActions.setAboutDirection({ direction: "down" }));

@@ -1,18 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import classNames from "classnames";
 import Slide from "@material-ui/core/Slide";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 import Avatar from "../Avatar/Head";
 import HomeContent from "../Content/HomeContent";
-import DownArrow from "../UI/DownArrow/DownArrow";
-import { hiddenActions } from "../../store/hiddenSlice";
+import DownArrow from "../UI/Arrows/DownArrow";
 
 import classes from "./HomePage.module.css";
 
 const HomePage = ({ currentPage }) => {
-  const dispatch = useDispatch();
   const homeIsHidden = useSelector((state) => state.hidden.home);
   const slideDirection = useSelector(
     (state) => state.hidden.homeSlideDirection

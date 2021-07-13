@@ -18,7 +18,6 @@ const hiddenSlice = createSlice({
     unhideHome(state) {
       state.home = false;
       state.currentPage = "home";
-      // state.aboutSlideDirection = "up";
     },
     hideAbout(state) {
       state.about = true;
@@ -33,7 +32,6 @@ const hiddenSlice = createSlice({
     unhideWork(state) {
       state.work = false;
       state.currentPage = "work";
-      // state.aboutSlideDirection = "down";
     },
     setHomeDirection(state, action) {
       const { direction } = action.payload;
@@ -41,7 +39,6 @@ const hiddenSlice = createSlice({
     },
     setAboutDirection(state, action) {
       const { direction } = action.payload;
-      console.log("set about direction received", direction);
       state.aboutSlideDirection = direction;
     },
     setWorkDirection(state, action) {
