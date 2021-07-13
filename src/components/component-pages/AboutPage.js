@@ -13,7 +13,7 @@ const AboutPage = () => {
       <div className={classes.container}>
         <AboutIcons />
         <AboutText />
-        <DownArrow to="scrollToWork" />
+        {/* <DownArrow to="scrollToWork" /> */}
       </div>
     </Element>
   );
