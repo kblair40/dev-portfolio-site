@@ -21,6 +21,7 @@ const WorkPage = ({ disableScrolling, enableScrolling }) => {
         onExit={disableScrolling}
       >
         <div className={classes.container}>
+          <h1 className={classes.header}>My Work</h1>
           <ProjectCards />
           <UpArrow curPage="work" />
         </div>

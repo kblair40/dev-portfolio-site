@@ -13,20 +13,7 @@ const ProjectCardNav = () => {
         <div className={classNames(classes.minus, classes.button)}></div>
         <div className={classNames(classes.expand, classes.button)}></div>
       </div>
-      <div className={classes.linkContainer}>
-        <a
-          href="https://www.github.com/kblair40/ecommerce"
-          target="blank"
-          className={classes.link}
-        >
-          Live Link
-        </a>
-        <div className={classes.iconLink}>
-          <IconButton size="small" classes={{ root: classes.iconBtnRoot }}>
-            <GitHubIcon />
-          </IconButton>
-        </div>
-      </div>
+      <h2 className={classes.header}>ECOMMERCE</h2>
     </div>
   );
 };

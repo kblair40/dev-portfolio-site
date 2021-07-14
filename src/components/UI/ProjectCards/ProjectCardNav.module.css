@@ -1,11 +1,9 @@
 .container {
   width: 100%;
-  /* min-width: 300px; */
   height: 2rem;
   background: #ddd;
   display: flex;
   align-items: center;
-  border-radius: 2% 2% 0 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -13,7 +11,7 @@
 
 .btnContainer {
   display: flex;
-  width: 100%;
+  position: absolute;
   margin-left: 1rem;
 }
 
@@ -34,30 +32,9 @@
   background: #28ca41;
 }
 
-.linkContainer {
-  /* margin: 0; */
-  display: flex;
-  /* justify-content: flex-end; */
-  align-items: center;
-  margin-right: 1rem;
-}
-
-.link {
-  white-space: nowrap;
-  text-decoration: none;
-  color: #0c0c0d;
-}
-.link:hover {
-  text-decoration: underline;
-}
-
-.iconLink {
-  margin-left: 0.8rem;
-}
-
-.iconBtnRoot {
-  color: rgba(0, 0, 0, 0.89);
-}
-.iconBtnRoot:hover {
-  color: rgba(0, 0, 0, 1);
+.header {
+  font-size: 14px;
+  font-family: Josefin Sans;
+  width: 100%;
+  text-align: center;
 }

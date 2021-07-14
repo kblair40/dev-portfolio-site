@@ -1,10 +1,9 @@
-.container {
-  width: 32%;
-  min-width: 18rem;
-}
 .projectCard {
-  /* padding: 1rem; */
   position: relative;
+  width: 440px;
+  height: 240px;
+  display: inline-block;
+  margin: 0.5rem;
 }
 .cardTitle {
   color: #0c0c0d !important;
@@ -18,28 +17,65 @@
   flex-direction: column;
   margin-top: 2rem;
   padding: 0 1rem 0.5rem;
+  height: 12rem;
 }
-/* 
-.linkContainer {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.iconLink {
-  margin-right: 0.5rem;
-} */
 
 .cardContent {
   font-family: Josefin Sans;
 }
 
 .ecommerceBackground {
-  background-image: url(../../../assets/images/ecommerce_card.png);
-  background-position: bottom;
+  background-image: url(../../../assets/images/ecommerce_front.png);
+  background-position: center 0;
   background-size: cover;
   background-repeat: no-repeat;
-  /* position: absolute; */
-  /* width: 100%; */
-  /* height: 100%; */
 }
+
+.todoBackground {
+  align-self: flex-start;
+}
+
+@media screen and (max-width: 1440px) {
+  .projectCard {
+    width: 410px;
+    height: 225px;
+  }
+}
+@media screen and (max-width: 890px) {
+  .projectCard {
+    width: 370px;
+    height: 215px;
+    margin: 0.5rem auto;
+  }
+}
+@media screen and (max-width: 820px) {
+  .projectCard {
+    width: 340px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .projectCard {
+    height: 185px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .projectCard {
+    width: 310px;
+    /* height: 185px; */
+  }
+}
+@media screen and (max-width: 500px) {
+  .projectCard {
+    width: 290px;
+    height: 175px;
+  }
+}
+/* @media screen and (max-width: 400px) {
+  .projectCard {
+    width: 260px;
+    height: 175px;
+  }
+} */
