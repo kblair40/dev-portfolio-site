@@ -43,59 +43,10 @@ const Home = () => {
     [currentPage, dispatch, scrollingIsEnabled]
   );
 
-  // const changePages = (event) => {
-  //   if (!scrollingIsEnabled) {
-  //     return;
-  //   }
-  //   const deltaY = event.wheelDeltaY;
-
-  //   if (currentPage === "home") {
-  //     if (deltaY < 0) {
-  //       dispatch(hiddenActions.hideHomeUnhideAbout());
-  //     }
-  //   } else if (currentPage === "about") {
-  //     if (deltaY > 0) {
-  //       dispatch(hiddenActions.hideAboutUnhideHome());
-  //       dispatch(hiddenActions.setAboutDirection({ direction: "up" }));
-  //     } else {
-  //       dispatch(hiddenActions.setAboutDirection({ direction: "down" }));
-  //       dispatch(hiddenActions.hideAboutUnhideWork());
-  //     }
-  //   } else {
-  //     if (deltaY > 0) {
-  //       dispatch(hiddenActions.hideWorkUnhideAbout());
-  //     }
-  //   }
-  // };
   useEffect(() => {
     window.addEventListener("wheel", changePagesCallback);
     return () => window.removeEventListener("wheel", changePagesCallback);
   }, [scrollingIsEnabled, changePagesCallback]);
-
-  // const changePages = (event) => {
-  //   if (!scrollingIsEnabled) {
-  //     return;
-  //   }
-  //   const deltaY = event.wheelDeltaY;
-
-  //   if (currentPage === "home") {
-  //     if (deltaY < 0) {
-  //       dispatch(hiddenActions.hideHomeUnhideAbout());
-  //     }
-  //   } else if (currentPage === "about") {
-  //     if (deltaY > 0) {
-  //       dispatch(hiddenActions.hideAboutUnhideHome());
-  //       dispatch(hiddenActions.setAboutDirection({ direction: "up" }));
-  //     } else {
-  //       dispatch(hiddenActions.setAboutDirection({ direction: "down" }));
-  //       dispatch(hiddenActions.hideAboutUnhideWork());
-  //     }
-  //   } else {
-  //     if (deltaY > 0) {
-  //       dispatch(hiddenActions.hideWorkUnhideAbout());
-  //     }
-  //   }
-  // };
 
   const enableScrolling = () => {
     dispatch(hiddenActions.enableScrolling());

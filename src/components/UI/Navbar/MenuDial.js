@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Backdrop from "@material-ui/core/Backdrop";
 import SpeedDial from "@material-ui/lab/SpeedDial";
 import SpeedDialIcon from "@material-ui/lab/SpeedDialIcon";
@@ -11,16 +11,20 @@ import RingVolumeIcon from "@material-ui/icons/RingVolume";
 
 import classes from "./MenuDial.module.css";
 
-const actions = [
-  { icon: <ResumeIcon fontSize="large" />, name: "Resume" },
-  //   Change phone icon to email icon if changing functionality to open email
-  { icon: <RingVolumeIcon fontSize="large" />, name: "Contact" },
-  { icon: <GitHubIcon fontSize="large" />, name: "Github" },
-  { icon: <LinkedInIcon fontSize="large" />, name: "LinkedIn" },
-];
+// const actions = [
+//   {
+//     icon: <ResumeIcon onMouseOver={handleResumeHover} fontSize="large" />,
+//     name: "Resume",
+//   },
+//   //   Change phone icon to email icon if changing functionality to open email
+//   { icon: <RingVolumeIcon fontSize="large" />, name: "Contact" },
+//   { icon: <GitHubIcon fontSize="large" />, name: "Github" },
+//   { icon: <LinkedInIcon fontSize="large" />, name: "LinkedIn" },
+// ];
 
 const MenuDial = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const resumeIsHovered = useState(false);
 
   const handleOpen = () => {
     setOpen(true);
@@ -29,6 +33,19 @@ const MenuDial = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const actions = [
+    {
+      icon: <ResumeIcon fontSize="large" />,
+      name: "Resume",
+    },
+    {
+      icon: <RingVolumeIcon fontSize="large" />,
+      name: "Contact",
+    },
+    { icon: <GitHubIcon fontSize="large" />, name: "Github" },
+    { icon: <LinkedInIcon fontSize="large" />, name: "LinkedIn" },
+  ];
 
   return (
     <div className={classes.container}>
@@ -47,9 +64,9 @@ const MenuDial = () => {
         }
         onClose={handleClose}
         onOpen={handleOpen}
-        // open={open}
+        open={open}
         direction="down"
-        open
+        // open
       >
         {actions.map((action) => (
           <SpeedDialAction
@@ -59,6 +76,7 @@ const MenuDial = () => {
               staticTooltipLabel: classes.tooltip,
               fab: classes.actionFab,
             }}
+            name={action.name}
             key={action.name}
             icon={action.icon}
             tooltipTitle={<p className={classes.tooltipTitle}>{action.name}</p>}

@@ -37,6 +37,7 @@
 }
 
 /* SPEED DIAL ACTIONS */
+
 .actionFab {
   background-color: rgba(255, 255, 255, 0.5) !important;
   padding: 1.75rem !important;
@@ -45,6 +46,7 @@
   align-items: center;
   height: 3.25rem !important;
   width: 3.25rem !important;
+  z-index: 200;
 }
 
 .actionFab:hover {
@@ -55,8 +57,11 @@
 .tooltip {
   padding: 0;
   width: 7rem;
-  background-color: rgba(255, 255, 255, 0.5) !important ;
+  background-color: rgba(255, 255, 255, 1) !important ;
   z-index: 19;
+}
+.tooltip-hover {
+  background-color: white !important;
 }
 .tooltipTitle {
   font-family: Josefin Sans;

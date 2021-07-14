@@ -33,3 +33,31 @@
 .expand {
   background: #28ca41;
 }
+
+.linkContainer {
+  /* margin: 0; */
+  display: flex;
+  /* justify-content: flex-end; */
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.link {
+  white-space: nowrap;
+  text-decoration: none;
+  color: #0c0c0d;
+}
+.link:hover {
+  text-decoration: underline;
+}
+
+.iconLink {
+  margin-left: 0.8rem;
+}
+
+.iconBtnRoot {
+  color: rgba(0, 0, 0, 0.89);
+}
+.iconBtnRoot:hover {
+  color: rgba(0, 0, 0, 1);
+}

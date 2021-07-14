@@ -3,7 +3,7 @@
   min-width: 18rem;
 }
 .projectCard {
-  padding: 1rem;
+  /* padding: 1rem; */
   position: relative;
 }
 .cardTitle {
@@ -16,8 +16,10 @@
 .contentContainer {
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
+  padding: 0 1rem 0.5rem;
 }
-
+/* 
 .linkContainer {
   display: flex;
   justify-content: flex-end;
@@ -26,9 +28,18 @@
 
 .iconLink {
   margin-right: 0.5rem;
-}
+} */
 
 .cardContent {
-  margin-top: 1rem;
   font-family: Josefin Sans;
+}
+
+.ecommerceBackground {
+  background-image: url(../../../assets/images/ecommerce_card.png);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* position: absolute; */
+  /* width: 100%; */
+  /* height: 100%; */
 }
