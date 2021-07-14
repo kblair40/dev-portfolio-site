@@ -10,29 +10,9 @@ const hiddenSlice = createSlice({
     homeSlideDirection: "down",
     aboutSlideDirection: "up",
     workSlideDirection: "up",
+    scrollingEnabled: true,
   },
   reducers: {
-    hideHome(state) {
-      state.home = true;
-    },
-    unhideHome(state) {
-      state.home = false;
-      state.currentPage = "home";
-    },
-    hideAbout(state) {
-      state.about = true;
-    },
-    unhideAbout(state) {
-      state.about = false;
-      state.currentPage = "about";
-    },
-    hideWork(state) {
-      state.work = true;
-    },
-    unhideWork(state) {
-      state.work = false;
-      state.currentPage = "work";
-    },
     hideWorkUnhideAbout(state) {
       state.work = true;
       state.about = false;
@@ -64,6 +44,12 @@ const hiddenSlice = createSlice({
     setWorkDirection(state, action) {
       const { direction } = action.payload;
       state.workSlideDirection = direction;
+    },
+    disableScrolling(state) {
+      state.scrollingEnabled = false;
+    },
+    enableScrolling(state) {
+      state.scrollingEnabled = true;
     },
   },
 });

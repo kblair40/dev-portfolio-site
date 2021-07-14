@@ -6,7 +6,7 @@ import UpArrow from "../UI/Arrows/UpArrow";
 import ProjectCards from "../UI/ProjectCards/ProjectCards";
 import classes from "./WorkPage.module.css";
 
-const WorkPage = () => {
+const WorkPage = ({ disableScrolling, enableScrolling }) => {
   const workIsHidden = useSelector((state) => state.hidden.work);
 
   return (
@@ -17,6 +17,8 @@ const WorkPage = () => {
         in={!workIsHidden}
         timeout={1000}
         direction="up"
+        onEntered={enableScrolling}
+        onExit={disableScrolling}
       >
         <div className={classes.container}>
           <ProjectCards />

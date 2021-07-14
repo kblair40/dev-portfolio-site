@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Slide from "@material-ui/core/Slide";
 
@@ -10,24 +10,12 @@ import { hiddenActions } from "../../store/hiddenSlice";
 
 import classes from "./AboutPage.module.css";
 
-const AboutPage = () => {
+const AboutPage = ({ disableScrolling, enableScrolling }) => {
   const dispatch = useDispatch();
   const aboutIsHidden = useSelector((state) => state.hidden.about);
   const slideDirection = useSelector(
     (state) => state.hidden.aboutSlideDirection
   );
-
-  useEffect(() => {
-    console.log("ABOUT PAGE USE EFFECT RUNNING");
-    // window.addEventListener("wheel", (e) => setDirection(e));
-    window.addEventListener("wheel", setDirection);
-
-    return () => window.removeEventListener("wheel");
-  }, []);
-
-  const setDirection = (event) => {
-    console.log("E:", event);
-  };
 
   const setDirectionDown = () => {
     dispatch(hiddenActions.setAboutDirection({ direction: "down" }));
@@ -44,6 +32,8 @@ const AboutPage = () => {
         in={!aboutIsHidden}
         timeout={1000}
         direction={slideDirection}
+        onEntered={enableScrolling}
+        onExit={disableScrolling}
       >
         <div className={classes.container}>
           <AboutIcons />

@@ -11,12 +11,8 @@ const DownArrow = ({ curPage }) => {
 
   const hidePage = () => {
     if (curPage === "home") {
-      // dispatch(hiddenActions.hideHome());
-      // dispatch(hiddenActions.unhideAbout());
       dispatch(hiddenActions.hideHomeUnhideAbout());
     } else if (curPage === "about") {
-      // dispatch(hiddenActions.hideAbout());
-      // dispatch(hiddenActions.unhideWork());
       dispatch(hiddenActions.hideAboutUnhideWork());
     }
   };

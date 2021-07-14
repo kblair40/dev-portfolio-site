@@ -11,61 +11,66 @@ import classes from "./Home.module.css";
 const Home = () => {
   const dispatch = useDispatch();
   const currentPage = useSelector((state) => state.hidden.currentPage);
-  console.log("CURRENT PAGE NOT IN FUNCTION:", currentPage);
-  // all useEffect code is new
-  useEffect(() => {
-    console.log("use-effect running");
-    document.addEventListener("wheel", changePages);
+  const scrollingIsEnabled = useSelector(
+    (state) => state.hidden.scrollingEnabled
+  );
 
-    return () => document.removeEventListener("wheel", changePages);
-    // return document.removeEventListener("wheel", hidePage);
-  }, [currentPage]);
+  useEffect(() => {
+    window.addEventListener("wheel", changePages);
+    return () => window.removeEventListener("wheel", changePages);
+  }, [scrollingIsEnabled]);
 
   const changePages = (event) => {
+    if (!scrollingIsEnabled) {
+      return;
+    }
     const deltaY = event.wheelDeltaY;
-    console.log("DELTA Y:", deltaY, typeof deltaY);
-    console.log("CURRENT PAGE:", currentPage);
 
     if (currentPage === "home") {
-      // Scrolling Down
       if (deltaY < 0) {
         dispatch(hiddenActions.hideHomeUnhideAbout());
       }
     } else if (currentPage === "about") {
-      // Scrolling Up
       if (deltaY > 0) {
         dispatch(hiddenActions.hideAboutUnhideHome());
         dispatch(hiddenActions.setAboutDirection({ direction: "up" }));
       } else {
-        // Scrolling Down
         dispatch(hiddenActions.setAboutDirection({ direction: "down" }));
         dispatch(hiddenActions.hideAboutUnhideWork());
       }
     } else {
-      // Scrolling Up
       if (deltaY > 0) {
         dispatch(hiddenActions.hideWorkUnhideAbout());
       }
     }
   };
 
-  // const setDirectionDown = () => {
-  //   dispatch(hiddenActions.setAboutDirection({ direction: "down" }));
-  // };
-  // const setDirectionUp = () => {
-  //   dispatch(hiddenActions.setAboutDirection({ direction: "up" }));
-  // };
+  const enableScrolling = () => {
+    dispatch(hiddenActions.enableScrolling());
+  };
+  const disableScrolling = () => {
+    dispatch(hiddenActions.disableScrolling());
+  };
 
   return (
     <div className={classNames(classes.container)}>
       <div className={classNames(classes.pageContainer)}>
-        <HomePage />
+        <HomePage
+          enableScrolling={enableScrolling}
+          disableScrolling={disableScrolling}
+        />
       </div>
       <div className={classNames(classes.pageContainer)}>
-        <AboutPage />
+        <AboutPage
+          enableScrolling={enableScrolling}
+          disableScrolling={disableScrolling}
+        />
       </div>
       <div className={classNames(classes.pageContainer)}>
-        <WorkPage />
+        <WorkPage
+          enableScrolling={enableScrolling}
+          disableScrolling={disableScrolling}
+        />
       </div>
     </div>
   );
