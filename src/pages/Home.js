@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -15,35 +15,87 @@ const Home = () => {
     (state) => state.hidden.scrollingEnabled
   );
 
-  useEffect(() => {
-    window.addEventListener("wheel", changePages);
-    return () => window.removeEventListener("wheel", changePages);
-  }, [scrollingIsEnabled]);
-
-  const changePages = (event) => {
-    if (!scrollingIsEnabled) {
-      return;
-    }
-    const deltaY = event.wheelDeltaY;
-
-    if (currentPage === "home") {
-      if (deltaY < 0) {
-        dispatch(hiddenActions.hideHomeUnhideAbout());
+  const changePagesCallback = useCallback(
+    (event) => {
+      if (!scrollingIsEnabled) {
+        return;
       }
-    } else if (currentPage === "about") {
-      if (deltaY > 0) {
-        dispatch(hiddenActions.hideAboutUnhideHome());
-        dispatch(hiddenActions.setAboutDirection({ direction: "up" }));
+      const deltaY = event.wheelDeltaY;
+
+      if (currentPage === "home") {
+        if (deltaY < 0) {
+          dispatch(hiddenActions.hideHomeUnhideAbout());
+        }
+      } else if (currentPage === "about") {
+        if (deltaY > 0) {
+          dispatch(hiddenActions.hideAboutUnhideHome());
+          dispatch(hiddenActions.setAboutDirection({ direction: "up" }));
+        } else {
+          dispatch(hiddenActions.setAboutDirection({ direction: "down" }));
+          dispatch(hiddenActions.hideAboutUnhideWork());
+        }
       } else {
-        dispatch(hiddenActions.setAboutDirection({ direction: "down" }));
-        dispatch(hiddenActions.hideAboutUnhideWork());
+        if (deltaY > 0) {
+          dispatch(hiddenActions.hideWorkUnhideAbout());
+        }
       }
-    } else {
-      if (deltaY > 0) {
-        dispatch(hiddenActions.hideWorkUnhideAbout());
-      }
-    }
-  };
+    },
+    [currentPage, dispatch, scrollingIsEnabled]
+  );
+
+  // const changePages = (event) => {
+  //   if (!scrollingIsEnabled) {
+  //     return;
+  //   }
+  //   const deltaY = event.wheelDeltaY;
+
+  //   if (currentPage === "home") {
+  //     if (deltaY < 0) {
+  //       dispatch(hiddenActions.hideHomeUnhideAbout());
+  //     }
+  //   } else if (currentPage === "about") {
+  //     if (deltaY > 0) {
+  //       dispatch(hiddenActions.hideAboutUnhideHome());
+  //       dispatch(hiddenActions.setAboutDirection({ direction: "up" }));
+  //     } else {
+  //       dispatch(hiddenActions.setAboutDirection({ direction: "down" }));
+  //       dispatch(hiddenActions.hideAboutUnhideWork());
+  //     }
+  //   } else {
+  //     if (deltaY > 0) {
+  //       dispatch(hiddenActions.hideWorkUnhideAbout());
+  //     }
+  //   }
+  // };
+  useEffect(() => {
+    window.addEventListener("wheel", changePagesCallback);
+    return () => window.removeEventListener("wheel", changePagesCallback);
+  }, [scrollingIsEnabled, changePagesCallback]);
+
+  // const changePages = (event) => {
+  //   if (!scrollingIsEnabled) {
+  //     return;
+  //   }
+  //   const deltaY = event.wheelDeltaY;
+
+  //   if (currentPage === "home") {
+  //     if (deltaY < 0) {
+  //       dispatch(hiddenActions.hideHomeUnhideAbout());
+  //     }
+  //   } else if (currentPage === "about") {
+  //     if (deltaY > 0) {
+  //       dispatch(hiddenActions.hideAboutUnhideHome());
+  //       dispatch(hiddenActions.setAboutDirection({ direction: "up" }));
+  //     } else {
+  //       dispatch(hiddenActions.setAboutDirection({ direction: "down" }));
+  //       dispatch(hiddenActions.hideAboutUnhideWork());
+  //     }
+  //   } else {
+  //     if (deltaY > 0) {
+  //       dispatch(hiddenActions.hideWorkUnhideAbout());
+  //     }
+  //   }
+  // };
 
   const enableScrolling = () => {
     dispatch(hiddenActions.enableScrolling());

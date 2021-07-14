@@ -47,9 +47,9 @@ const MenuDial = () => {
         }
         onClose={handleClose}
         onOpen={handleOpen}
-        open={open}
+        // open={open}
         direction="down"
-        // open
+        open
       >
         {actions.map((action) => (
           <SpeedDialAction
