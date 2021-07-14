@@ -33,6 +33,26 @@ const hiddenSlice = createSlice({
       state.work = false;
       state.currentPage = "work";
     },
+    hideWorkUnhideAbout(state) {
+      state.work = true;
+      state.about = false;
+      state.currentPage = "about";
+    },
+    hideAboutUnhideHome(state) {
+      state.about = true;
+      state.home = false;
+      state.currentPage = "home";
+    },
+    hideAboutUnhideWork(state) {
+      state.about = true;
+      state.work = false;
+      state.currentPage = "work";
+    },
+    hideHomeUnhideAbout(state) {
+      state.home = true;
+      state.about = false;
+      state.currentPage = "about";
+    },
     setHomeDirection(state, action) {
       const { direction } = action.payload;
       state.homeSlideDirection = direction;

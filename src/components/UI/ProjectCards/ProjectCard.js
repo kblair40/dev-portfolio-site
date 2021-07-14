@@ -26,9 +26,7 @@ const ProjectCard = () => {
             Cillum in cupidatat irure ipsum fugiat ex exercitation et. Id
             reprehenderit consectetur dolore duis. Nulla esse sunt mollit mollit
             ea anim culpa. Culpa dolor dolore anim eu do duis ex ea ipsum est
-            Lorem incididunt laboris quis. Et veniam est veniam nostrud velit.
-            Proident ea aute Lorem anim. Sunt eu elit ad velit mollit culpa
-            occaecat proident non dolor.
+            Lorem incididunt laboris quis.
           </div>
         </div>
       </Card>

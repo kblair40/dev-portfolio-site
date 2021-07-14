@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Slide from "@material-ui/core/Slide";
 
@@ -16,6 +16,18 @@ const AboutPage = () => {
   const slideDirection = useSelector(
     (state) => state.hidden.aboutSlideDirection
   );
+
+  useEffect(() => {
+    console.log("ABOUT PAGE USE EFFECT RUNNING");
+    // window.addEventListener("wheel", (e) => setDirection(e));
+    window.addEventListener("wheel", setDirection);
+
+    return () => window.removeEventListener("wheel");
+  }, []);
+
+  const setDirection = (event) => {
+    console.log("E:", event);
+  };
 
   const setDirectionDown = () => {
     dispatch(hiddenActions.setAboutDirection({ direction: "down" }));
