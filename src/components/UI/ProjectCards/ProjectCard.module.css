@@ -41,10 +41,10 @@
   align-items: center;
 }
 .iconBtn {
-  background: transparent;
+  background: transparent !important;
 }
 .iconBtn:hover {
-  background: transparent;
+  background: transparent !important;
 }
 .iconLink {
   font-size: 80px !important;
@@ -80,21 +80,28 @@
 }
 
 /* BACKGROUND CLASSES */
-.ecommerceBackground {
+
+.background {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-image: url(../../../assets/images/ecommerce_front.png);
   background-position: center 0;
   background-size: cover;
   background-repeat: no-repeat;
 }
-
-.ecommerceBackground:hover {
+.background:hover {
   animation: hide-bg 0.5s;
   animation-fill-mode: forwards;
 }
-/* END BACKGROUND CLASSES */
+.ecommerceBackground {
+  background-image: url(../../../assets/images/ecommerce.png);
+}
+.userAuthBackground {
+  background-image: url(../../../assets/images/user_auth.png);
+}
+.memoryBackground {
+  background-image: url(../../../assets/images/memory.png);
+}
 
 @keyframes hide-bg {
   0% {
@@ -155,3 +162,18 @@
     height: 175px;
   }
 }
+
+/* THIS WORKS */
+/* .ecommerceBackground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url(../../../assets/images/ecommerce_front.png);
+  background-position: center 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.background:hover {
+  animation: hide-bg 0.5s;
+  animation-fill-mode: forwards;
+} */

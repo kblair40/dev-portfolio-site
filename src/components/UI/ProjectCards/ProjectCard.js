@@ -9,7 +9,7 @@ import classNames from "classnames";
 import ProjectCardNav from "./ProjectCardNav";
 import classes from "./ProjectCard.module.css";
 
-const ProjectCard = ({ name }) => {
+const ProjectCard = ({ name, liveLink, githubLink }) => {
   const projectLinksRef = useRef();
   const removeBgRef = useRef();
 
@@ -35,8 +35,11 @@ const ProjectCard = ({ name }) => {
   if (name === "ecommerce") {
     backgroundClass = classes.ecommerceBackground;
   }
-  if (name === "todo") {
-    backgroundClass = classes.todoBackground;
+  if (name === "user auth") {
+    backgroundClass = classes.userAuthBackground;
+  }
+  if (name === "memory") {
+    backgroundClass = classes.memoryBackground;
   }
 
   return (
@@ -45,7 +48,11 @@ const ProjectCard = ({ name }) => {
       <div
         ref={removeBgRef}
         id="remove-bg"
-        className={classNames(classes.contentContainer, backgroundClass)}
+        className={classNames(
+          classes.contentContainer,
+          classes.background,
+          backgroundClass
+        )}
       ></div>
       <div
         ref={projectLinksRef}
@@ -55,7 +62,9 @@ const ProjectCard = ({ name }) => {
         <div className={classes.linkContainer}>
           <a
             className={classNames(classes.githubLink, classes.link)}
-            href="https://www.github.com/kblair40/ecommerce"
+            // href="https://www.github.com/kblair40/ecommerce"
+            // target="blank"
+            href={githubLink}
             target="blank"
           >
             <IconButton className={classes.iconBtn}>
@@ -69,7 +78,9 @@ const ProjectCard = ({ name }) => {
           <Divider orientation="vertical" />
           <a
             className={classNames(classes.liveLink, classes.link)}
-            href="https://ecommerce-kb.netlify.app/"
+            // href="https://ecommerce-kb.netlify.app/"
+            // target="blank"
+            href={liveLink}
             target="blank"
           >
             <IconButton className={classes.iconBtn}>
