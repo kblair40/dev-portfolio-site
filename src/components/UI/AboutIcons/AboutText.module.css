@@ -33,3 +33,10 @@
 .longAbout {
   font-size: 20px;
 }
+
+@media screen and (max-width: 600px) {
+  .textContainer {
+    width: 95%;
+    /* height: 80%; */
+  }
+}

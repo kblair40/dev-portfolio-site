@@ -19,23 +19,6 @@
   z-index: 1;
 }
 
-/* BACKGROUND CLASSES */
-.ecommerceBackground {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-image: url(../../../assets/images/ecommerce_front.png);
-  background-position: center 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.ecommerceBackground:hover {
-  animation: hide-bg 0.5s;
-  animation-fill-mode: forwards;
-}
-/* END BACKGROUND CLASSES */
-
 .links {
   font-family: Josefin Sans;
   color: #0c0c0d;
@@ -52,22 +35,66 @@
 
 .linkContainer {
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
+.iconBtn {
+  background: transparent;
+}
+.iconBtn:hover {
+  background: transparent;
+}
+.iconLink {
+  font-size: 80px !important;
+}
+
+.githubIcon {
+  color: #fff;
+}
+.liveIcon {
+  color: #ffa500;
+}
+.githubLink {
+  color: #fff;
+  background-color: #242a2e;
+}
+.liveLink {
+  color: #ffa500;
+  background-color: #fff;
+}
 
 .link {
+  width: 50%;
+  height: 100%;
   text-decoration: none;
-  color: #0c0c0d;
-}
-.link:hover {
-  text-decoration: underline;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hidden {
   display: none;
 }
+
+/* BACKGROUND CLASSES */
+.ecommerceBackground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url(../../../assets/images/ecommerce_front.png);
+  background-position: center 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.ecommerceBackground:hover {
+  animation: hide-bg 0.5s;
+  animation-fill-mode: forwards;
+}
+/* END BACKGROUND CLASSES */
 
 @keyframes hide-bg {
   0% {

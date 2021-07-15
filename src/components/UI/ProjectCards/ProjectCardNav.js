@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import classes from "./ProjectCardNav.module.css";
 
-const ProjectCardNav = () => {
+const ProjectCardNav = ({ title }) => {
   return (
     <div className={classes.container}>
       <div className={classes.btnContainer}>
@@ -11,7 +11,7 @@ const ProjectCardNav = () => {
         <div className={classNames(classes.minus, classes.button)}></div>
         <div className={classNames(classes.expand, classes.button)}></div>
       </div>
-      <h2 className={classes.header}>ECOMMERCE</h2>
+      <h2 className={classes.header}>{title.toUpperCase()}</h2>
     </div>
   );
 };

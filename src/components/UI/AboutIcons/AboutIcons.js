@@ -1,4 +1,5 @@
 import React from "react";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMedal,
@@ -10,23 +11,26 @@ import {
 import classes from "./AboutIcons.module.css";
 
 const AboutIcons = () => {
+  const sm = useMediaQuery("(max-width:400px)");
+  const md = useMediaQuery("(max-width:600px)");
+
   return (
     <div className={classes.container}>
       <div className={classes.iconContainer}>
         <div className={classes.item}>
-          <FontAwesomeIcon icon={faMedal} size="8x" />
+          <FontAwesomeIcon icon={faMedal} size={sm ? "4x" : md ? "6x" : "8x"} />
           <p>World-Class Apps</p>
         </div>
         <div className={classes.item}>
-          <FontAwesomeIcon icon={faBrush} size="8x" />
+          <FontAwesomeIcon icon={faBrush} size={sm ? "4x" : md ? "6x" : "8x"} />
           <p>Tailored To Your Needs</p>
         </div>
         <div className={classes.item}>
-          <FontAwesomeIcon icon={faRuler} size="8x" />
+          <FontAwesomeIcon icon={faRuler} size={sm ? "4x" : md ? "6x" : "8x"} />
           <p>Pixel-Perfect Code</p>
         </div>
         <div className={classes.item}>
-          <FontAwesomeIcon icon={faHeart} size="8x" />
+          <FontAwesomeIcon icon={faHeart} size={sm ? "4x" : md ? "6x" : "8x"} />
           <p>Built With Love</p>
         </div>
       </div>

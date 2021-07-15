@@ -1,7 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import Card from "@material-ui/core/Card";
 import IconButton from "@material-ui/core/IconButton";
+import Divider from "@material-ui/core/Divider";
 import GitHubIcon from "@material-ui/icons/GitHub";
+import OfflineBoltIcon from "@material-ui/icons/OfflineBolt";
 import classNames from "classnames";
 
 import ProjectCardNav from "./ProjectCardNav";
@@ -39,7 +41,7 @@ const ProjectCard = ({ name }) => {
 
   return (
     <Card square={true} className={classes.projectCard}>
-      <ProjectCardNav />
+      <ProjectCardNav title={name} />
       <div
         ref={removeBgRef}
         id="remove-bg"
@@ -51,17 +53,32 @@ const ProjectCard = ({ name }) => {
         className={classNames(classes.links)}
       >
         <div className={classes.linkContainer}>
-          <a href="https://www.github.com/kblair40/ecommerce" target="blank">
-            <IconButton classes={{ root: classes.iconLink }}>
-              <GitHubIcon fontSize="large" />
-            </IconButton>
-          </a>
           <a
-            className={classes.link}
-            href="https://www.linkedin.com"
+            className={classNames(classes.githubLink, classes.link)}
+            href="https://www.github.com/kblair40/ecommerce"
             target="blank"
           >
-            Live Link!
+            <IconButton className={classes.iconBtn}>
+              <GitHubIcon
+                fontSize="large"
+                className={classNames(classes.iconLink, classes.githubIcon)}
+              />
+            </IconButton>
+            Github Repo
+          </a>
+          <Divider orientation="vertical" />
+          <a
+            className={classNames(classes.liveLink, classes.link)}
+            href="https://ecommerce-kb.netlify.app/"
+            target="blank"
+          >
+            <IconButton className={classes.iconBtn}>
+              <OfflineBoltIcon
+                fontSize="large"
+                className={classNames(classes.iconLink, classes.liveIcon)}
+              />
+            </IconButton>
+            Live Project
           </a>
         </div>
       </div>

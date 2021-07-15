@@ -6,7 +6,7 @@
 }
 
 .iconContainer {
-  width: 80%;
+  width: 85%;
   display: flex;
   justify-content: space-between;
   /* border: 2px solid green; */
@@ -22,5 +22,16 @@
 
 .item p {
   font-weight: 700;
+  font-size: 16px;
   font-family: Josefin Sans;
+}
+
+@media screen and (max-width: 600px) {
+  .iconContainer {
+    width: 98%;
+    /* height: 80%; */
+  }
+  /* .item p {
+    font-size: 14px;
+  } */
 }

@@ -6,10 +6,22 @@ import classes from "./ProjectCards.module.css";
 const ProjectCards = () => {
   return (
     <div className={classes.container}>
-      <ProjectCard name="ecommerce" />
-      <ProjectCard />
-      <ProjectCard name="todo" />
-      {/* <ProjectCard /> */}
+      <ProjectCard
+        name="ecommerce"
+        liveLink="https://ecommerce-kb.netlify.app/"
+        githubLink="https://github.com/kblair40/ecommerce"
+      />
+      <ProjectCard
+        name="user auth"
+        liveLink="https://signup-kb.netlify.app/signup"
+        githubLink="https://github.com/kblair40/signup"
+      />
+      <ProjectCard
+        name="memory"
+        liveLink="https://memory-6fc80b.netlify.app/"
+        githubLink="https://github.com/kblair40/memory"
+      />
+      <ProjectCard name="todo" liveLink="" githubLink="" />
     </div>
   );
 };
