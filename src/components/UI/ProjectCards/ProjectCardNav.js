@@ -1,7 +1,5 @@
 import React from "react";
 import classNames from "classnames";
-import IconButton from "@material-ui/core/IconButton";
-import GitHubIcon from "@material-ui/icons/GitHub";
 
 import classes from "./ProjectCardNav.module.css";
 

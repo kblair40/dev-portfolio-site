@@ -5,34 +5,90 @@
   display: inline-block;
   margin: 0.5rem;
 }
-.cardTitle {
-  color: #0c0c0d !important;
-  text-align: left !important;
-  margin-top: 2rem !important;
-  font-family: Josefin Sans;
+.projectCard:hover {
+  cursor: pointer;
 }
 
 .contentContainer {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
   padding: 0 1rem 0.5rem;
   height: 12rem;
+  z-index: 1;
 }
 
-.cardContent {
-  font-family: Josefin Sans;
-}
-
+/* BACKGROUND CLASSES */
 .ecommerceBackground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
   background-image: url(../../../assets/images/ecommerce_front.png);
   background-position: center 0;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.todoBackground {
-  align-self: flex-start;
+.ecommerceBackground:hover {
+  animation: hide-bg 0.5s;
+  animation-fill-mode: forwards;
+}
+/* END BACKGROUND CLASSES */
+
+.links {
+  font-family: Josefin Sans;
+  color: #0c0c0d;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.fadeInLinks {
+  animation: fade-in-links 2s;
+}
+
+.linkContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  color: #0c0c0d;
+}
+.link:hover {
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes hide-bg {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-links {
+  0% {
+    opacity: 0;
+  }
+  99.999% {
+    z-index: 3;
+  }
+  100% {
+    opacity: 1;
+    z-index: 4;
+  }
 }
 
 @media screen and (max-width: 1440px) {
@@ -57,14 +113,13 @@
 
 @media screen and (max-width: 750px) {
   .projectCard {
-    height: 185px;
+    height: 180px;
   }
 }
 
 @media screen and (max-width: 600px) {
   .projectCard {
     width: 310px;
-    /* height: 185px; */
   }
 }
 @media screen and (max-width: 500px) {
@@ -73,9 +128,3 @@
     height: 175px;
   }
 }
-/* @media screen and (max-width: 400px) {
-  .projectCard {
-    width: 260px;
-    height: 175px;
-  }
-} */
