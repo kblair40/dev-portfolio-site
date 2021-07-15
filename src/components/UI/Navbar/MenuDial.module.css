@@ -1,7 +1,6 @@
 .container {
   transform: translateZ(0px);
   z-index: 6 !important;
-  background-color: transparent;
 }
 
 /* SPEED DIAL */
@@ -23,21 +22,21 @@
   justify-content: center;
   align-items: center;
 }
-
+.backdropRoot {
+  background-color: transparent !important;
+}
 .speedDialIcon {
   color: #0c0c0d;
   font-size: 42px !important;
 }
 
 .speedDialOpen {
-  background-color: rgba(255, 255, 255, 1) !important;
   width: 100% !important;
   height: 100% !important;
   border-radius: 50%;
 }
 
 /* SPEED DIAL ACTIONS */
-
 .actionFab {
   background-color: rgba(255, 255, 255, 0.5) !important;
   padding: 1.75rem !important;

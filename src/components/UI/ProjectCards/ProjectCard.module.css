@@ -103,6 +103,10 @@
   background-image: url(../../../assets/images/memory.png);
 }
 
+.todosBackground {
+  background-image: url(../../../assets/images/todos.png);
+}
+
 @keyframes hide-bg {
   0% {
     opacity: 1;

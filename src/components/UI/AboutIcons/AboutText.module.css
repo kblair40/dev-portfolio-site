@@ -2,7 +2,6 @@
   width: 100vw;
   display: flex;
   justify-content: center;
-  /* border: 2px solid yellow; */
   margin-top: 2rem;
 }
 
@@ -11,14 +10,12 @@
   height: 80%;
   display: flex;
   justify-content: space-between;
-  /* border: 2px solid green; */
 }
 .spacer {
   width: 5%;
 }
 .column {
   width: 50%;
-  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,6 +34,38 @@
 @media screen and (max-width: 600px) {
   .textContainer {
     width: 95%;
-    /* height: 80%; */
+  }
+  .container {
+    position: absolute;
+    top: 15rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .textContainer {
+    width: 98%;
+  }
+  .shortAbout {
+    font-size: 40px;
+  }
+
+  .longAbout {
+    font-size: 19px;
+  }
+}
+
+@media screen and (max-height: 740px) and (max-width: 420px) {
+  .shortAbout {
+    font-size: 36px;
+  }
+}
+@media screen and (max-height: 650px) and (max-width: 365px) {
+  .container {
+    top: 12rem;
+  }
+  .shortAbout {
+    font-size: 30px;
+  }
+  .longAbout {
+    font-size: 16px;
   }
 }

@@ -41,6 +41,9 @@ const ProjectCard = ({ name, liveLink, githubLink }) => {
   if (name === "memory") {
     backgroundClass = classes.memoryBackground;
   }
+  if (name === "todos") {
+    backgroundClass = classes.todosBackground;
+  }
 
   return (
     <Card square={true} className={classes.projectCard}>
@@ -62,8 +65,6 @@ const ProjectCard = ({ name, liveLink, githubLink }) => {
         <div className={classes.linkContainer}>
           <a
             className={classNames(classes.githubLink, classes.link)}
-            // href="https://www.github.com/kblair40/ecommerce"
-            // target="blank"
             href={githubLink}
             target="blank"
           >
@@ -78,8 +79,6 @@ const ProjectCard = ({ name, liveLink, githubLink }) => {
           <Divider orientation="vertical" />
           <a
             className={classNames(classes.liveLink, classes.link)}
-            // href="https://ecommerce-kb.netlify.app/"
-            // target="blank"
             href={liveLink}
             target="blank"
           >

@@ -36,7 +36,7 @@ const MenuDial = () => {
 
   return (
     <div className={classes.container}>
-      <Backdrop open={open} />
+      <Backdrop open={open} classes={{ root: classes.backdropRoot }} />
       <SpeedDial
         ariaLabel="Home page menu"
         classes={{ root: classes.speedDial, fab: classes.fab }}

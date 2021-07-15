@@ -21,7 +21,11 @@ const ProjectCards = () => {
         liveLink="https://memory-6fc80b.netlify.app/"
         githubLink="https://github.com/kblair40/memory"
       />
-      <ProjectCard name="todo" liveLink="" githubLink="" />
+      <ProjectCard
+        name="todos"
+        liveLink="https://todos-kb.netlify.app/"
+        githubLink="https://github.com/kblair40/Todo"
+      />
     </div>
   );
 };

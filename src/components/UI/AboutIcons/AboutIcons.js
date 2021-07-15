@@ -1,12 +1,10 @@
 import React from "react";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import SpeedIcon from "@material-ui/icons/Speed";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import AssessmentIcon from "@material-ui/icons/Assessment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMedal,
-  faBrush,
-  faRuler,
-  faHeart,
-} from "@fortawesome/free-solid-svg-icons";
+import { faMedal } from "@fortawesome/free-solid-svg-icons";
 
 import classes from "./AboutIcons.module.css";
 
@@ -18,19 +16,23 @@ const AboutIcons = () => {
     <div className={classes.container}>
       <div className={classes.iconContainer}>
         <div className={classes.item}>
-          <FontAwesomeIcon icon={faMedal} size={sm ? "4x" : md ? "6x" : "8x"} />
+          <FontAwesomeIcon
+            className={classes.faIcon}
+            icon={faMedal}
+            size={sm ? "4x" : md ? "6x" : "8x"}
+          />
           <p>World-Class Apps</p>
         </div>
         <div className={classes.item}>
-          <FontAwesomeIcon icon={faBrush} size={sm ? "4x" : md ? "6x" : "8x"} />
-          <p>Tailored To Your Needs</p>
+          <SpeedIcon size="large" classes={{ root: classes.muiIcon }} />
+          <p>Fast Learner</p>
         </div>
         <div className={classes.item}>
-          <FontAwesomeIcon icon={faRuler} size={sm ? "4x" : md ? "6x" : "8x"} />
+          <AssessmentIcon size="large" classes={{ root: classes.muiIcon }} />
           <p>Pixel-Perfect Code</p>
         </div>
         <div className={classes.item}>
-          <FontAwesomeIcon icon={faHeart} size={sm ? "4x" : md ? "6x" : "8x"} />
+          <FavoriteIcon size="large" classes={{ root: classes.muiIcon }} />
           <p>Built With Love</p>
         </div>
       </div>
