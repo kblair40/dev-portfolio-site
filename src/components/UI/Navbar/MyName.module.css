@@ -5,3 +5,10 @@
   font-size: 32px;
   z-index: 15;
 }
+
+@media screen and (max-width: 600px) {
+  .myName {
+    margin-left: 0.5rem;
+    font-size: 26px;
+  }
+}
