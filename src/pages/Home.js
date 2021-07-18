@@ -20,8 +20,15 @@ const Home = () => {
       if (!scrollingIsEnabled) {
         return;
       }
+      console.log("current page:", currentPage);
+      if (
+        currentPage === "work" &&
+        !event.target.id === "work-page-container"
+      ) {
+        return;
+      }
       const deltaY = event.wheelDeltaY;
-
+      // console.log("target id:", event.target.id);
       if (currentPage === "home") {
         if (deltaY < 0) {
           dispatch(hiddenActions.hideHomeUnhideAbout());
@@ -49,7 +56,11 @@ const Home = () => {
   }, [scrollingIsEnabled, changePagesCallback]);
 
   const enableScrolling = () => {
+    // uncomment settimeout for production
+
+    // setTimeout(() => {
     dispatch(hiddenActions.enableScrolling());
+    // }, 1000);
   };
   const disableScrolling = () => {
     dispatch(hiddenActions.disableScrolling());

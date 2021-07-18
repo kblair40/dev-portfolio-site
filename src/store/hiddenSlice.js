@@ -14,9 +14,11 @@ const hiddenSlice = createSlice({
   },
   reducers: {
     hideWorkUnhideAbout(state) {
+      // if (state.scrollingEnabled) {
       state.work = true;
       state.about = false;
       state.currentPage = "about";
+      // }
     },
     hideAboutUnhideHome(state) {
       state.about = true;

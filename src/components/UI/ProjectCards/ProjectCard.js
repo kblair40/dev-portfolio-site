@@ -50,7 +50,7 @@ const ProjectCard = ({ name, liveLink, githubLink }) => {
       <ProjectCardNav title={name} />
       <div
         ref={removeBgRef}
-        id="remove-bg"
+        // id="remove-bg"
         className={classNames(
           classes.contentContainer,
           classes.background,
@@ -59,7 +59,7 @@ const ProjectCard = ({ name, liveLink, githubLink }) => {
       ></div>
       <div
         ref={projectLinksRef}
-        id="project-links"
+        // id="project-links"
         className={classNames(classes.links)}
       >
         <div className={classes.linkContainer}>
