@@ -1,0 +1,3 @@
+TODO
+1. Add custom scroll bar for project cards at certain width
+2. 

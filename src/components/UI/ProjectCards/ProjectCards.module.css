@@ -1,23 +1,16 @@
+.scrollbar {
+  width: 65vw;
+  height: 75vh;
+  position: relative;
+  top: 4rem;
+  background-color: #3a3a3a;
+  border-radius: 5px;
+}
+
 .container {
-  padding: 0 1rem;
-  width: 100vw;
+  padding: 0 0.5rem;
   max-width: 1240px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  position: absolute;
-  top: 10.5rem;
-}
-
-@media screen and (max-width: 750px) {
-  .container {
-    flex-direction: column;
-    flex-wrap: nowrap;
-  }
-}
-
-@media screen and (max-height: 750px) {
-  .container {
-    bottom: 0.5rem;
-  }
 }
