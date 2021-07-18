@@ -1,10 +1,9 @@
 .projectCard {
   position: relative;
-  /* width: 440px; */
-  min-height: 240px;
-  /* height: 240px; */
+  width: 48%;
+  min-height: 220px;
   display: inline-block;
-  margin: 0.5rem;
+  margin: 0.5rem 0;
 }
 .projectCard:hover {
   cursor: pointer;
@@ -18,7 +17,6 @@
   padding: 0 1rem 0.5rem;
   height: 12rem;
   z-index: 1;
-  background-color: #3a3a3a;
 }
 
 .links {
@@ -27,7 +25,7 @@
   width: 100%;
   height: 100%;
   font-size: 30px;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   display: flex;
   justify-content: center;
 }
@@ -37,7 +35,10 @@
 
 .linkContainer {
   width: 100%;
-  height: calc(100% - 1rem);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: calc(100% - 2rem);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -76,6 +77,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .hidden {
@@ -132,49 +134,8 @@
   }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 800px) {
   .projectCard {
-    width: 410px;
-    height: 225px;
+    width: 100%;
   }
 }
-@media screen and (max-width: 890px) {
-  .projectCard {
-    width: 370px;
-    height: 215px;
-    margin: 0.5rem auto;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .projectCard {
-    /* height: 180px; */
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .projectCard {
-    /* width: 310px; */
-  }
-}
-@media screen and (max-width: 500px) {
-  .projectCard {
-    /* width: 290px;
-    height: 175px; */
-  }
-}
-
-/* THIS WORKS */
-/* .ecommerceBackground {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-image: url(../../../assets/images/ecommerce_front.png);
-  background-position: center 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.background:hover {
-  animation: hide-bg 0.5s;
-  animation-fill-mode: forwards;
-} */
