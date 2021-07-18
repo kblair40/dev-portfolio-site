@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Slide from "@material-ui/core/Slide";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+// import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useSelector } from "react-redux";
 
 import UpArrow from "../UI/Arrows/UpArrow";
@@ -12,16 +12,6 @@ const WorkPage = ({ disableScrolling, enableScrolling }) => {
   // const mdScreen = useMediaQuery("(max-width: 890px)");
   // console.log("MEDIUM SCREEN:", mdScreen);
 
-  const logMousePosition = (e) => {
-    console.log("E:", e);
-  };
-
-  const logEnter = () => {
-    console.log("ENTERED");
-    document.addEventListener("mouseenter", logMousePosition);
-    // enableScrolling();
-  };
-
   return (
     <div>
       <Slide
@@ -31,7 +21,6 @@ const WorkPage = ({ disableScrolling, enableScrolling }) => {
         timeout={1000}
         direction="up"
         onEntered={enableScrolling}
-        // onEntered={logEnter}
         onExit={disableScrolling}
       >
         <div className={classes.container} id="work-page-container">

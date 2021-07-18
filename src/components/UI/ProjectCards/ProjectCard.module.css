@@ -1,6 +1,7 @@
 .projectCard {
   position: relative;
   width: 48%;
+  max-width: 420px;
   min-height: 220px;
   display: inline-block;
   margin: 0.5rem 0;

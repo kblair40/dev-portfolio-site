@@ -1,3 +1,2 @@
 TODO
-1. Add custom scroll bar for project cards at certain width
 2. Project Cards should have github and live link w/o need for hover

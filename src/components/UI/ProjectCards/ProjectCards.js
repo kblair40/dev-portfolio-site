@@ -1,46 +1,20 @@
-import React, { useState, useRef, useEffect } from "react";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+import React from "react";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import PerfectScrollbar from "react-perfect-scrollbar";
-import { useDispatch, useSelector } from "react-redux";
-import { hiddenActions } from "../../../store/hiddenSlice";
 
 import ProjectCard from "./ProjectCard";
 import classes from "./ProjectCards.module.css";
 
 const ProjectCards = () => {
-  // const mdScreen = useMediaQuery("(max-width: 890px)");
-  // const [hasScrolledDown, setHasScrolledDown] = useState(false);
-  const dispatch = useDispatch();
-  // const scrollingEnabled = useSelector((st) => st.hidden.scrollingEnabled);
-  const containerRef = useRef();
-
-  const disableScrolling = () => {
-    dispatch(hiddenActions.disableScrolling());
-  };
-  const enableScrolling = () => {
-    dispatch(hiddenActions.enableScrolling());
-  };
-
-  useEffect(() => {
-    // dispatch(hiddenActions.disableScrolling());
-    containerRef.current.addEventListener("mouseenter", disableScrolling);
-    containerRef.current.addEventListener("mouseleave", enableScrolling);
-  }, []);
-
-  // ADD EVENT LISTENER FOR SCROLL ON CONTAINER
-  //   STOP PROPAGATION ON IT
-  // MIGHT NEED TO REMOVE EVENT LISTENERS FROM WINDOW AND ATTACH ELSEWHERE
-
   return (
-    // <div className={classes.scrollbar}>
     <PerfectScrollbar
       className={classes.scrollbar}
       options={{
         suppressScrollX: true,
+        wheelPropagation: false,
       }}
     >
-      <div className={classes.container} ref={containerRef}>
+      <div className={classes.container}>
         <ProjectCard
           name="ecommerce"
           liveLink="https://ecommerce-kb.netlify.app/"
@@ -63,7 +37,6 @@ const ProjectCards = () => {
         />
       </div>
     </PerfectScrollbar>
-    // </div>
   );
 };
 
