@@ -1,12 +1,14 @@
 .container {
   /* border: 2px solid red; */
   position: absolute;
-  top: 55vh;
+  top: 50vh;
   width: 100%;
   color: white;
   font-family: Josefin Sans;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .textSection {
@@ -16,6 +18,7 @@
   font-family: Josefin Sans;
   font-weight: 400;
   font-size: 64px;
+  margin: 1rem 0;
 }
 
 @media screen and (max-width: 960px) {
@@ -24,18 +27,24 @@
     width: 60%;
   }
 }
+@media screen and (max-width: 960px) {
+  .textSection {
+    font-size: 56px;
+    width: 70%;
+  }
+}
 @media screen and (max-width: 600px) {
   .textSection {
-    font-size: 44px;
+    font-size: 48px;
     width: 80%;
   }
 }
 @media screen and (max-width: 360px) {
   .textSection {
-    font-size: 32px;
+    font-size: 36px;
     width: 96%;
   }
   .container {
-    top: 70vh;
+    top: 50vh;
   }
 }

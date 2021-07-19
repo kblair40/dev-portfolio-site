@@ -3,7 +3,7 @@ import classNames from "classnames";
 import Slide from "@material-ui/core/Slide";
 import { useSelector } from "react-redux";
 
-import Avatar from "../Avatar/Head";
+import MePixelized from "../Avatar/MePixelized";
 import HomeContent from "../Content/HomeContent";
 import DownArrow from "../UI/Arrows/DownArrow";
 import classes from "./HomePage.module.css";
@@ -27,7 +27,7 @@ const HomePage = ({ disableScrolling, enableScrolling }) => {
       >
         <div className={classNames(classes.container)}>
           <div className={classes.bgOverlay}>
-            <Avatar />
+            <MePixelized />
             <HomeContent />
             <DownArrow curPage="home" />
           </div>

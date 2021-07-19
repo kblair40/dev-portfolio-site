@@ -20,6 +20,7 @@ const DownArrow = ({ curPage }) => {
   return (
     <div className={classes.container}>
       <div className={classes.arrowContainer}>
+        {curPage === "home" && <p>Scroll to learn more</p>}
         <IconButton onClick={hidePage} className={classes.iconBtnRoot}>
           <ArrowDownwardIcon fontSize="large" />
         </IconButton>

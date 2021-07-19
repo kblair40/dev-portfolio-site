@@ -4,9 +4,8 @@ import classes from "./HomeContent.module.css";
 const HomeContent = () => {
   return (
     <div className={classes.container}>
-      <p className={classes.textSection}>
-        Quis laboris Lorem ad eiusmod quis amet amet dolore Lorem.
-      </p>
+      <p className={classes.textSection}>Hi, my name is Kevin Blair.</p>
+      <p className={classes.textSection}>I'm a developer based in Chicago.</p>
     </div>
   );
 };

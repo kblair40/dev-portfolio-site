@@ -12,9 +12,16 @@
   height: 100%;
   width: 20%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   position: absolute;
   animation: arrow-movement 2s ease-in-out infinite;
+}
+
+.arrowContainer p {
+  color: white;
+  margin-bottom: 0.2rem;
 }
 
 .iconBtnRoot {
