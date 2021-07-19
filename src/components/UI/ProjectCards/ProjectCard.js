@@ -1,17 +1,19 @@
 import React, { useRef, useEffect } from "react";
 import Card from "@material-ui/core/Card";
 import IconButton from "@material-ui/core/IconButton";
-import Divider from "@material-ui/core/Divider";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import OfflineBoltIcon from "@material-ui/icons/OfflineBolt";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import classNames from "classnames";
 
 import ProjectCardNav from "./ProjectCardNav";
 import classes from "./ProjectCard.module.css";
 
 const ProjectCard = ({ name, liveLink, githubLink }) => {
+  const smallScreen = useMediaQuery("(max-width: 400px)");
   const projectLinksRef = useRef();
   const removeBgRef = useRef();
+  console.log("SCREEN IS SMALL?", smallScreen);
 
   useEffect(() => {
     removeBgRef.current.addEventListener("mouseover", addBgClass);
@@ -50,18 +52,13 @@ const ProjectCard = ({ name, liveLink, githubLink }) => {
       <ProjectCardNav title={name} />
       <div
         ref={removeBgRef}
-        // id="remove-bg"
         className={classNames(
-          classes.contentContainer,
+          smallScreen ? classes.hidden : classes.contentContainer,
           classes.background,
           backgroundClass
         )}
       ></div>
-      <div
-        ref={projectLinksRef}
-        // id="project-links"
-        className={classNames(classes.links)}
-      >
+      <div ref={projectLinksRef} className={classNames(classes.links)}>
         <div className={classes.linkContainer}>
           <a
             className={classNames(classes.githubLink, classes.link)}
@@ -76,7 +73,6 @@ const ProjectCard = ({ name, liveLink, githubLink }) => {
             </IconButton>
             Github Repo
           </a>
-          <Divider orientation="vertical" />
           <a
             className={classNames(classes.liveLink, classes.link)}
             href={liveLink}

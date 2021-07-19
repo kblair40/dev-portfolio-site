@@ -1,10 +1,10 @@
 .scrollbar {
   width: 90vw;
-  height: 75vh;
+  height: 70vh !important;
   position: relative;
   top: 4rem;
   border-radius: 5px;
-  max-width: 900px;
+  max-width: 1100px;
 }
 
 .container {
@@ -13,8 +13,7 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  /* border: 1px solid green; */
-  /* box-shadow: 0px 0px 15px 15px #000; */
+  /* z-index: 10; */
 }
 
 .hidden {
@@ -26,19 +25,16 @@
     width: 60vw;
     box-shadow: 0px 2px 7px 0px #000;
     max-width: 440px;
-    /* background-color: #3a3a3a; */
   }
 }
 @media screen and (max-width: 750px) {
   .scrollbar {
     width: 65vw;
-    /* background-color: #3a3a3a; */
   }
 }
 @media screen and (max-width: 700px) {
   .scrollbar {
     width: 70vw;
-    /* background-color: #3a3a3a; */
   }
 }
 @media screen and (max-width: 600px) {
@@ -48,14 +44,15 @@
 }
 @media screen and (max-width: 500px) {
   .scrollbar {
-    width: 80vw;
+    width: 85vw;
   }
 }
 @media screen and (max-width: 400px) {
   .scrollbar {
-    width: 98vw;
+    width: 100vw;
+    box-shadow: none;
   }
   .container {
-    padding: 0 0.6rem;
+    padding: 0;
   }
 }

@@ -9,6 +9,7 @@ const ProjectCards = () => {
   return (
     <PerfectScrollbar
       className={classes.scrollbar}
+      style={{ zIndex: 100 }}
       options={{
         suppressScrollX: true,
         wheelPropagation: false,

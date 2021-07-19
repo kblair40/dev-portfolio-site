@@ -120,3 +120,27 @@
     24px 36px #ebccab, 36px 42px #ebccab, 30px 42px #ebccab, 36px 36px #ebccab,
     42px 36px #ebccab, 42px 30px #ebccab;
 }
+
+@media screen and (min-height: 1100px) {
+  .me {
+    transform: scale(2.2);
+    position: absolute;
+    /* right: 0px; */
+    /* left: 150px; */
+    top: 5.5rem;
+  }
+  .meContainer {
+    width: 260px;
+    height: 260px;
+    top: 5rem;
+  }
+
+  .meContainer::before {
+    content: "";
+    height: 220px;
+    width: 220px;
+    background: linear-gradient(#262627 0%, #19191a 60%, #0c0c0d 100%);
+    border-radius: 50%;
+    filter: blur(18px);
+  }
+}
