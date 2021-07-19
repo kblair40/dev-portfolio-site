@@ -22,6 +22,8 @@
 .arrowContainer p {
   color: white;
   margin-bottom: 0.2rem;
+  width: 100vw;
+  text-align: center;
 }
 
 .iconBtnRoot {

@@ -4,6 +4,7 @@ import SpeedIcon from "@material-ui/icons/Speed";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import AssessmentIcon from "@material-ui/icons/Assessment";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
+import SchoolIcon from "@material-ui/icons/School";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMedal } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames";
@@ -25,11 +26,11 @@ const AboutIcons = () => {
           <p>First-Rate Apps</p>
         </div>
         <div className={classes.item}>
-          <SpeedIcon
+          <SchoolIcon
             size="large"
             classes={{ root: classNames(classes.muiIcon, classes.speedIcon) }}
           />
-          <p>Fast Learner</p>
+          <p>Constantly Learning</p>
         </div>
         <div className={classes.item}>
           <AssessmentIcon
