@@ -12,3 +12,10 @@
 .hidden {
   display: none;
 }
+
+@media screen and (max-width: 500px) {
+  .container {
+    justify-content: flex-start;
+    padding-top: 5.5rem;
+  }
+}
