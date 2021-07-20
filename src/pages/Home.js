@@ -88,6 +88,10 @@ const Home = () => {
     };
   }, [scrollingIsEnabled, changePagesCallback]);
 
+  useEffect(() => {
+    console.log("window:", window);
+  });
+
   return (
     <div
       onTouchStart={(e) => handleTouchStart(e)}

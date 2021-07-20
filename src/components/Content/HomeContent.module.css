@@ -17,6 +17,8 @@
   font-weight: 600;
   font-size: 72px;
   margin: 1rem 0;
+  /* NEW */
+  /* height: 100%; */
 }
 
 @media screen and (max-width: 1200px) {
@@ -51,5 +53,32 @@
   }
   .container {
     top: 50vh;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 830px) and (max-height: 550px) {
+  .container {
+    bottom: 0.5rem;
+  }
+  .textSection {
+    width: 96%;
+    font-size: 34px;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 740px) and (max-height: 420px) {
+  .container {
+    bottom: 1.5rem;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 660px) and (max-height: 300px) {
+  .container {
+    bottom: 1.1rem;
+  }
+  .textSection {
+    width: 96%;
+    font-size: 28px;
+    margin: 0;
   }
 }

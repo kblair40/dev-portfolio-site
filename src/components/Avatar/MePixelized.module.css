@@ -125,8 +125,6 @@
   .me {
     transform: scale(2.2);
     position: absolute;
-    /* right: 0px; */
-    /* left: 150px; */
     top: 5.5rem;
   }
   .meContainer {
@@ -142,5 +140,35 @@
     background: linear-gradient(#262627 0%, #19191a 60%, #0c0c0d 100%);
     border-radius: 50%;
     filter: blur(18px);
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 825px) and (max-height: 420px) {
+  .me {
+    top: 1.75rem;
+    transform: scale(1.2);
+    position: absolute;
+    left: 2.75rem;
+  }
+  .meContainer {
+    width: 160px;
+    height: 160px;
+    top: 1rem;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 660px) and (max-height: 300px) {
+  .me {
+    top: 0.5rem;
+    transform: scale(1);
+    position: absolute;
+    left: 1.5rem;
+  }
+  .meContainer {
+    width: 125px;
+    height: 125px;
+    top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

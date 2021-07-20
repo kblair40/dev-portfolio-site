@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 import MePixelized from "../Avatar/MePixelized";
 import HomeContent from "../Content/HomeContent";
+import Wrapper from "../UI/Wrapper";
 import classes from "./HomePage.module.css";
 
 const HomePage = ({ disableScrolling, enableScrolling }) => {
@@ -14,7 +15,7 @@ const HomePage = ({ disableScrolling, enableScrolling }) => {
   );
 
   return (
-    <div>
+    <Wrapper>
       <Slide
         mountOnEnter
         unmountOnExit
@@ -31,7 +32,7 @@ const HomePage = ({ disableScrolling, enableScrolling }) => {
           </div>
         </div>
       </Slide>
-    </div>
+    </Wrapper>
   );
 };
 
