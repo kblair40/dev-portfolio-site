@@ -25,10 +25,10 @@
     width: 60%;
   }
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 980px) {
   .textSection {
-    font-size: 56px;
-    width: 70%;
+    font-size: 54px;
+    width: 80%;
   }
 }
 

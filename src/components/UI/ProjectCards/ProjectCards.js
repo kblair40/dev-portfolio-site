@@ -1,6 +1,7 @@
 import React from "react";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import PerfectScrollbar from "react-perfect-scrollbar";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import ProjectCard from "./ProjectCard";
 import classes from "./ProjectCards.module.css";
@@ -9,7 +10,6 @@ const ProjectCards = () => {
   return (
     <PerfectScrollbar
       className={classes.scrollbar}
-      style={{ zIndex: 100 }}
       options={{
         suppressScrollX: true,
         wheelPropagation: false,

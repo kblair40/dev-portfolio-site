@@ -1,2 +1,8 @@
 TODO
-2. Project Cards should have github and live link w/o need for hover
+2. Work on getting PerfectScrollbar hidden on screen widths that don't require scrolling
+3. Nav links for resume, github, linkedin and contact
+4. Add info modal with mat-UI 'i' icon ( or modal with preview image(s)? )for project cards on screen widths below
+
+
+Less Important
+1. Replace PerfectScrollbar with a 3d-carousel

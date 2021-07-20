@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -14,9 +14,12 @@ const Home = () => {
   const scrollingIsEnabled = useSelector(
     (state) => state.hidden.scrollingEnabled
   );
+  const [touchStartY, setTouchStartY] = useState(undefined);
 
   const changePagesCallback = useCallback(
     (event) => {
+      console.log("SCROLL OR WHEEL EVENT!");
+      console.log(event, "\n\n\n");
       if (!scrollingIsEnabled) {
         return;
       }
@@ -50,9 +53,38 @@ const Home = () => {
     [currentPage, dispatch, scrollingIsEnabled]
   );
 
+  const handleTouchStart = (e) => {
+    // const initX = e.touches[0].clientX;
+    const initY = e.touches[0].clientY;
+    // console.log("initX:", initX);
+    console.log("initY", initY);
+    setTouchStartY(initY);
+  };
+
+  const handleTouchMove = (e) => {
+    // const moveX = e.touches[0].clientX;
+    const moveY = e.touches[0].clientY;
+    // console.log("moveX:", moveX);
+    console.log("moveY", moveY);
+  };
+
+  const handleTouchEnd = (e) => {
+    console.log("end event:", e);
+    // const endX = e.changedTouches[0].clientX;
+    const endY = e.changedTouches[0].clientY;
+    // console.log("endX:", endX);
+    console.log("\n\n\nstartY:", touchStartY);
+    console.log("endY", endY);
+  };
+
   useEffect(() => {
     window.addEventListener("wheel", changePagesCallback);
-    return () => window.removeEventListener("wheel", changePagesCallback);
+    // window.addEventListener("touchstart", startTouch);
+    // window.addEventListener("touchmove", changePagesCallback);
+    return () => {
+      window.removeEventListener("wheel", changePagesCallback);
+      // window.removeEventListener("touchmove", changePagesCallback);
+    };
   }, [scrollingIsEnabled, changePagesCallback]);
 
   const enableScrolling = () => {
@@ -67,7 +99,12 @@ const Home = () => {
   };
 
   return (
-    <div className={classNames(classes.container)}>
+    <div
+      onTouchStart={(e) => handleTouchStart(e)}
+      onTouchMove={(e) => handleTouchMove(e)}
+      onTouchEnd={(e) => handleTouchEnd(e)}
+      className={classNames(classes.container)}
+    >
       <div className={classNames(classes.pageContainer)}>
         <HomePage
           enableScrolling={enableScrolling}

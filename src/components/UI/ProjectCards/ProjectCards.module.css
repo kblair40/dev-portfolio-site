@@ -1,10 +1,14 @@
 .scrollbar {
   width: 90vw;
-  height: 70vh !important;
-  position: relative;
-  top: 4rem;
+  height: 75vh;
+  /* position: relative;
+  top: 4rem; */
   border-radius: 5px;
   max-width: 1100px;
+  /* NEW */
+  /* previously relative and top: 4rem */
+  position: absolute;
+  bottom: 0.25rem;
 }
 
 .container {
@@ -13,7 +17,7 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  /* z-index: 10; */
+  /* NEW */
 }
 
 .hidden {
