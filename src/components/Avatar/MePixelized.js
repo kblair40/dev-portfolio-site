@@ -9,13 +9,9 @@ const MePixelized = () => {
   const [animationActive, setAnimationActive] = useState(true);
 
   const trackMouse = (e) => {
-    console.log("EVENT:");
     let screenWidth = e.target.clientWidth;
     let halfway = screenWidth / 2;
     let mouseX = e.pageX;
-    console.log("screenWidth", screenWidth);
-    console.log("halfway", halfway);
-    console.log("mouseX", mouseX, "\n\n\n");
     if (!animationActive) {
       if (!mouseOnLeftHalf && mouseX < halfway) {
         setMouseOnLeftHalf(true);

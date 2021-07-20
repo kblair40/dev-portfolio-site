@@ -3,6 +3,7 @@
   width: 100vw;
   height: 10vh;
   bottom: 1rem;
+  /* bottom: offset; */
   display: flex;
   justify-content: center;
 }
@@ -18,21 +19,22 @@
   position: absolute;
   animation: arrow-movement 2s ease-in-out infinite;
 }
-
-.arrowContainer p {
+.subtext {
   color: white;
-  margin-bottom: 0.2rem;
+  margin-bottom: -0.5rem;
   width: 100vw;
   text-align: center;
   font-family: Open Sans;
-  font-size: 15px;
+  font-size: 14px;
+  border: 1px solid white !important;
+  z-index: 1;
 }
 
 .iconBtnRoot {
   color: white !important;
   width: 3.5rem;
   height: 3.5rem;
-  /* border: 1px solid white !important; */
+  z-index: 2;
 }
 .iconBtnRoot:hover {
   background-color: transparent !important;

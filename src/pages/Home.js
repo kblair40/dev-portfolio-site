@@ -7,6 +7,7 @@ import AboutPage from "../components/component-pages/AboutPage";
 import WorkPage from "../components/component-pages/WorkPage";
 import { hiddenActions } from "../store/hiddenSlice";
 import classes from "./Home.module.css";
+import DownArrow from "../components/UI/Arrows/DownArrow";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -69,13 +70,6 @@ const Home = () => {
     changePagesCallback(e, touchEndY - touchStartY);
   };
 
-  useEffect(() => {
-    window.addEventListener("wheel", changePagesCallback);
-    return () => {
-      window.removeEventListener("wheel", changePagesCallback);
-    };
-  }, [scrollingIsEnabled, changePagesCallback]);
-
   const enableScrolling = () => {
     // uncomment settimeout for production
     // setTimeout(() => {
@@ -85,6 +79,14 @@ const Home = () => {
   const disableScrolling = () => {
     dispatch(hiddenActions.disableScrolling());
   };
+
+  useEffect(() => {
+    window.addEventListener("wheel", changePagesCallback);
+
+    return () => {
+      window.removeEventListener("wheel", changePagesCallback);
+    };
+  }, [scrollingIsEnabled, changePagesCallback]);
 
   return (
     <div
@@ -110,6 +112,7 @@ const Home = () => {
           disableScrolling={disableScrolling}
         />
       </div>
+      {currentPage !== "work" && <DownArrow />}
     </div>
   );
 };

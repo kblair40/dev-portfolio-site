@@ -7,6 +7,10 @@
   justify-content: center;
 }
 
+.lowered {
+  top: 1.5rem;
+}
+
 .arrowContainer {
   z-index: 20;
   height: 100%;

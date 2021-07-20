@@ -2,7 +2,7 @@ TODO
 2. Work on getting PerfectScrollbar hidden on screen widths that don't require scrolling
 3. Nav links for resume, github, linkedin and contact
 4. Add info modal with mat-UI 'i' icon ( or modal with preview image(s)? )for project cards on screen widths below
-
+5. Project cards should display links on wider screens in case mobile device is tilted horizontal, OR prevent tilting (if possible).
 
 Less Important
 1. Replace PerfectScrollbar with a 3d-carousel

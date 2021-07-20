@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 
 import MePixelized from "../Avatar/MePixelized";
 import HomeContent from "../Content/HomeContent";
-import DownArrow from "../UI/Arrows/DownArrow";
 import classes from "./HomePage.module.css";
 
 const HomePage = ({ disableScrolling, enableScrolling }) => {
@@ -29,7 +28,6 @@ const HomePage = ({ disableScrolling, enableScrolling }) => {
           <div className={classes.bgOverlay}>
             <MePixelized />
             <HomeContent />
-            <DownArrow curPage="home" />
           </div>
         </div>
       </Slide>

@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Slide from "@material-ui/core/Slide";
 
 import AboutIcons from "../UI/AboutIcons/AboutIcons";
 import AboutText from "../UI/AboutIcons/AboutText";
-import DownArrow from "../UI/Arrows/DownArrow";
 import UpArrow from "../UI/Arrows/UpArrow";
 import { hiddenActions } from "../../store/hiddenSlice";
 
@@ -16,6 +15,17 @@ const AboutPage = ({ disableScrolling, enableScrolling }) => {
   const slideDirection = useSelector(
     (state) => state.hidden.aboutSlideDirection
   );
+  const [screenHeight, setScreenHeight] = useState("100vh");
+
+  const handleResize = () => {
+    let windowHeight = window.innerHeight;
+    console.log("windowHeight:", windowHeight, typeof windowHeight);
+    setScreenHeight(`${windowHeight}px`);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+  }, []);
 
   const setDirectionDown = () => {
     dispatch(hiddenActions.setAboutDirection({ direction: "down" }));
@@ -23,6 +33,8 @@ const AboutPage = ({ disableScrolling, enableScrolling }) => {
   const setDirectionUp = () => {
     dispatch(hiddenActions.setAboutDirection({ direction: "up" }));
   };
+
+  const styles = { height: screenHeight };
 
   return (
     <div>
@@ -35,15 +47,13 @@ const AboutPage = ({ disableScrolling, enableScrolling }) => {
         onEntered={enableScrolling}
         onExit={disableScrolling}
       >
-        <div className={classes.container}>
+        <div className={classes.container} style={styles}>
           <AboutIcons />
           <AboutText />
           <div onClick={setDirectionUp}>
             <UpArrow curPage="about" />
           </div>
-          <div onClick={setDirectionDown}>
-            <DownArrow curPage="about" />
-          </div>
+          <div onClick={setDirectionDown}></div>
         </div>
       </Slide>
     </div>
