@@ -13,7 +13,6 @@ const ProjectCard = ({ name, liveLink, githubLink }) => {
   const smallScreen = useMediaQuery("(max-width: 400px)");
   const projectLinksRef = useRef();
   const removeBgRef = useRef();
-  console.log("SCREEN IS SMALL?", smallScreen);
 
   useEffect(() => {
     removeBgRef.current.addEventListener("mouseover", addBgClass);

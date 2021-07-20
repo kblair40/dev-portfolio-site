@@ -7,6 +7,10 @@ import ProjectCard from "./ProjectCard";
 import classes from "./ProjectCards.module.css";
 
 const ProjectCards = () => {
+  const handleTouchStart = (e) => {
+    // Prevent user scrolling on cards from changing the page
+    e.stopPropagation();
+  };
   return (
     <PerfectScrollbar
       className={classes.scrollbar}
@@ -14,6 +18,7 @@ const ProjectCards = () => {
         suppressScrollX: true,
         wheelPropagation: false,
       }}
+      onTouchStart={handleTouchStart}
     >
       <div className={classes.container}>
         <ProjectCard

@@ -17,21 +17,25 @@ const Home = () => {
   const [touchStartY, setTouchStartY] = useState(undefined);
 
   const changePagesCallback = useCallback(
-    (event) => {
-      console.log("SCROLL OR WHEEL EVENT!");
-      console.log(event, "\n\n\n");
+    (event, delta = null) => {
       if (!scrollingIsEnabled) {
         return;
       }
-      console.log("current page:", currentPage);
+
       if (
         currentPage === "work" &&
         !event.target.id === "work-page-container"
       ) {
         return;
       }
-      const deltaY = event.wheelDeltaY;
-      // console.log("target id:", event.target.id);
+
+      let deltaY;
+      if (delta) {
+        deltaY = delta;
+      } else {
+        deltaY = event.wheelDeltaY;
+      }
+
       if (currentPage === "home") {
         if (deltaY < 0) {
           dispatch(hiddenActions.hideHomeUnhideAbout());
@@ -54,42 +58,26 @@ const Home = () => {
   );
 
   const handleTouchStart = (e) => {
-    // const initX = e.touches[0].clientX;
     const initY = e.touches[0].clientY;
-    // console.log("initX:", initX);
-    console.log("initY", initY);
+
     setTouchStartY(initY);
   };
 
-  const handleTouchMove = (e) => {
-    // const moveX = e.touches[0].clientX;
-    const moveY = e.touches[0].clientY;
-    // console.log("moveX:", moveX);
-    console.log("moveY", moveY);
-  };
-
   const handleTouchEnd = (e) => {
-    console.log("end event:", e);
-    // const endX = e.changedTouches[0].clientX;
-    const endY = e.changedTouches[0].clientY;
-    // console.log("endX:", endX);
-    console.log("\n\n\nstartY:", touchStartY);
-    console.log("endY", endY);
+    const touchEndY = e.changedTouches[0].clientY;
+
+    changePagesCallback(e, touchEndY - touchStartY);
   };
 
   useEffect(() => {
     window.addEventListener("wheel", changePagesCallback);
-    // window.addEventListener("touchstart", startTouch);
-    // window.addEventListener("touchmove", changePagesCallback);
     return () => {
       window.removeEventListener("wheel", changePagesCallback);
-      // window.removeEventListener("touchmove", changePagesCallback);
     };
   }, [scrollingIsEnabled, changePagesCallback]);
 
   const enableScrolling = () => {
     // uncomment settimeout for production
-
     // setTimeout(() => {
     dispatch(hiddenActions.enableScrolling());
     // }, 1000);
@@ -101,7 +89,6 @@ const Home = () => {
   return (
     <div
       onTouchStart={(e) => handleTouchStart(e)}
-      onTouchMove={(e) => handleTouchMove(e)}
       onTouchEnd={(e) => handleTouchEnd(e)}
       className={classNames(classes.container)}
     >
