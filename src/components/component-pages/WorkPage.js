@@ -2,7 +2,7 @@ import React from "react";
 import Slide from "@material-ui/core/Slide";
 import { useSelector } from "react-redux";
 
-import UpArrow from "../UI/Arrows/UpArrow";
+import Wrapper from "../UI/Wrapper";
 import ProjectCards from "../UI/ProjectCards/ProjectCards";
 import classes from "./WorkPage.module.css";
 
@@ -10,7 +10,7 @@ const WorkPage = ({ disableScrolling, enableScrolling }) => {
   const workIsHidden = useSelector((state) => state.hidden.work);
 
   return (
-    <div>
+    <Wrapper>
       <Slide
         mountOnEnter
         unmountOnExit
@@ -23,10 +23,9 @@ const WorkPage = ({ disableScrolling, enableScrolling }) => {
         <div className={classes.container} id="work-page-container">
           <h1 className={classes.header}>My Work</h1>
           <ProjectCards />
-          <UpArrow curPage="work" />
         </div>
       </Slide>
-    </div>
+    </Wrapper>
   );
 };
 

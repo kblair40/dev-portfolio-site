@@ -1,6 +1,6 @@
 .container {
   transform: translateZ(0px);
-  z-index: 6 !important;
+  z-index: 60 !important;
 }
 
 /* SPEED DIAL */
@@ -57,7 +57,7 @@
   padding: 0;
   width: 7rem;
   background-color: rgba(255, 255, 255, 1) !important ;
-  z-index: 19;
+  /* z-index: 100; */
 }
 .tooltip-hover {
   background-color: white !important;

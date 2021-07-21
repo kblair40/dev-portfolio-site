@@ -3,8 +3,8 @@
 }
 
 .scrollbar {
-  overflow-y: scroll;
-  z-index: 1;
+  overflow-y: auto;
+  /* z-index: 1; */
 }
 
 .navbar {

@@ -9,8 +9,6 @@ import Home from "./pages/Home";
 function App() {
   return (
     <div className="App">
-      {/* <Navbar /> */}
-
       <Switch>
         <Route path="/" exact>
           <Home />

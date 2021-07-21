@@ -22,12 +22,17 @@ const useStyles = makeStyles({
 
 const DownArrow = () => {
   const height = use100vh();
-  console.log("HEIGHT:", height);
+
   const styles = useStyles();
   const curPage = useSelector((state) => state.hidden.currentPage);
   const dispatch = useDispatch();
-  // const touchPoints = navigator.maxTouchPoints;
-  // console.log("touch points:", touchPoints);
+
+  const setDirectionDown = async () => {
+    if (curPage === "about") {
+      await dispatch(hiddenActions.setAboutDirection({ direction: "down" }));
+    }
+    hidePage();
+  };
 
   const hidePage = () => {
     if (curPage === "home") {
@@ -46,7 +51,7 @@ const DownArrow = () => {
         {curPage === "about" && (
           <p className={classes.subtext}>Scroll to see my work</p>
         )}
-        <IconButton onClick={hidePage} className={classes.iconBtnRoot}>
+        <IconButton onClick={setDirectionDown} className={classes.iconBtnRoot}>
           <ArrowDownwardIcon fontSize="large" />
         </IconButton>
       </div>

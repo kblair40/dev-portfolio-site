@@ -23,10 +23,14 @@ const useStyles = makeStyles({
 const UpArrow = () => {
   const dispatch = useDispatch();
   const curPage = useSelector((state) => state.hidden.currentPage);
-
-  const touchPoints = navigator.maxTouchPoints;
-  console.log("touch points:", touchPoints);
   const styles = useStyles();
+
+  const setDirectionUp = async () => {
+    if (curPage === "about") {
+      await dispatch(hiddenActions.setAboutDirection({ direction: "up" }));
+    }
+    hidePage();
+  };
 
   const hidePage = () => {
     if (curPage === "about") {
@@ -39,7 +43,7 @@ const UpArrow = () => {
   return (
     <div className={classNames(styles.container)}>
       <div className={classes.arrowContainer}>
-        <IconButton onClick={hidePage} className={classes.iconBtnRoot}>
+        <IconButton onClick={setDirectionUp} className={classes.iconBtnRoot}>
           <ArrowUpwardIcon fontSize="large" />
         </IconButton>
       </div>
