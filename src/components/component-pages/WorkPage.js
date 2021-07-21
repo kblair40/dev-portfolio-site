@@ -20,7 +20,7 @@ const WorkPage = ({ disableScrolling, enableScrolling }) => {
         onEntered={enableScrolling}
         onExit={disableScrolling}
       >
-        <div className={classes.container} id="work-page-container">
+        <div className={classes.container}>
           <h1 className={classes.header}>My Work</h1>
           <ProjectCards />
         </div>

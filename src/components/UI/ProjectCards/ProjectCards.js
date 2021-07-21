@@ -20,7 +20,7 @@ const ProjectCards = () => {
       }}
       onTouchStart={handleTouchStart}
     >
-      <div className={classes.container}>
+      <div className={classes.container} id="work-page-container">
         <ProjectCard
           name="ecommerce"
           liveLink="https://ecommerce-kb.netlify.app/"

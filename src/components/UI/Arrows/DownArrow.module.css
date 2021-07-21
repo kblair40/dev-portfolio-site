@@ -55,3 +55,15 @@
     top: 0;
   }
 }
+
+@media screen and (max-width: 825px) and (max-height: 420px) {
+  .arrowContainer p {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 660px) and (max-height: 290px) {
+  .arrowContainer p {
+    font-size: 11px;
+  }
+}

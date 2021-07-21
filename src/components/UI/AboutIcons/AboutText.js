@@ -20,13 +20,6 @@ const AboutText = () => {
             but love having an excuse to dabble in NodeJS (Express) and
             databases such as MongoDB and Firebase as needed.
           </p>
-          {/* <p className={classes.longAbout}>
-            Esse cupidatat aute aliqua do nisi aliqua eiusmod incididunt cillum
-            pariatur qui dolor irure proident. Veniam nulla pariatur in esse ad
-            cillum ipsum consectetur nisi esse non. Aliquip excepteur incididunt
-            fugiat ad officia veniam officia anim tempor ipsum sunt proident
-            fugiat.
-          </p> */}
         </div>
       </div>
     </div>

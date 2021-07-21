@@ -15,15 +15,14 @@ const Wrapper = (props) => {
   const dispatch = useDispatch();
   const currentPage = useSelector((state) => state.hidden.currentPage);
   const [touchStartY, setTouchStartY] = useState(undefined);
+  const [yScrollSuppressed, setYScrollSuppressed] = useState(true);
 
   const changePagesCallback = useCallback(
     (event, delta = null) => {
-      console.log("WHEEL EVENT");
-      console.log(event);
       if (!scrollingIsEnabled) {
         return;
       }
-
+      event.stopPropagation();
       if (
         currentPage === "work" &&
         !event.target.id === "work-page-container"
@@ -63,6 +62,10 @@ const Wrapper = (props) => {
     if (wrapperRef && wrapperRef.current) {
       wrapperRef.current.addEventListener("wheel", changePagesCallback);
 
+      setTimeout(() => {
+        setYScrollSuppressed(false);
+      }, 500);
+
       return () => {
         wrapperRef.current.removeEventListener("wheel", changePagesCallback);
       };
@@ -78,11 +81,6 @@ const Wrapper = (props) => {
   };
 
   const handleTouchEnd = (e) => {
-    // Prevent user from scrolling multiple pages ???
-    // I think this is better...
-    // Prevent user from scrolling page while hovering ProjectCards container
-    e.stopPropagation();
-
     console.log("TOUCHED!");
     const touchEndY = e.changedTouches[0].clientY;
 
@@ -94,6 +92,8 @@ const Wrapper = (props) => {
       className={classes.scrollbar}
       options={{
         suppressScrollX: true,
+        // suppressScrollY: true,
+        suppressScrollY: yScrollSuppressed,
         wheelPropagation: false,
       }}
       onTouchStart={handleTouchStart}

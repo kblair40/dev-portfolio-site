@@ -19,3 +19,16 @@
 .bgOverlay {
   position: relative;
 }
+
+/* .slideDown {
+  animation: slide-down 1s forwards linear;
+}
+
+@keyframes slide-down {
+  0% {
+    top: -10rem;
+  }
+  100% {
+    top: 4rem;
+  }
+} */

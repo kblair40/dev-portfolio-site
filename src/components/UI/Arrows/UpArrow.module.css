@@ -15,6 +15,7 @@
   display: flex;
   justify-content: center;
   position: absolute;
+  /* top: 0; */
   animation: arrow-movement 2s ease-in-out infinite;
 }
 
@@ -37,15 +38,15 @@
 
 @keyframes arrow-movement {
   0% {
-    /* bottom: 0; */
-    top: 0;
+    bottom: 0;
+    /* top: 0; */
   }
   50% {
-    /* bottom: 0.5rem; */
-    top: 0.5rem;
+    bottom: 0.5rem;
+    /* top: 0.5rem; */
   }
   100% {
-    /* bottom: 0; */
-    top: 0;
+    bottom: 0;
+    /* top: 0; */
   }
 }
