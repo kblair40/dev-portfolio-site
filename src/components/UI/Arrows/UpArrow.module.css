@@ -30,12 +30,6 @@
   background-color: transparent !important;
 }
 
-@media screen and (max-width: 600px) {
-  .arrowContainer {
-    width: 50%;
-  }
-}
-
 @keyframes arrow-movement {
   0% {
     bottom: 0;
@@ -48,5 +42,12 @@
   100% {
     bottom: 0;
     /* top: 0; */
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .arrowContainer {
+    height: 3rem;
+    width: 50%;
   }
 }

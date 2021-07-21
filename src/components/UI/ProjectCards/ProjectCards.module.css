@@ -55,3 +55,20 @@
     padding: 0;
   }
 }
+@media screen and (max-width: 720px) and (max-height: 515px) {
+  .scrollbar {
+    height: 70vh;
+  }
+}
+@media screen and (max-width: 580px) and (max-height: 330px) {
+  .scrollbar {
+    width: 65vw;
+    height: 70vh;
+  }
+}
+@media screen and (max-width: 655px) and (max-height: 285px) {
+  .scrollbar {
+    width: 65vw;
+    height: 65vh;
+  }
+}
