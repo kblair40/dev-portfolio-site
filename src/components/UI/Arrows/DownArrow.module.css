@@ -1,12 +1,11 @@
-.container {
+/* .container {
   position: absolute;
   width: 100vw;
   height: 10vh;
   bottom: 1rem;
-  /* bottom: offset; */
   display: flex;
   justify-content: center;
-}
+} */
 
 .arrowContainer {
   z-index: 20;
@@ -26,7 +25,6 @@
   text-align: center;
   font-family: Open Sans;
   font-size: 14px;
-  /* border: 1px solid white !important; */
   z-index: 1;
 }
 
@@ -43,14 +41,6 @@
 @media screen and (max-width: 600px) {
   .arrowContainer {
     width: 50%;
-  }
-}
-
-@media screen and (orientation: landscape) and (max-width: 660px) and (max-height: 300px) {
-  .container {
-    height: 15vh !important;
-    bottom: 5rem !important;
-    border: 2px solid green !important;
   }
 }
 

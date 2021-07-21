@@ -1,3 +1,15 @@
 .wrapperContainer {
-  overflow-y: auto;
+  /* overflow-y: auto; */
+}
+
+.scrollbar {
+  overflow-y: scroll;
+  z-index: 1;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
 }

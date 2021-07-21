@@ -26,8 +26,8 @@ const DownArrow = () => {
   const styles = useStyles();
   const curPage = useSelector((state) => state.hidden.currentPage);
   const dispatch = useDispatch();
-  const touchPoints = navigator.maxTouchPoints;
-  console.log("touch points:", touchPoints);
+  // const touchPoints = navigator.maxTouchPoints;
+  // console.log("touch points:", touchPoints);
 
   const hidePage = () => {
     if (curPage === "home") {
@@ -38,12 +38,7 @@ const DownArrow = () => {
   };
 
   return (
-    <div
-      className={classNames(
-        styles.container
-        // touchPoints > 0 && classes.raised
-      )}
-    >
+    <div className={classNames(styles.container)}>
       <div className={classes.arrowContainer}>
         {curPage === "home" && (
           <p className={classes.subtext}>Scroll to learn more</p>

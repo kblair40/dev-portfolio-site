@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Slide from "@material-ui/core/Slide";
 
+import Wrapper from "../UI/Wrapper";
 import AboutIcons from "../UI/AboutIcons/AboutIcons";
 import AboutText from "../UI/AboutIcons/AboutText";
 import UpArrow from "../UI/Arrows/UpArrow";
@@ -37,7 +38,7 @@ const AboutPage = ({ disableScrolling, enableScrolling }) => {
   const styles = { height: screenHeight };
 
   return (
-    <div>
+    <Wrapper>
       <Slide
         mountOnEnter
         unmountOnExit
@@ -56,7 +57,7 @@ const AboutPage = ({ disableScrolling, enableScrolling }) => {
           <div onClick={setDirectionDown}></div>
         </div>
       </Slide>
-    </div>
+    </Wrapper>
   );
 };
 
