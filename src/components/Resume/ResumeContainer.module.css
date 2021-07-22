@@ -5,7 +5,8 @@
 
 .root {
   padding: 1rem;
-  color: #333; /* Should this be #0c0c0d? */
+  color: #333; /* May need to change to #0c0c0d? */
   margin-top: 6rem;
   width: 90%;
+  position: relative; /* Allows theme switch to be positioned in upper-right corner */
 }

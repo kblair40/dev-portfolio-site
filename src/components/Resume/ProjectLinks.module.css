@@ -5,6 +5,7 @@
   width: 100%;
   flex-wrap: wrap;
   margin: -1.5rem 0 0 0;
+  font-family: "Open Sans";
 }
 
 .subheaderContent {
@@ -12,12 +13,16 @@
   flex-grow: 1;
   display: flex;
   align-items: baseline;
+  font-family: "Open Sans";
+}
+.subheaderContent p {
+  margin-left: 1rem;
 }
 
 .links {
   display: flex;
   align-items: center;
-  margin: 0; /* set margin with media queries for when wrap occurs. */
+  margin: 0; /* set margin when wrap occurs with media queries. */
 }
 
 .detail {

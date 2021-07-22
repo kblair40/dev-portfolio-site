@@ -1,11 +1,8 @@
-:root {
-  --black-text: #0c0c0d;
-  --dark-gray-text: rgba(0, 0, 0, 0.75);
-}
-
 .sectionHeader {
   color: #0c0c0d;
   margin: 3rem 0 -1rem 0;
+  font-family: Montserrat;
+  font-size: 1.4rem;
 }
 
 .container {
@@ -28,4 +25,10 @@
 
 .container h1 {
   color: #0c0c0d;
+}
+
+.themeSwitchContainer {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
 }

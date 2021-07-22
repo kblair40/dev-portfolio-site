@@ -15,7 +15,7 @@ const ProjectLinks = ({
     >
       <div className={classes.subheaderContent}>
         <h4>{subheader}</h4>
-        <p style={{ marginLeft: "1rem" }}>
+        <p>
           <i className={classes.detail}>{detail}</i>
         </p>
       </div>

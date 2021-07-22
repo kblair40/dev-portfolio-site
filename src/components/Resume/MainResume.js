@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 
 import ResumeContainer from "./ResumeContainer";
 import Contact from "./Contact";
 import ResumeSection from "./ResumeSection";
+import ThemeSwitch from "./ThemeSwitch";
+
 import {
   ABOUT_TEXT,
   SKILLS_TEXT,
@@ -15,13 +16,23 @@ import {
 import classes from "./MainResume.module.css";
 
 const MainResume = (props) => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const handleThemeSwitch = () => {
+    setIsDarkMode((state) => !state);
+  };
 
   return (
     <div className={classes.container}>
       <ResumeContainer
       // isDarkMode={isDarkMode}
       >
+        <div className={classes.themeSwitchContainer}>
+          <ThemeSwitch
+            isDarkMode={isDarkMode}
+            handleThemeSwitch={handleThemeSwitch}
+          />
+        </div>
         <Contact />
         <h3 className={classes.sectionHeader}>ABOUT</h3>
         <ResumeSection content={ABOUT_TEXT} needsDivider={true} />
