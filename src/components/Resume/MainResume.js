@@ -1,9 +1,17 @@
 import React, { useState } from "react";
+import DeveloperModeIcon from "@material-ui/icons/DeveloperMode";
+import InfoIcon from "@material-ui/icons/Info";
+import LaptopMacIcon from "@material-ui/icons/LaptopMac";
+import CreateIcon from "@material-ui/icons/Create";
+import SchoolIcon from "@material-ui/icons/School";
+import WorkIcon from "@material-ui/icons/Work";
 
 import ResumeContainer from "./ResumeContainer";
 import Contact from "./Contact";
 import ResumeSection from "./ResumeSection";
 import ThemeSwitch from "./ThemeSwitch";
+import Skill from "./Skill";
+import CustomIcon from "./CustomIcon";
 
 import {
   ABOUT_TEXT,
@@ -32,97 +40,126 @@ const MainResume = (props) => {
           />
         </div>
         <Contact />
-        <h3 className={classes.sectionHeader}>ABOUT</h3>
-        <ResumeSection content={ABOUT_TEXT} needsDivider={true} />
-        <h3 className={classes.sectionHeader}>SKILLS</h3>
-        <ResumeSection content={SKILLS_TEXT} needsDivider={true} />
-        <h3 className={classes.sectionHeader}>PROJECTS</h3>
-        <ResumeSection
-          subheader="Memory Card Game"
-          subheaderDetails="ReactJS, Material-UI, Axios, JSS"
-          content={MEMORY_TEXT}
-          bullets={MEMORY_BULLETS}
-          liveLink="https://memory-6fc80b.netlify.app"
-          githubLink="https://github.com/kblair40/memory"
-          // isDarkMode={isDarkMode}
-        />
+        <div className={classes.sectionHeader}>
+          <CustomIcon icon={<InfoIcon fontSize="large" />} />
+          <h3>ABOUT</h3>
+        </div>
+        <div className={classes.sectionContent}>
+          <ResumeSection content={ABOUT_TEXT} needsDivider={true} />
+        </div>
+        <div className={classes.sectionHeader}>
+          <CustomIcon icon={<DeveloperModeIcon fontSize="large" />} />
+          <h3>PROGRAMMING SKILLS</h3>
+        </div>
+        <div className={classes.sectionContent}>
+          <Skill title="HTML5" skillLevel="90%" />
+          <Skill title="CSS3" skillLevel="88%" />
+          <Skill title="Javascript" skillLevel="83%" />
+          <Skill title="ReactJS" skillLevel="81%" />
+          <Skill title="NodeJS" skillLevel="72%" />
+          <Skill title="MongoDB" skillLevel="68%" />
+          <Skill title="SQL" skillLevel="62%" />
+        </div>
+        <div className={classes.sectionHeader}>
+          <CustomIcon icon={<CreateIcon fontSize="large" />} />
+          <h3>PROJECTS</h3>
+        </div>
 
-        <ResumeSection
-          subheader="Stock Watchlist"
-          subheaderDetails="ReactJS, Material-UI, Recharts, JSS"
-          content={WATCHLIST_TEXT}
-          bullets={WATCHLIST_BULLETS}
-          liveLink="https://watchlistkab.netlify.app"
-          githubLink="https://github.com/kblair40/watchlist"
-          // isDarkMode={isDarkMode}
-          needsDivider={true}
-        />
-        <h3 className={classes.sectionHeader}>
-          SOFTWARE DEVELOPMENT COURSEWORK
-        </h3>
-        <ResumeSection
-          subheader="The Modern React Bootcamp"
-          subheaderDetails="2021"
-          bullets={[
-            "Covered ReactJS class and functional components, in addition to hooks, Context API, React-Router and NextJS",
-          ]}
-          // isDarkMode={isDarkMode}
-          needsDivider={false}
-        />
-        <ResumeSection
-          subheader="The Web Developer Bootcamp 2021"
-          subheaderDetails="2021"
-          bullets={[
-            "Learned principles of responsive design implemented with CSS Flexbox, Grid and media queries",
-            "Gained a significantly greater understanding of the DOM, DOM events, AJAX, Prototypes, Classes and how to incorporate a NodeJS/MongoDB back-end with a JavaScript/HTML/CSS front-end",
-          ]}
-          // isDarkMode={isDarkMode}
-        />
-        <ResumeSection
-          subheader="AWS Certified Solutions Architect Associate 2020"
-          subheaderDetails="2020"
-          bullets={[
-            "Gained the necessary knowledge to take and pass the AWS Certified Solutions Architect Associate exam in June, 2020",
-          ]}
-          // isDarkMode={isDarkMode}
-        />
-        <ResumeSection
-          subheader="Complete Python Bootcamp From Zero to Hero in Python"
-          subheaderDetails="2019"
-          bullets={[
-            "Learned Python starting with the basics and ending with more advanced topics like decorators, generators, web scraping, exception handling, pandas/numpy libraries and GUI frameworks",
-          ]}
-          // isDarkMode={isDarkMode}
-        />
-        <ResumeSection
-          subheader="FreeCodeCamp"
-          subheaderDetails="2017"
-          bullets={[
-            "Learned the basics of HTML, CSS JavaScript, JQuery, the DOM, and responsive web design",
-          ]}
-          // isDarkMode={isDarkMode}
-          needsDivider={true}
-        />
-        <h3 className={classes.sectionHeader}>UNIVERSITY</h3>
-        <ResumeSection
-          subheader="The University of Alabama"
-          subheaderDetails="BS Finance  &nbsp;(2009 - 2013)"
-          bullets={[
-            "Alabama Men’s Varsity Basketball Scout Team, 2011 - 2012",
-            "Alabama Men’s Club Volleyball Team, 2009 - 2010",
-          ]}
-          // isDarkMode={isDarkMode}
-          needsDivider={true}
-        />
+        <div className={classes.sectionContent}>
+          <ResumeSection
+            subheader="Memory Card Game"
+            subheaderDetails="ReactJS, Material-UI, Axios, JSS"
+            content={MEMORY_TEXT}
+            bullets={MEMORY_BULLETS}
+            liveLink="https://memory-6fc80b.netlify.app"
+            githubLink="https://github.com/kblair40/memory"
+          />
+
+          <ResumeSection
+            subheader="Stock Watchlist"
+            subheaderDetails="ReactJS, Material-UI, Recharts, JSS"
+            content={WATCHLIST_TEXT}
+            bullets={WATCHLIST_BULLETS}
+            liveLink="https://watchlistkab.netlify.app"
+            githubLink="https://github.com/kblair40/watchlist"
+            needsDivider={true}
+          />
+        </div>
+
+        <div className={classes.sectionHeader}>
+          <CustomIcon icon={<LaptopMacIcon fontSize="large" />} />
+          <h3>SOFTWARE DEVELOPMENT COURSEWORK</h3>
+        </div>
+        <div className={classes.sectionContent}>
+          <ResumeSection
+            subheader="The Modern React Bootcamp"
+            subheaderDetails="2021"
+            bullets={[
+              "Covered ReactJS class and functional components, in addition to hooks, Context API, React-Router and NextJS",
+            ]}
+            needsDivider={false}
+          />
+          <ResumeSection
+            subheader="The Web Developer Bootcamp 2021"
+            subheaderDetails="2021"
+            bullets={[
+              "Learned principles of responsive design implemented with CSS Flexbox, Grid and media queries",
+              "Gained a significantly greater understanding of the DOM, DOM events, AJAX, Prototypes, Classes and how to incorporate a NodeJS/MongoDB back-end with a JavaScript/HTML/CSS front-end",
+            ]}
+          />
+          <ResumeSection
+            subheader="AWS Certified Solutions Architect Associate 2020"
+            subheaderDetails="2020"
+            bullets={[
+              "Gained the necessary knowledge to take and pass the AWS Certified Solutions Architect Associate exam in June, 2020",
+            ]}
+          />
+          <ResumeSection
+            subheader="Complete Python Bootcamp From Zero to Hero in Python"
+            subheaderDetails="2019"
+            bullets={[
+              "Learned Python starting with the basics and ending with more advanced topics like decorators, generators, web scraping, exception handling, pandas/numpy libraries and GUI frameworks",
+            ]}
+          />
+          <ResumeSection
+            subheader="FreeCodeCamp"
+            subheaderDetails="2017"
+            bullets={[
+              "Learned the basics of HTML, CSS JavaScript, JQuery, the DOM, and responsive web design",
+            ]}
+            needsDivider={true}
+          />
+        </div>
+        <div className={classes.sectionHeader}>
+          <CustomIcon icon={<SchoolIcon fontSize="large" />} />
+          <h3>UNIVERSITY</h3>
+        </div>
+        <div className={classes.sectionContent}>
+          <ResumeSection
+            subheader="The University of Alabama"
+            subheaderDetails="BS Finance  &nbsp;(2009 - 2013)"
+            bullets={[
+              "Alabama Men’s Varsity Basketball Scout Team, 2011 - 2012",
+              "Alabama Men’s Club Volleyball Team, 2009 - 2010",
+            ]}
+            needsDivider={true}
+          />
+        </div>
+        <div className={classes.sectionHeader}>
+          <CustomIcon icon={<WorkIcon fontSize="large" />} />
+          <h3>EXPERIENCE</h3>
+        </div>
         <h3 className={classes.sectionHeader}>EXPERIENCE</h3>
-        <ResumeSection
-          subheader="Donyati, LLC"
-          subheaderDetails="Consultant &nbsp;(Mar 2020 - Mar 2021)"
-          bullets={[
-            "Built command line programs using Python for comparing and automating modifications to Excel spreadsheets",
-            "Assisted in the implementation of EPM software for multiple Fortune 500 companies",
-          ]}
-        />
+        <div className={classes.sectionContent}>
+          <ResumeSection
+            subheader="Donyati, LLC"
+            subheaderDetails="Consultant &nbsp;(Mar 2020 - Mar 2021)"
+            bullets={[
+              "Built command line programs using Python for comparing and automating modifications to Excel spreadsheets",
+              "Assisted in the implementation of EPM software for multiple Fortune 500 companies",
+            ]}
+          />
+        </div>
       </ResumeContainer>
     </div>
   );

@@ -7,67 +7,73 @@
   padding: 1rem;
   margin-top: 6rem;
   width: 90%;
+  display: flex;
+  flex-direction: column;
   position: relative; /* Allows theme switch to be positioned in upper-right corner */
 }
 
-/* .root {
-  transition: all 1s;
-} */
-/* .root *:not(){
-   
-
-     transition: color 1s;
-    
-} */
-
 .paperLight {
-  /* background-color: white !important;
-  color: rgb(0, 27, 58) !important; */
-  animation: to-light 0.5s forwards;
-}
-@keyframes to-light {
-  0% {
-    background-color: rgb(0, 27, 58);
-    color: rgba(255, 255, 255, 0.87);
-  }
-  100% {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 27, 58);
-  }
-}
-.paperDark {
-  animation: to-dark 0.5s forwards;
-}
-@keyframes to-dark {
-  0% {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 27, 58);
-  }
-  100% {
-    background-color: rgb(0, 27, 58);
-    color: rgba(255, 255, 255, 0.87);
-  }
+  animation: to-light-bg 0.5s forwards;
 }
 
-.paperLight a:visited,
-a {
-  color: rgb(0, 27, 58) !important;
+.paperDark {
+  animation: to-dark-bg 0.5s forwards;
 }
-.paperDark a:visited,
-a {
-  color: rgba(255, 255, 255, 0.87) !important;
+
+.paperLight a {
+  animation: to-light-text 0.5s forwards;
+}
+.paperDark a {
+  animation: to-dark-text 0.5s forwards;
 }
 
 .paperLight svg {
-  color: rgb(0, 27, 58) !important;
+  animation: to-light-text 0.5s forwards;
 }
 .paperDark svg {
-  color: white !important;
+  animation: to-dark-text 0.5s forwards;
+}
+@keyframes to-light-text {
+  0% {
+    color: rgba(255, 255, 255, 0.87);
+  }
+  100% {
+    color: rgb(0, 27, 58);
+  }
+}
+@keyframes to-dark-text {
+  0% {
+    color: rgb(0, 27, 58);
+  }
+  100% {
+    color: rgba(255, 255, 255, 0.87);
+  }
 }
 
 .paperLight hr {
-  background-color: rgba(187, 222, 251, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .paperDark hr {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(187, 222, 251, 0.2);
+}
+
+@keyframes to-light-bg {
+  0% {
+    background-color: rgb(0, 27, 58);
+    color: rgba(255, 255, 255, 0.87);
+  }
+  100% {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 27, 58);
+  }
+}
+@keyframes to-dark-bg {
+  0% {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 27, 58);
+  }
+  100% {
+    background-color: rgb(0, 27, 58);
+    color: rgba(255, 255, 255, 0.87);
+  }
 }

@@ -18,19 +18,25 @@ const Contact = ({ isDarkMode }) => {
             <div>847-845-4635</div>
             <div>kblair40@gmail.com</div>
           </div>
-          <div>
-            <IconButton
-              onClick={() => window.open("https://www.github.com/kblair40")}
-            >
-              <GitHubIcon className={classes.icon} fontSize="large" />
-            </IconButton>
-            <IconButton
-              onClick={() =>
-                window.open("https://www.linkedin.com/in/kevin-blair-74525935")
-              }
-            >
-              <LinkedInIcon className={classes.icon} fontSize="large" />
-            </IconButton>
+          <div className={classes.icons}>
+            <div className={classes.icon}>
+              <IconButton
+                onClick={() => window.open("https://www.github.com/kblair40")}
+              >
+                <GitHubIcon fontSize="large" />
+              </IconButton>
+            </div>
+            <div className={classes.icon}>
+              <IconButton
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/in/kevin-blair-74525935"
+                  )
+                }
+              >
+                <LinkedInIcon fontSize="large" />
+              </IconButton>
+            </div>
           </div>
         </div>
       </div>

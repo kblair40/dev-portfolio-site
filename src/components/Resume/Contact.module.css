@@ -22,3 +22,14 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.icons {
+  display: flex;
+}
+
+.icon {
+  transition: transform 1s;
+}
+.icon:hover {
+  transform: rotate(360deg);
+}
