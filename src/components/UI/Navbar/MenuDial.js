@@ -7,6 +7,8 @@ import ResumeIcon from "@material-ui/icons/Description";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import RingVolumeIcon from "@material-ui/icons/RingVolume";
+import { Link } from "react-router-dom";
+import classNames from "classnames";
 
 import classes from "./MenuDial.module.css";
 
@@ -21,17 +23,54 @@ const MenuDial = () => {
     setOpen(false);
   };
 
+  const withLink = (to, children) => {
+    let linkClasses;
+    if (to === "/resume" || to === "/contact") {
+      return (
+        <Link className={classNames(classes.link)} to={to}>
+          {children}
+        </Link>
+      );
+    } else {
+      if (to === "https://www.linkedin.com/in/kevin-blair-74525935") {
+        linkClasses = classes.linkedInLink;
+      } else if (to === "https://www.github.com/kblair40") {
+        linkClasses = classes.githubLink;
+      }
+      return (
+        <a
+          className={classNames(classes.link, linkClasses)}
+          href={to}
+          target="blank"
+        >
+          {children}
+        </a>
+      );
+    }
+  };
   const actions = [
     {
-      icon: <ResumeIcon fontSize="large" />,
+      icon: withLink("/resume", <ResumeIcon fontSize="large" />),
       name: "Resume",
     },
     {
-      icon: <RingVolumeIcon fontSize="large" />,
+      icon: withLink("/contact", <RingVolumeIcon fontSize="large" />),
       name: "Contact",
     },
-    { icon: <GitHubIcon fontSize="large" />, name: "Github" },
-    { icon: <LinkedInIcon fontSize="large" />, name: "LinkedIn" },
+    {
+      icon: withLink(
+        "https://www.github.com/kblair40",
+        <GitHubIcon fontSize="large" />
+      ),
+      name: "Github",
+    },
+    {
+      icon: withLink(
+        "https://www.linkedin.com/in/kevin-blair-74525935",
+        <LinkedInIcon fontSize="large" />
+      ),
+      name: "LinkedIn",
+    },
   ];
 
   return (
@@ -51,9 +90,9 @@ const MenuDial = () => {
         }
         onClose={handleClose}
         onOpen={handleOpen}
-        open={open}
+        // open={open}
         direction="down"
-        // open
+        open
       >
         {actions.map((action) => (
           <SpeedDialAction

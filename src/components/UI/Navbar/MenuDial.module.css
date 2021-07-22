@@ -69,6 +69,17 @@
   white-space: nowrap;
   margin: 0;
 }
+.link {
+  color: #0c0c0d;
+  height: 35px;
+  transition: color 0.3s ease-in-out;
+}
+.linkedInLink:hover {
+  color: rgba(14, 118, 168, 1);
+}
+.githubLink:hover {
+  color: rgba(36, 42, 46, 1);
+}
 
 @media screen and (max-width: 400px) {
   .speedDial {

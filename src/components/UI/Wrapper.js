@@ -66,9 +66,9 @@ const Wrapper = (props) => {
         setYScrollSuppressed(false);
       }, 500);
 
-      return () => {
-        wrapperRef.current.removeEventListener("wheel", changePagesCallback);
-      };
+      // return () => {
+      //   wrapperRef.current.removeEventListener("wheel", changePagesCallback);
+      // };
     }
   }, [scrollingIsEnabled, changePagesCallback]);
 
@@ -92,7 +92,6 @@ const Wrapper = (props) => {
       className={classes.scrollbar}
       options={{
         suppressScrollX: true,
-        // suppressScrollY: true,
         suppressScrollY: yScrollSuppressed,
         wheelPropagation: false,
       }}
