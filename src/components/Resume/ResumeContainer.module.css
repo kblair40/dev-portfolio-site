@@ -5,8 +5,40 @@
 
 .root {
   padding: 1rem;
-  color: #333; /* May need to change to #0c0c0d? */
   margin-top: 6rem;
   width: 90%;
   position: relative; /* Allows theme switch to be positioned in upper-right corner */
+  transition: color 1s;
+}
+
+.paperLight {
+  background-color: white !important;
+  color: rgb(0, 27, 58) !important;
+}
+.paperDark {
+  background-color: rgb(0, 27, 58) !important;
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+
+.paperLight a:visited,
+a {
+  color: rgb(0, 27, 58) !important;
+}
+.paperDark a:visited,
+a {
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+
+.paperLight svg {
+  color: rgb(0, 27, 58) !important;
+}
+.paperDark svg {
+  color: white !important;
+}
+
+.paperLight hr {
+  background-color: rgba(187, 222, 251, 0.2);
+}
+.paperDark hr {
+  background-color: rgba(0, 0, 0, 0.1);
 }

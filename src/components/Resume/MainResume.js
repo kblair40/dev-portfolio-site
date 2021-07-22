@@ -24,9 +24,7 @@ const MainResume = (props) => {
 
   return (
     <div className={classes.container}>
-      <ResumeContainer
-      // isDarkMode={isDarkMode}
-      >
+      <ResumeContainer isDarkMode={isDarkMode}>
         <div className={classes.themeSwitchContainer}>
           <ThemeSwitch
             isDarkMode={isDarkMode}

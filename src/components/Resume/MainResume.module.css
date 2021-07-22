@@ -1,5 +1,4 @@
 .sectionHeader {
-  color: #0c0c0d;
   margin: 3rem 0 -1rem 0;
   font-family: Montserrat;
   font-size: 1.4rem;
@@ -12,23 +11,18 @@
 
 .container a {
   text-decoration: none;
-  color: #0c0c0d;
   transition-duration: 0.3s;
   font-weight: 600;
 }
-.container a:visited {
+/* .container a:visited {
   color: #0c0c0d;
 }
 .container a:hover {
   text-decoration: underline;
-}
-
-.container h1 {
-  color: #0c0c0d;
-}
+} */
 
 .themeSwitchContainer {
   position: absolute;
-  right: 1rem;
-  top: 1rem;
+  right: 0;
+  top: 0.5rem;
 }

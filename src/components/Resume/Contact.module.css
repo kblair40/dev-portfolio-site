@@ -1,15 +1,12 @@
 .header {
   margin: 0 0 -0.5rem 0;
-  color: #0c0c0d;
   font-family: Montserrat;
-  border: 1px solid red;
 }
 
 .contactContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* position: relative; */
 }
 
 .headerContact {
@@ -24,11 +21,4 @@
 .profileButtons {
   display: flex;
   justify-content: flex-end;
-}
-
-.icon {
-  color: #0c0c0d;
-}
-.icon:hover {
-  color: #0c0c0d;
 }

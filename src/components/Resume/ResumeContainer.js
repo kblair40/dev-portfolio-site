@@ -1,16 +1,21 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
+import classNames from "classnames";
 
 import classes from "./ResumeContainer.module.css";
 
 const ResumeContainer = ({ children, isDarkMode }) => {
-  const paperStyles = isDarkMode
-    ? { background: "#121212", color: "rgba(255,255,255,0.87)" }
-    : {};
-
   return (
-    <div className={`${classes.resumeContainer} ${isDarkMode && classes.dark}`}>
-      <Paper elevation={5} style={paperStyles} classes={{ root: classes.root }}>
+    <div className={classes.resumeContainer}>
+      <Paper
+        elevation={5}
+        classes={{
+          root: classNames(
+            classes.root,
+            isDarkMode ? classes.paperDark : classes.paperLight
+          ),
+        }}
+      >
         {children}
       </Paper>
     </div>
