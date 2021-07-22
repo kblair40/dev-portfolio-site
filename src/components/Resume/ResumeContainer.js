@@ -1,22 +1,9 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
-import Fade from "@material-ui/core/Fade";
-import withStyles from "@material-ui/core/styles/withStyles";
 
-const styles = {
-  resumeContainer: {
-    display: "flex",
-    justifyContent: "center",
-  },
-  root: {
-    padding: "1rem",
-    color: "#333",
-    marginTop: "6rem",
-    width: "90%",
-  },
-};
+import classes from "./ResumeContainer.module.css";
 
-const ResumeContainer = ({ classes, children, isDarkMode }) => {
+const ResumeContainer = ({ children, isDarkMode }) => {
   const paperStyles = isDarkMode
     ? { background: "#121212", color: "rgba(255,255,255,0.87)" }
     : {};
@@ -30,4 +17,4 @@ const ResumeContainer = ({ classes, children, isDarkMode }) => {
   );
 };
 
-export default withStyles(styles)(ResumeContainer);
+export default ResumeContainer;

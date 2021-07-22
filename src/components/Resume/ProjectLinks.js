@@ -1,37 +1,9 @@
 import React from "react";
-import withStyles from "@material-ui/core/styles/withStyles";
+import classes from "./ProjectLinks.module.css";
 
-const styles = {
-  subheader: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    width: "100%",
-    flexWrap: "wrap",
-    margin: "-1.5rem 0 0 0",
-  },
-  subheaderContent: {
-    margin: 0,
-    flexGrow: 1,
-    display: "flex",
-    alignItems: "baseline",
-  },
-  links: {
-    display: "flex",
-    alignItems: "center",
-    margin: 0,
-    // set margin with media queries
-    // for when wrap occurs.
-  },
-  detail: {
-    fontWeight: 300,
-  },
-};
-
-const Subheader = ({
+const ProjectLinks = ({
   subheader,
   detail,
-  classes,
   liveLink,
   hasContent,
   githubLink,
@@ -62,4 +34,4 @@ const Subheader = ({
   );
 };
 
-export default withStyles(styles)(Subheader);
+export default ProjectLinks;

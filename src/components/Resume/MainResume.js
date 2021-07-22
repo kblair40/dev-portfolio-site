@@ -1,5 +1,4 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 
 import ResumeContainer from "./ResumeContainer";
@@ -13,39 +12,10 @@ import {
   WATCHLIST_TEXT,
   WATCHLIST_BULLETS,
 } from "../../constants";
-
-const useStyles = makeStyles({
-  container: {
-    position: "relative",
-    padding: "1rem",
-    "& a": {
-      position: "relative",
-      textDecoration: "none",
-      // color: isDarkMode ? "white" : "black",
-      transitionDuration: ".3s",
-      fontWeight: 600,
-    },
-    "& a:visited": {
-      // color: isDarkMode ? "white" : "black",
-    },
-    "& a:hover": {
-      textDecoration: "underline",
-      // color: isDarkMode ? "rgba(255,255,255,0.6)" : "black",
-    },
-    "& h1": {
-      // color: isDarkMode ? "rgba(255,255,255,0.87)" : "black",
-    },
-    "& h3": {
-      // color: isDarkMode ? "rgba(255,255,255,0.87)" : "black",
-    },
-  },
-  sectionHeader: {
-    margin: "3rem 0 -1rem 0",
-  },
-});
+import classes from "./MainResume.module.css";
 
 const MainResume = (props) => {
-  const classes = useStyles();
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   return (
     <div className={classes.container}>

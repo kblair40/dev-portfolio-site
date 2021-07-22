@@ -1,0 +1,11 @@
+.resumeContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.root {
+  padding: 1rem;
+  color: #333; /* Should this be #0c0c0d? */
+  margin-top: 6rem;
+  width: 90%;
+}

@@ -1,0 +1,31 @@
+:root {
+  --black-text: #0c0c0d;
+  --dark-gray-text: rgba(0, 0, 0, 0.75);
+}
+
+.sectionHeader {
+  color: #0c0c0d;
+  margin: 3rem 0 -1rem 0;
+}
+
+.container {
+  position: relative;
+  padding: 1rem;
+}
+
+.container a {
+  text-decoration: none;
+  color: #0c0c0d;
+  transition-duration: 0.3s;
+  font-weight: 600;
+}
+.container a:visited {
+  color: #0c0c0d;
+}
+.container a:hover {
+  text-decoration: underline;
+}
+
+.container h1 {
+  color: #0c0c0d;
+}

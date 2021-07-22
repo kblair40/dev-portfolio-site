@@ -1,0 +1,25 @@
+.subheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: -1.5rem 0 0 0;
+}
+
+.subheaderContent {
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: baseline;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  margin: 0; /* set margin with media queries for when wrap occurs. */
+}
+
+.detail {
+  font-weight: 300;
+}

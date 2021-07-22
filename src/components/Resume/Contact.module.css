@@ -1,0 +1,38 @@
+.header {
+  margin: 0 0 -0.5rem 0;
+  color: #0c0c0d;
+}
+
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerContact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem 0 0 0;
+  text-align: center;
+}
+
+.profileButtons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon {
+  color: #0c0c0d;
+}
+.icon:hover {
+  color: #0c0c0d;
+}
+
+/* icon: {
+      color: (isDarkMode) =>
+        isDarkMode ? "rgba(255,255,255,0.87)" : "rgba(0,0,0,0.6)",
+      "&:hover": {
+        color: (isDarkMode) => (isDarkMode ? "rgba(187,222,251,.7)" : "#121212"),
+      },
+    },  */
