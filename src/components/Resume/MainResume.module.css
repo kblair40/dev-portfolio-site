@@ -11,15 +11,8 @@
 
 .container a {
   text-decoration: none;
-  transition-duration: 0.3s;
   font-weight: 600;
 }
-/* .container a:visited {
-  color: #0c0c0d;
-}
-.container a:hover {
-  text-decoration: underline;
-} */
 
 .themeSwitchContainer {
   position: absolute;
