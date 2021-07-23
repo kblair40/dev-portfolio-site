@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import DeveloperModeIcon from "@material-ui/icons/DeveloperMode";
 import InfoIcon from "@material-ui/icons/Info";
 import LaptopMacIcon from "@material-ui/icons/LaptopMac";
 import CreateIcon from "@material-ui/icons/Create";
 import SchoolIcon from "@material-ui/icons/School";
 import WorkIcon from "@material-ui/icons/Work";
+import { useSelector } from "react-redux";
 
 import ResumeContainer from "./ResumeContainer";
 import Contact from "./Contact";
@@ -24,20 +25,13 @@ import {
 import classes from "./MainResume.module.css";
 
 const MainResume = (props) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const handleThemeSwitch = () => {
-    setIsDarkMode((state) => !state);
-  };
+  const isDarkMode = useSelector((state) => state.theme.isDarkMode);
 
   return (
     <div className={classes.container}>
       <ResumeContainer isDarkMode={isDarkMode}>
         <div className={classes.themeSwitchContainer}>
-          <ThemeSwitch
-            isDarkMode={isDarkMode}
-            handleThemeSwitch={handleThemeSwitch}
-          />
+          <ThemeSwitch isDarkMode={isDarkMode} />
         </div>
         <Contact isDarkMode={isDarkMode} />
         <div className={classes.sectionHeader}>

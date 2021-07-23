@@ -49,23 +49,11 @@ const Contact = ({ isDarkMode }) => {
           width: "calc(100% + 2rem)",
           position: "relative",
           right: "1rem",
+          margin: 0,
         }}
       />
     </React.Fragment>
   );
 };
-// .paperLight hr {
-//   background-color: #222222;
-//   margin-bottom: 1rem;
-//   width: calc(100% + 3.5rem);
-//   position: relative;
-//   right: 2.5rem;
-// }
-// .paperDark hr {
-//   background-color: #e1e1e1;
-//   margin-bottom: 1rem;
-//   width: calc(100% + 3.5rem);
-//   position: relative;
-//   right: 2.5rem;
-// }
+
 export default Contact;

@@ -1,5 +1,7 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import Divider from "@material-ui/core/Divider";
+import classNames from "classnames";
+import { useSelector } from "react-redux";
 
 import classes from "./Skill.module.css";
 
@@ -17,33 +19,20 @@ const CustomDivider = () => {
 };
 
 const Skills = ({ title, skillLevel, isLastSkill = false }) => {
-  const containerRef = useRef();
+  const isDarkMode = useSelector((state) => state.theme.isDarkMode);
 
-  const handleMouseEnter = () => {
-    containerRef.current.classList.add(classes.grow);
-  };
-  const handleMouseOut = () => {
-    containerRef.current.classList.remove(classes.grow);
-  };
-
-  useEffect(() => {
-    containerRef.current.addEventListener("mouseenter", handleMouseEnter);
-    containerRef.current.addEventListener("mouseout", handleMouseOut);
-
-    return () => {
-      containerRef.current.removeEventListener("mouseenter", handleMouseEnter);
-      containerRef.current.removeEventListener("mouseout", handleMouseOut);
-    };
-  }, []);
   return (
     <React.Fragment>
-      <div ref={containerRef} className={classes.container}>
+      <div className={classes.container}>
         <div className={classes.skillTitle}>{title}</div>
         <div className={classes.progressContainer}>
           <div className={classes.progressBg} />
           <div
             style={{ width: skillLevel }}
-            className={classes.progressOverlay}
+            className={classNames(
+              classes.progressOverlay,
+              isDarkMode ? classes.overlayDark : classes.overlayLight
+            )}
           />
         </div>
       </div>

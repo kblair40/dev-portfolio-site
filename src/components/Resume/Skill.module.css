@@ -1,11 +1,11 @@
 .container {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
-  margin-top: 0.25rem;
   width: 100%;
-  height: 1.5rem;
-  border: 1px solid green;
+  height: 24px;
+  /* border: 1px solid green; */
+  position: relative;
 }
 
 .skillTitle {
@@ -17,37 +17,42 @@
 
 .progressContainer {
   width: 82%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  height: 12px;
   display: flex;
   align-items: center;
-  position: relative;
+  position: absolute;
+  right: 0;
 }
 
 .progressBg {
   position: absolute;
   width: 100%;
-  height: 0.25rem;
+  height: 2px;
   background-color: #90caf9;
   opacity: 0.5;
+  border-radius: 5px;
 }
 
 .progressOverlay {
   position: absolute;
-  height: 0.25rem;
+  height: 4px;
   background-color: #90caf9;
+  /* box-shadow: 0 0 7px #fff; */
+  border-radius: 5px;
+  transform: scaleY(1);
+  transition: transform 0.4s ease-in-out;
+}
+.overlayDark {
+  /* background-color: #90caf9; */
   box-shadow: 0 0 7px #fff;
 }
-
-.grow {
-  animation: grow 1s forwards;
-  cursor: pointer;
+.overlayLight {
+  /* box-shadow: 0 0 4px #90caf9; */
+  box-shadow: 0 0 3px #5d99c6;
 }
 
-@keyframes grow {
-  0% {
-    height: 1.5rem;
-  }
-  100% {
-    height: 2.5rem;
-  }
+/* .progressContainer:hover .progressOverlay { */
+.container:hover .progressOverlay {
+  transform: scaleY(1.4);
 }

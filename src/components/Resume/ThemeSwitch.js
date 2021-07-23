@@ -1,12 +1,15 @@
 import React from "react";
-// import Switch from "@material-ui/core/Switch";
-// import WbSunnyIcon from "@material-ui/icons/WbSunny";
-// import NightsStayIcon from "@material-ui/icons/NightsStay";
 import classNames from "classnames";
+import { useDispatch } from "react-redux";
 
 import classes from "./ThemeSwitch.module.css";
+import { themeActions } from "../../store/themeSlice";
 
 const ThemeSwitch = ({ isDarkMode, handleThemeSwitch }) => {
+  const dispatch = useDispatch();
+  const toggleTheme = () => {
+    dispatch(themeActions.toggleTheme());
+  };
   return (
     <div
       className={classNames(
@@ -14,10 +17,7 @@ const ThemeSwitch = ({ isDarkMode, handleThemeSwitch }) => {
         !isDarkMode && classes.light
       )}
     >
-      <div
-        onClick={handleThemeSwitch}
-        className={classNames(classes.container)}
-      >
+      <div onClick={toggleTheme} className={classNames(classes.container)}>
         <div className={classes.circle}>
           <div className={classes.cloud} />
         </div>
