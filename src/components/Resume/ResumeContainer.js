@@ -11,7 +11,7 @@ const ResumeContainer = ({ children, isDarkMode }) => {
         elevation={5}
         classes={{
           root: classNames(
-            classes.root,
+            classes.paperRoot,
             isDarkMode ? classes.paperDark : classes.paperLight
           ),
         }}

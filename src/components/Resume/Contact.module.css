@@ -33,3 +33,10 @@
 .icon:hover {
   transform: rotate(360deg);
 }
+
+.iconBtn {
+  background-color: transparent !important;
+}
+.iconBtn:hover {
+  background-color: transparent !important;
+}

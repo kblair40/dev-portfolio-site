@@ -6,11 +6,13 @@ const useStyles = makeStyles({
     height: "3rem",
     width: "3rem",
     borderRadius: "50%",
-    // border: "1px solid green",
+    // border: "1px inset #fafafa",
+    // color: "red",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    background: "#eaeaea",
+    // backgroundColor: "#fff",
+    boxShadow: "inset 0 0 3px #bbb",
   },
 });
 

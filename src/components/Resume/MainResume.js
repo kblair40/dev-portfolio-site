@@ -39,16 +39,22 @@ const MainResume = (props) => {
             handleThemeSwitch={handleThemeSwitch}
           />
         </div>
-        <Contact />
+        <Contact isDarkMode={isDarkMode} />
         <div className={classes.sectionHeader}>
-          <CustomIcon icon={<InfoIcon fontSize="large" />} />
+          <CustomIcon
+            className={classes.customIcon}
+            icon={<InfoIcon fontSize="large" />}
+          />
           <h3>ABOUT</h3>
         </div>
         <div className={classes.sectionContent}>
           <ResumeSection content={ABOUT_TEXT} needsDivider={true} />
         </div>
         <div className={classes.sectionHeader}>
-          <CustomIcon icon={<DeveloperModeIcon fontSize="large" />} />
+          <CustomIcon
+            className={classes.customIcon}
+            icon={<DeveloperModeIcon fontSize="large" />}
+          />
           <h3>PROGRAMMING SKILLS</h3>
         </div>
         <div className={classes.sectionContent}>
@@ -58,10 +64,14 @@ const MainResume = (props) => {
           <Skill title="ReactJS" skillLevel="81%" />
           <Skill title="NodeJS" skillLevel="72%" />
           <Skill title="MongoDB" skillLevel="68%" />
-          <Skill title="SQL" skillLevel="62%" />
+          <Skill title="SQL" skillLevel="62%" isLastSkill={true} />
         </div>
+
         <div className={classes.sectionHeader}>
-          <CustomIcon icon={<CreateIcon fontSize="large" />} />
+          <CustomIcon
+            className={classes.customIcon}
+            icon={<CreateIcon fontSize="large" />}
+          />
           <h3>PROJECTS</h3>
         </div>
 
@@ -87,7 +97,10 @@ const MainResume = (props) => {
         </div>
 
         <div className={classes.sectionHeader}>
-          <CustomIcon icon={<LaptopMacIcon fontSize="large" />} />
+          <CustomIcon
+            className={classes.customIcon}
+            icon={<LaptopMacIcon fontSize="large" />}
+          />
           <h3>SOFTWARE DEVELOPMENT COURSEWORK</h3>
         </div>
         <div className={classes.sectionContent}>
@@ -131,7 +144,10 @@ const MainResume = (props) => {
           />
         </div>
         <div className={classes.sectionHeader}>
-          <CustomIcon icon={<SchoolIcon fontSize="large" />} />
+          <CustomIcon
+            className={classes.customIcon}
+            icon={<SchoolIcon fontSize="large" />}
+          />
           <h3>UNIVERSITY</h3>
         </div>
         <div className={classes.sectionContent}>
@@ -146,7 +162,10 @@ const MainResume = (props) => {
           />
         </div>
         <div className={classes.sectionHeader}>
-          <CustomIcon icon={<WorkIcon fontSize="large" />} />
+          <CustomIcon
+            className={classes.customIcon}
+            icon={<WorkIcon fontSize="large" />}
+          />
           <h3>EXPERIENCE</h3>
         </div>
         <h3 className={classes.sectionHeader}>EXPERIENCE</h3>

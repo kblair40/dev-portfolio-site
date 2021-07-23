@@ -24,21 +24,11 @@
   position: absolute;
   width: 100%;
   height: 0.25rem;
-  background-color: rgba(180, 180, 180, 1);
+  background-color: rgba(33, 150, 243, 1);
 }
 
 .progressOverlay {
   position: absolute;
   height: 0.5rem;
-  background-color: rgba(100, 200, 100, 0.5);
+  background-color: rgba(33, 150, 243, 0.5);
 }
-
-/* 
-  <div className={classes.container}>
-      <div className={classes.skillTitle}></div>
-      <div className={classes.progressContainer}>
-          <div className={classes.progressBg} />
-          <div className={classes.progressOverlay} />
-      </div>
-  </div> 
-  */

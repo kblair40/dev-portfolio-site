@@ -4,6 +4,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import Divider from "@material-ui/core/Divider";
 
+import CustomIcon from "./CustomIcon";
 import classes from "./Contact.module.css";
 
 const Contact = ({ isDarkMode }) => {
@@ -21,20 +22,22 @@ const Contact = ({ isDarkMode }) => {
           <div className={classes.icons}>
             <div className={classes.icon}>
               <IconButton
+                classes={{ root: classes.iconBtn }}
                 onClick={() => window.open("https://www.github.com/kblair40")}
               >
-                <GitHubIcon fontSize="large" />
+                <CustomIcon icon={<GitHubIcon fontSize="large" />} />
               </IconButton>
             </div>
             <div className={classes.icon}>
               <IconButton
+                classes={{ root: classes.iconBtn }}
                 onClick={() =>
                   window.open(
                     "https://www.linkedin.com/in/kevin-blair-74525935"
                   )
                 }
               >
-                <LinkedInIcon fontSize="large" />
+                <CustomIcon icon={<LinkedInIcon fontSize="large" />} />
               </IconButton>
             </div>
           </div>
@@ -42,13 +45,27 @@ const Contact = ({ isDarkMode }) => {
       </div>
       <Divider
         style={{
-          backgroundColor: isDarkMode
-            ? "rgba(187,222,251,0.2)"
-            : "rgba(0,0,0,0.1)",
+          backgroundColor: isDarkMode ? "#e1e1e1" : "#222222",
+          width: "calc(100% + 2rem)",
+          position: "relative",
+          right: "1rem",
         }}
       />
     </React.Fragment>
   );
 };
-
+// .paperLight hr {
+//   background-color: #222222;
+//   margin-bottom: 1rem;
+//   width: calc(100% + 3.5rem);
+//   position: relative;
+//   right: 2.5rem;
+// }
+// .paperDark hr {
+//   background-color: #e1e1e1;
+//   margin-bottom: 1rem;
+//   width: calc(100% + 3.5rem);
+//   position: relative;
+//   right: 2.5rem;
+// }
 export default Contact;

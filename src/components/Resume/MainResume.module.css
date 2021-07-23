@@ -8,7 +8,7 @@
 }
 
 .sectionHeader h3 {
-  margin: 0;
+  margin: 0 0 0 1rem;
 }
 
 .container {
@@ -32,3 +32,8 @@
   width: calc(100% - 1.5rem);
   align-self: flex-end;
 }
+/* 
+.customIcon {
+  color: black !important;
+  background-color: black !important;
+} */
