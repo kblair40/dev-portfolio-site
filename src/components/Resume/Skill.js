@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Divider from "@material-ui/core/Divider";
 
 import classes from "./Skill.module.css";
 
-const Skills = ({ title, skillLevel, isLastSkill = false }) => {
-  const divider = (
+const CustomDivider = () => {
+  return (
     <Divider
       style={{
         marginTop: "1rem",
@@ -14,9 +14,30 @@ const Skills = ({ title, skillLevel, isLastSkill = false }) => {
       }}
     />
   );
+};
+
+const Skills = ({ title, skillLevel, isLastSkill = false }) => {
+  const containerRef = useRef();
+
+  const handleMouseEnter = () => {
+    containerRef.current.classList.add(classes.grow);
+  };
+  const handleMouseOut = () => {
+    containerRef.current.classList.remove(classes.grow);
+  };
+
+  useEffect(() => {
+    containerRef.current.addEventListener("mouseenter", handleMouseEnter);
+    containerRef.current.addEventListener("mouseout", handleMouseOut);
+
+    return () => {
+      containerRef.current.removeEventListener("mouseenter", handleMouseEnter);
+      containerRef.current.removeEventListener("mouseout", handleMouseOut);
+    };
+  }, []);
   return (
     <React.Fragment>
-      <div className={classes.container}>
+      <div ref={containerRef} className={classes.container}>
         <div className={classes.skillTitle}>{title}</div>
         <div className={classes.progressContainer}>
           <div className={classes.progressBg} />
@@ -26,7 +47,7 @@ const Skills = ({ title, skillLevel, isLastSkill = false }) => {
           />
         </div>
       </div>
-      {isLastSkill && divider}
+      {isLastSkill && <CustomDivider />}
     </React.Fragment>
   );
 };
