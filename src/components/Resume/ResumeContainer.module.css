@@ -24,6 +24,7 @@
   display: flex;
   flex-direction: column;
   position: relative; /* Allows theme switch to be positioned in upper-right corner */
+  overflow-x: hidden;
 }
 
 .paperLight {
@@ -33,33 +34,11 @@
   animation: to-dark-bg 0.5s forwards;
 }
 
-.paperLight a {
-  animation: to-light-text 0.5s forwards;
-}
-.paperDark a {
-  animation: to-dark-text 0.5s forwards;
-}
-
 .paperLight svg {
   animation: to-light-svg 0.5s forwards;
 }
 .paperDark svg {
   animation: to-dark-svg 0.5s forwards;
-}
-
-.paperLight hr {
-  background-color: #222222;
-  margin-bottom: 1rem;
-  width: calc(100% + 3.5rem);
-  position: relative;
-  right: 2.5rem;
-}
-.paperDark hr {
-  background-color: #e1e1e1;
-  margin-bottom: 1rem;
-  width: calc(100% + 3.5rem);
-  position: relative;
-  right: 2.5rem;
 }
 
 @keyframes to-light-bg {

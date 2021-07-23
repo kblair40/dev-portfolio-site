@@ -1,4 +1,7 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import classNames from "classnames";
+
 import classes from "./ProjectLinks.module.css";
 
 const ProjectLinks = ({
@@ -8,10 +11,11 @@ const ProjectLinks = ({
   hasContent,
   githubLink,
 }) => {
+  const isDarkMode = useSelector((st) => st.theme.isDarkMode);
   return (
     <div
       className={classes.subheader}
-      style={{ marginBottom: hasContent ? "-2.5rem" : "-1.5rem" }}
+      style={{ marginBottom: hasContent ? "-2rem" : "-1.5rem" }}
     >
       <div className={classes.subheaderContent}>
         <h4>{subheader}</h4>
@@ -21,11 +25,26 @@ const ProjectLinks = ({
       </div>
       {liveLink && githubLink && (
         <div className={classes.links}>
-          <a href={liveLink} target="blank">
+          <a
+            className={classNames(
+              classes.liveLink,
+              classes.link,
+              isDarkMode ? classes.darkText : classes.lightText
+            )}
+            href={liveLink}
+            target="blank"
+          >
             Live
           </a>
-          &nbsp;|&nbsp;
-          <a href={githubLink} target="blank">
+          <a
+            className={classNames(
+              classes.githubLink,
+              classes.link,
+              isDarkMode ? classes.darkText : classes.lightText
+            )}
+            href={githubLink}
+            target="blank"
+          >
             Github
           </a>
         </div>

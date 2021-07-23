@@ -1,0 +1,15 @@
+.divider {
+  width: calc(100% + 3.5rem);
+  position: relative;
+  right: 2.5rem;
+  height: 0.1px;
+}
+
+.dividerLight {
+  background-color: #222222;
+}
+
+.dividerDark {
+  background-color: #2196f3 !important;
+  box-shadow: 0 0 4px 0.5px #6ec6ff !important;
+}

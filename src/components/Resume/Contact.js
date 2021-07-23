@@ -2,7 +2,6 @@ import React from "react";
 import IconButton from "@material-ui/core/IconButton";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import Divider from "@material-ui/core/Divider";
 
 import CustomIcon from "./CustomIcon";
 import classes from "./Contact.module.css";
@@ -43,15 +42,6 @@ const Contact = ({ isDarkMode }) => {
           </div>
         </div>
       </div>
-      <Divider
-        style={{
-          backgroundColor: isDarkMode ? "#e1e1e1" : "#222222",
-          width: "calc(100% + 2rem)",
-          position: "relative",
-          right: "1rem",
-          margin: 0,
-        }}
-      />
     </React.Fragment>
   );
 };

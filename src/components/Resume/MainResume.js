@@ -13,10 +13,9 @@ import ResumeSection from "./ResumeSection";
 import ThemeSwitch from "./ThemeSwitch";
 import Skill from "./Skill";
 import CustomIcon from "./CustomIcon";
-
+import SectionDivider from "./SectionDivider";
 import {
   ABOUT_TEXT,
-  SKILLS_TEXT,
   MEMORY_TEXT,
   MEMORY_BULLETS,
   WATCHLIST_TEXT,
@@ -33,7 +32,10 @@ const MainResume = (props) => {
         <div className={classes.themeSwitchContainer}>
           <ThemeSwitch isDarkMode={isDarkMode} />
         </div>
+
         <Contact isDarkMode={isDarkMode} />
+        <SectionDivider />
+
         <div className={classes.sectionHeader}>
           <CustomIcon
             className={classes.customIcon}
@@ -42,8 +44,10 @@ const MainResume = (props) => {
           <h3>ABOUT</h3>
         </div>
         <div className={classes.sectionContent}>
-          <ResumeSection content={ABOUT_TEXT} needsDivider={true} />
+          <p style={{ margin: 0 }}>{ABOUT_TEXT}</p>
+          <SectionDivider topMargin="1rem" />
         </div>
+
         <div className={classes.sectionHeader}>
           <CustomIcon
             className={classes.customIcon}
@@ -56,9 +60,10 @@ const MainResume = (props) => {
           <Skill title="CSS3" skillLevel="88%" />
           <Skill title="Javascript" skillLevel="83%" />
           <Skill title="ReactJS" skillLevel="81%" />
+          <Skill title="SQL" skillLevel="62%" />
           <Skill title="NodeJS" skillLevel="72%" />
           <Skill title="MongoDB" skillLevel="68%" />
-          <Skill title="SQL" skillLevel="62%" isLastSkill={true} />
+          <SectionDivider topMargin="1rem" />
         </div>
 
         <div className={classes.sectionHeader}>
@@ -68,7 +73,6 @@ const MainResume = (props) => {
           />
           <h3>PROJECTS</h3>
         </div>
-
         <div className={classes.sectionContent}>
           <ResumeSection
             subheader="Memory Card Game"
@@ -78,7 +82,6 @@ const MainResume = (props) => {
             liveLink="https://memory-6fc80b.netlify.app"
             githubLink="https://github.com/kblair40/memory"
           />
-
           <ResumeSection
             subheader="Stock Watchlist"
             subheaderDetails="ReactJS, Material-UI, Recharts, JSS"
@@ -88,6 +91,7 @@ const MainResume = (props) => {
             githubLink="https://github.com/kblair40/watchlist"
             needsDivider={true}
           />
+          <SectionDivider topMargin="2rem" />
         </div>
 
         <div className={classes.sectionHeader}>
@@ -136,7 +140,9 @@ const MainResume = (props) => {
             ]}
             needsDivider={true}
           />
+          <SectionDivider topMargin="2rem" />
         </div>
+
         <div className={classes.sectionHeader}>
           <CustomIcon
             className={classes.customIcon}
@@ -154,7 +160,9 @@ const MainResume = (props) => {
             ]}
             needsDivider={true}
           />
+          <SectionDivider topMargin="2rem" />
         </div>
+
         <div className={classes.sectionHeader}>
           <CustomIcon
             className={classes.customIcon}

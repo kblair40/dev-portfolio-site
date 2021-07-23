@@ -12,8 +12,6 @@ const ResumeSection = (props) => {
     subheaderDetails,
     content,
     bullets,
-    isDarkMode,
-    needsDivider,
   } = props;
 
   const getBullets = (bullets) => {
@@ -44,11 +42,6 @@ const ResumeSection = (props) => {
       )}
       {content && <p>{content}</p>}
       {bulletsContent}
-      {needsDivider && (
-        <Divider
-          className={isDarkMode ? classes.lightDivider : classes.darkDivider}
-        />
-      )}
     </div>
   );
 };

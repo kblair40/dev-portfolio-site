@@ -22,9 +22,123 @@
 .links {
   display: flex;
   align-items: center;
-  margin: 0; /* set margin when wrap occurs with media queries. */
+  margin: 0;
+  width: 10rem;
+  justify-content: space-between;
 }
 
 .detail {
   font-weight: 300;
+}
+
+.lightText {
+  animation: to-light-text 0.5s forwards;
+}
+
+.darkText {
+  animation: to-dark-text 0.5s forwards;
+}
+
+@keyframes to-light-text {
+  0% {
+    color: rgba(255, 255, 255, 0.87);
+  }
+  100% {
+    color: #222222;
+  }
+}
+@keyframes to-dark-text {
+  0% {
+    color: #222222;
+  }
+  100% {
+    color: rgba(255, 255, 255, 0.87);
+  }
+}
+
+/* DarkMode Blue - #90caf9 */
+
+.link {
+  font-size: 14px;
+  width: 4.5rem;
+  height: 1.4rem;
+  text-align: center;
+  font-weight: 400 !important;
+  color: #90caf9 !important;
+  position: relative;
+  border: none;
+  z-index: 2;
+}
+
+.link:before,
+.link:after {
+  position: absolute;
+  content: "";
+  width: 20%;
+  height: 20%;
+  border: 1px solid #90caf9;
+
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.link:before {
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #90caf9;
+  border-left-color: #90caf9;
+}
+
+.link:after {
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #90caf9;
+  border-right-color: #90caf9;
+}
+
+.link:hover:before,
+.link:hover:after {
+  border-color: #90caf9;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 4px #90caf9, 0 0 4px #90caf9 inset;
+}
+
+/* a.link:hover .live1,
+.live2  */
+/* a.link:hover {
+  animation: flicker 0.01s infinite;
+  text-shadow: 0 0 2px #fff;
+  box-shadow: 0 0 3px #fff;
+} */
+/* a.link:hover span {
+  animation: flicker 0.03s infinite;
+} */
+
+@keyframes flicker {
+  75% {
+    opacity: 0.7;
+  }
+  /* 0% {
+    opacity: 0.2;
+  }
+  8% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 1;
+  }
+  62% {
+    opacity: 0.2;
+  }
+  64% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0.8;
+  } */
 }
