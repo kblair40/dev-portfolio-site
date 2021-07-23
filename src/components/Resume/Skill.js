@@ -5,19 +5,6 @@ import { useSelector } from "react-redux";
 
 import classes from "./Skill.module.css";
 
-const CustomDivider = () => {
-  return (
-    <Divider
-      style={{
-        marginTop: "1rem",
-        width: "calc(100% + 3.5rem)",
-        position: "relative",
-        right: "2.5rem",
-      }}
-    />
-  );
-};
-
 const Skills = ({ title, skillLevel, isLastSkill = false }) => {
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
 
@@ -36,7 +23,6 @@ const Skills = ({ title, skillLevel, isLastSkill = false }) => {
           />
         </div>
       </div>
-      {isLastSkill && <CustomDivider />}
     </React.Fragment>
   );
 };

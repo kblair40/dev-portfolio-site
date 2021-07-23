@@ -44,7 +44,7 @@
   transition: transform 0.25s linear;
 }
 .overlayDark {
-  box-shadow: 0 0 7px #fff;
+  box-shadow: 0 0 7px #6ec6ff;
 }
 .overlayLight {
   box-shadow: 0 0 3px #5d99c6;

@@ -34,13 +34,6 @@
   animation: to-dark-bg 0.5s forwards;
 }
 
-.paperLight svg {
-  animation: to-light-svg 0.5s forwards;
-}
-.paperDark svg {
-  animation: to-dark-svg 0.5s forwards;
-}
-
 @keyframes to-light-bg {
   0% {
     background-color: #212121;
@@ -58,38 +51,6 @@
   }
   100% {
     background-color: #1e1e1e;
-    color: rgba(255, 255, 255, 0.87);
-  }
-}
-@keyframes to-light-text {
-  0% {
-    color: rgba(255, 255, 255, 0.87);
-  }
-  100% {
-    color: #222222;
-  }
-}
-@keyframes to-dark-text {
-  0% {
-    color: #222;
-  }
-  100% {
-    color: rgba(255, 255, 255, 0.87);
-  }
-}
-@keyframes to-light-svg {
-  0% {
-    color: rgba(255, 255, 255, 0.87);
-  }
-  100% {
-    color: #222;
-  }
-}
-@keyframes to-dark-svg {
-  0% {
-    color: #222;
-  }
-  100% {
     color: rgba(255, 255, 255, 0.87);
   }
 }

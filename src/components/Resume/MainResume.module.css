@@ -2,8 +2,6 @@
   position: relative;
   padding: 2rem;
   background-color: #121212;
-  /* IS THIS NECESSARY? */
-  /* overflow-x: hidden;  */
 }
 
 .sectionHeader {
@@ -11,7 +9,6 @@
   font-size: 1.4rem;
   display: flex;
   align-items: center;
-  /* border: 1px solid red; */
   margin-top: 1rem;
 }
 
@@ -31,11 +28,30 @@
 }
 
 .sectionContent {
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
   width: calc(100% - 1.5rem);
   align-self: flex-end;
 }
 
-/* .sectionContent p {
-  margin: 0;
-} */
+.sectionContainer {
+  position: relative;
+}
+.sectionContainer h3 {
+  transition: 0.3s linear;
+}
+
+.sectionContainer:hover h3 {
+  transform: scale(1.05);
+}
+.sectionContainer:hover svg {
+  transform: scale(1.15);
+}
+
+.bgOverlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  /* border: 1px solid orange; */
+  /* background-color: rgba(0, 0, 0, 0.5); */
+}
