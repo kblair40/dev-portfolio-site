@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import DeveloperModeIcon from "@material-ui/icons/DeveloperMode";
 import InfoIcon from "@material-ui/icons/Info";
 import LaptopMacIcon from "@material-ui/icons/LaptopMac";
 import CreateIcon from "@material-ui/icons/Create";
 import SchoolIcon from "@material-ui/icons/School";
 import WorkIcon from "@material-ui/icons/Work";
-import { useSelector, useDispatch } from "react-redux";
+import {
+  useSelector,
+  // useDispatch
+} from "react-redux";
 
 import ResumeContainer from "./ResumeContainer";
 import Contact from "./Contact";
@@ -14,6 +17,8 @@ import ThemeSwitch from "./ThemeSwitch";
 import Skill from "./Skill";
 import CustomIcon from "./CustomIcon";
 import SectionDivider from "./SectionDivider";
+import useEventListener from "../../hooks/useEventListener";
+import useHover from "../../hooks/useHover";
 import {
   ABOUT_TEXT,
   MEMORY_TEXT,
@@ -25,6 +30,30 @@ import classes from "./MainResume.module.css";
 
 const MainResume = (props) => {
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
+  const [aboutRef, aboutIsHovered] = useHover();
+  const [skillsRef, skillsIsHovered] = useHover();
+  const [projectsRef, projectsIsHovered] = useHover();
+  const [courseworkRef, courseworkIsHovered] = useHover();
+  const [universityRef, universityIsHovered] = useHover();
+  const [experienceRef, experienceIsHovered] = useHover();
+
+  useEffect(() => {
+    console.log("\n\n\naboutIsHovered:", aboutIsHovered);
+    console.log("skillsIsHovered:", skillsIsHovered);
+    console.log("projectsIsHovered:", projectsIsHovered);
+    console.log("courseworkIsHovered:", courseworkIsHovered);
+    console.log("universityIsHovered:", universityIsHovered);
+    console.log("experienceIsHovered:", experienceIsHovered);
+    console.log("\n\n\n");
+  }, [
+    aboutIsHovered,
+    skillsIsHovered,
+    projectsIsHovered,
+    courseworkIsHovered,
+    universityIsHovered,
+    experienceIsHovered,
+  ]);
+  console.log("");
 
   return (
     <div className={classes.container}>
@@ -32,13 +61,13 @@ const MainResume = (props) => {
         <div className={classes.themeSwitchContainer}>
           <ThemeSwitch isDarkMode={isDarkMode} />
         </div>
-
+        {/* Dont't dynamically style Contact - change from section to header element */}
         <section id="contact" className={classes.sectionContainer}>
           <Contact isDarkMode={isDarkMode} />
           <SectionDivider />
         </section>
 
-        <section id="about" className={classes.sectionContainer}>
+        <section id="about" className={classes.sectionContainer} ref={aboutRef}>
           <div className={classes.bgOverlay} />
           <div className={classes.sectionHeader}>
             <CustomIcon
@@ -53,7 +82,11 @@ const MainResume = (props) => {
           </div>
         </section>
 
-        <section id="skills" className={classes.sectionContainer}>
+        <section
+          id="skills"
+          className={classes.sectionContainer}
+          ref={skillsRef}
+        >
           <div className={classes.bgOverlay} />
           <div className={classes.sectionHeader}>
             <CustomIcon
@@ -74,7 +107,11 @@ const MainResume = (props) => {
           </div>
         </section>
 
-        <section id="projects" className={classes.sectionContainer}>
+        <section
+          id="projects"
+          className={classes.sectionContainer}
+          ref={projectsRef}
+        >
           <div className={classes.sectionHeader}>
             <CustomIcon
               className={classes.customIcon}
@@ -104,7 +141,11 @@ const MainResume = (props) => {
           </div>
         </section>
 
-        <section id="coursework" className={classes.sectionContainer}>
+        <section
+          id="coursework"
+          className={classes.sectionContainer}
+          ref={courseworkRef}
+        >
           <div className={classes.sectionHeader}>
             <CustomIcon
               className={classes.customIcon}
@@ -155,7 +196,11 @@ const MainResume = (props) => {
           </div>
         </section>
 
-        <section id="university" className={classes.sectionContainer}>
+        <section
+          id="university"
+          className={classes.sectionContainer}
+          ref={universityRef}
+        >
           <div className={classes.sectionHeader}>
             <CustomIcon
               className={classes.customIcon}
@@ -177,7 +222,11 @@ const MainResume = (props) => {
           </div>
         </section>
 
-        <section id="experience" className={classes.sectionContainer}>
+        <section
+          id="experience"
+          className={classes.sectionContainer}
+          ref={experienceRef}
+        >
           <div className={classes.sectionHeader}>
             <CustomIcon
               className={classes.customIcon}
