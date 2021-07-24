@@ -1,34 +1,23 @@
-import React, { useRef, useEffect, useCallback } from "react";
-import DeveloperModeIcon from "@material-ui/icons/DeveloperMode";
-import InfoIcon from "@material-ui/icons/Info";
-import LaptopMacIcon from "@material-ui/icons/LaptopMac";
-import CreateIcon from "@material-ui/icons/Create";
-import SchoolIcon from "@material-ui/icons/School";
-import WorkIcon from "@material-ui/icons/Work";
-import {
-  useSelector,
-  // useDispatch
-} from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-import ResumeContainer from "./ResumeContainer";
-import Contact from "./Contact";
-import ResumeSection from "./ResumeSection";
-import ThemeSwitch from "./ThemeSwitch";
-import Skill from "./Skill";
-import CustomIcon from "./CustomIcon";
-import SectionDivider from "./SectionDivider";
-import useEventListener from "../../hooks/useEventListener";
+import { hoverLocationActions } from "../../store/hoverLocationSlice";
 import useHover from "../../hooks/useHover";
-import {
-  ABOUT_TEXT,
-  MEMORY_TEXT,
-  MEMORY_BULLETS,
-  WATCHLIST_TEXT,
-  WATCHLIST_BULLETS,
-} from "../../constants";
+import ResumeContainer from "./ResumeContainer";
+import ThemeSwitch from "./ThemeSwitch";
+import Contact from "./Contact";
+import SectionDivider from "./SectionDivider";
+import About from "./Sections/About";
+import Skills from "./Sections/Skills";
+import Projects from "./Sections/Projects";
+import Coursework from "./Sections/Coursework";
+import University from "./Sections/University";
+import Experience from "./Sections/Experience";
+
 import classes from "./MainResume.module.css";
 
-const MainResume = (props) => {
+const MainResume = () => {
+  const dispatch = useDispatch();
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
   const [aboutRef, aboutIsHovered] = useHover();
   const [skillsRef, skillsIsHovered] = useHover();
@@ -38,13 +27,18 @@ const MainResume = (props) => {
   const [experienceRef, experienceIsHovered] = useHover();
 
   useEffect(() => {
-    console.log("\n\n\naboutIsHovered:", aboutIsHovered);
-    console.log("skillsIsHovered:", skillsIsHovered);
-    console.log("projectsIsHovered:", projectsIsHovered);
-    console.log("courseworkIsHovered:", courseworkIsHovered);
-    console.log("universityIsHovered:", universityIsHovered);
-    console.log("experienceIsHovered:", experienceIsHovered);
-    console.log("\n\n\n");
+    dispatch(
+      hoverLocationActions.setMutingActive({
+        hoverStates: {
+          aboutIsHovered,
+          skillsIsHovered,
+          projectsIsHovered,
+          courseworkIsHovered,
+          universityIsHovered,
+          experienceIsHovered,
+        },
+      })
+    );
   }, [
     aboutIsHovered,
     skillsIsHovered,
@@ -53,7 +47,6 @@ const MainResume = (props) => {
     universityIsHovered,
     experienceIsHovered,
   ]);
-  console.log("");
 
   return (
     <div className={classes.container}>
@@ -61,6 +54,7 @@ const MainResume = (props) => {
         <div className={classes.themeSwitchContainer}>
           <ThemeSwitch isDarkMode={isDarkMode} />
         </div>
+
         {/* Dont't dynamically style Contact - change from section to header element */}
         <section id="contact" className={classes.sectionContainer}>
           <Contact isDarkMode={isDarkMode} />
@@ -69,76 +63,28 @@ const MainResume = (props) => {
 
         <section id="about" className={classes.sectionContainer} ref={aboutRef}>
           <div className={classes.bgOverlay} />
-          <div className={classes.sectionHeader}>
-            <CustomIcon
-              className={classes.customIcon}
-              icon={<InfoIcon fontSize="large" />}
-            />
-            <h3>ABOUT</h3>
-          </div>
-          <div className={classes.sectionContent}>
-            <p style={{ margin: 0 }}>{ABOUT_TEXT}</p>
-            <SectionDivider topMargin="1rem" />
-          </div>
+          <About />
         </section>
 
         <section
+          style={{
+            border: "1px solid red",
+          }}
           id="skills"
           className={classes.sectionContainer}
           ref={skillsRef}
         >
+          <Skills />
           <div className={classes.bgOverlay} />
-          <div className={classes.sectionHeader}>
-            <CustomIcon
-              className={classes.customIcon}
-              icon={<DeveloperModeIcon fontSize="large" />}
-            />
-            <h3>PROGRAMMING SKILLS</h3>
-          </div>
-          <div className={classes.sectionContent}>
-            <Skill title="HTML5" skillLevel="90%" />
-            <Skill title="CSS3" skillLevel="88%" />
-            <Skill title="Javascript" skillLevel="83%" />
-            <Skill title="ReactJS" skillLevel="81%" />
-            <Skill title="SQL" skillLevel="62%" />
-            <Skill title="NodeJS" skillLevel="72%" />
-            <Skill title="MongoDB" skillLevel="68%" />
-            <SectionDivider topMargin="1rem" />
-          </div>
         </section>
 
         <section
+          style={{ border: "1px solid orange", zIndex: 30 }}
           id="projects"
           className={classes.sectionContainer}
           ref={projectsRef}
         >
-          <div className={classes.sectionHeader}>
-            <CustomIcon
-              className={classes.customIcon}
-              icon={<CreateIcon fontSize="large" />}
-            />
-            <h3>PROJECTS</h3>
-          </div>
-          <div className={classes.sectionContent}>
-            <ResumeSection
-              subheader="Memory Card Game"
-              subheaderDetails="ReactJS, Material-UI, Axios, JSS"
-              content={MEMORY_TEXT}
-              bullets={MEMORY_BULLETS}
-              liveLink="https://memory-6fc80b.netlify.app"
-              githubLink="https://github.com/kblair40/memory"
-            />
-            <ResumeSection
-              subheader="Stock Watchlist"
-              subheaderDetails="ReactJS, Material-UI, Recharts, JSS"
-              content={WATCHLIST_TEXT}
-              bullets={WATCHLIST_BULLETS}
-              liveLink="https://watchlistkab.netlify.app"
-              githubLink="https://github.com/kblair40/watchlist"
-              needsDivider={true}
-            />
-            <SectionDivider topMargin="2rem" />
-          </div>
+          <Projects />
         </section>
 
         <section
@@ -146,54 +92,7 @@ const MainResume = (props) => {
           className={classes.sectionContainer}
           ref={courseworkRef}
         >
-          <div className={classes.sectionHeader}>
-            <CustomIcon
-              className={classes.customIcon}
-              icon={<LaptopMacIcon fontSize="large" />}
-            />
-            <h3>SOFTWARE DEVELOPMENT COURSEWORK</h3>
-          </div>
-          <div className={classes.sectionContent}>
-            <ResumeSection
-              subheader="The Modern React Bootcamp"
-              subheaderDetails="2021"
-              bullets={[
-                "Covered ReactJS class and functional components, in addition to hooks, Context API, React-Router and NextJS",
-              ]}
-              needsDivider={false}
-            />
-            <ResumeSection
-              subheader="The Web Developer Bootcamp 2021"
-              subheaderDetails="2021"
-              bullets={[
-                "Learned principles of responsive design implemented with CSS Flexbox, Grid and media queries",
-                "Gained a significantly greater understanding of the DOM, DOM events, AJAX, Prototypes, Classes and how to incorporate a NodeJS/MongoDB back-end with a JavaScript/HTML/CSS front-end",
-              ]}
-            />
-            <ResumeSection
-              subheader="AWS Certified Solutions Architect Associate 2020"
-              subheaderDetails="2020"
-              bullets={[
-                "Gained the necessary knowledge to take and pass the AWS Certified Solutions Architect Associate exam in June, 2020",
-              ]}
-            />
-            <ResumeSection
-              subheader="Complete Python Bootcamp From Zero to Hero in Python"
-              subheaderDetails="2019"
-              bullets={[
-                "Learned Python starting with the basics and ending with more advanced topics like decorators, generators, web scraping, exception handling, pandas/numpy libraries and GUI frameworks",
-              ]}
-            />
-            <ResumeSection
-              subheader="FreeCodeCamp"
-              subheaderDetails="2017"
-              bullets={[
-                "Learned the basics of HTML, CSS JavaScript, JQuery, the DOM, and responsive web design",
-              ]}
-              needsDivider={true}
-            />
-            <SectionDivider topMargin="2rem" />
-          </div>
+          <Coursework />
         </section>
 
         <section
@@ -201,25 +100,7 @@ const MainResume = (props) => {
           className={classes.sectionContainer}
           ref={universityRef}
         >
-          <div className={classes.sectionHeader}>
-            <CustomIcon
-              className={classes.customIcon}
-              icon={<SchoolIcon fontSize="large" />}
-            />
-            <h3>UNIVERSITY</h3>
-          </div>
-          <div className={classes.sectionContent}>
-            <ResumeSection
-              subheader="The University of Alabama"
-              subheaderDetails="BS Finance  &nbsp;(2009 - 2013)"
-              bullets={[
-                "Alabama Men’s Varsity Basketball Scout Team, 2011 - 2012",
-                "Alabama Men’s Club Volleyball Team, 2009 - 2010",
-              ]}
-              needsDivider={true}
-            />
-            <SectionDivider topMargin="2rem" />
-          </div>
+          <University />
         </section>
 
         <section
@@ -227,24 +108,7 @@ const MainResume = (props) => {
           className={classes.sectionContainer}
           ref={experienceRef}
         >
-          <div className={classes.sectionHeader}>
-            <CustomIcon
-              className={classes.customIcon}
-              icon={<WorkIcon fontSize="large" />}
-            />
-            <h3>EXPERIENCE</h3>
-          </div>
-          <h3 className={classes.sectionHeader}>EXPERIENCE</h3>
-          <div className={classes.sectionContent}>
-            <ResumeSection
-              subheader="Donyati, LLC"
-              subheaderDetails="Consultant &nbsp;(Mar 2020 - Mar 2021)"
-              bullets={[
-                "Built command line programs using Python for comparing and automating modifications to Excel spreadsheets",
-                "Assisted in the implementation of EPM software for multiple Fortune 500 companies",
-              ]}
-            />
-          </div>
+          <Experience />
         </section>
       </ResumeContainer>
     </div>

@@ -4,18 +4,6 @@
   background-color: #121212;
 }
 
-.sectionHeader {
-  font-family: Montserrat;
-  font-size: 1.4rem;
-  display: flex;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-.sectionHeader h3 {
-  margin: 0 0 0 1rem;
-}
-
 .container a {
   text-decoration: none;
   font-weight: 600;
@@ -25,12 +13,6 @@
   position: absolute;
   right: 0;
   top: 0.5rem;
-}
-
-.sectionContent {
-  margin-top: 1.5rem;
-  width: calc(100% - 1.5rem);
-  align-self: flex-end;
 }
 
 .sectionContainer {
