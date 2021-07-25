@@ -4,20 +4,22 @@ const useHover = () => {
   const [value, setValue] = useState(false);
   const ref = useRef(null);
 
-  const handleMouseOver = (e) => {
+  const handleMouseEnter = (e) => {
     setValue(true);
   };
-  const handleMouseOut = () => setValue(false);
+  const handleMouseLeave = (e) => {
+    setValue(false);
+  };
 
   useEffect(
     () => {
       const node = ref.current;
       if (node) {
-        node.addEventListener("mouseover", handleMouseOver);
-        node.addEventListener("mouseout", handleMouseOut);
+        node.addEventListener("mouseenter", handleMouseEnter);
+        node.addEventListener("mouseleave", handleMouseLeave);
         return () => {
-          node.removeEventListener("mouseover", handleMouseOver);
-          node.removeEventListener("mouseout", handleMouseOut);
+          node.removeEventListener("mouseenter", handleMouseEnter);
+          node.removeEventListener("mouseleave", handleMouseLeave);
         };
       }
     },

@@ -26,17 +26,44 @@ const MainResume = () => {
   const [universityRef, universityIsHovered] = useHover();
   const [experienceRef, experienceIsHovered] = useHover();
 
+  // const handleMouseEnter = (e) => {
+  //   console.log("\n\nENTERED\n\n");
+  //   dispatch(
+  //     hoverLocationActions.setMutingIsActive({
+  //       resumeIsHovered: true,
+  //     })
+  //   );
+  // };
+
+  // const handleMouseLeave = (e) => {
+  //   const validTargets = ["about", "skills", "projects"];
+  //   console.log("LEFT RESUME FOR", e.target.id);
+  //   if (validTargets.includes(e.target.id)) {
+  //     console.log("DOING NOTHING:", e.target.id);
+  //   } else {
+  //     dispatch(
+  //       hoverLocationActions.setMutingIsActive({
+  //         resumeIsHovered: false,
+  //       })
+  //     );
+  //   }
+  //   console.log("\n\nLEAVING\n\n");
+  // };
+
   useEffect(() => {
+    const hoverStates = {
+      aboutIsHovered,
+      skillsIsHovered,
+      projectsIsHovered,
+      courseworkIsHovered,
+      universityIsHovered,
+      experienceIsHovered,
+    };
+    // console.log("OBJECT VALUES:", Object.values(hoverStates));
+
     dispatch(
-      hoverLocationActions.setMutingActive({
-        hoverStates: {
-          aboutIsHovered,
-          skillsIsHovered,
-          projectsIsHovered,
-          courseworkIsHovered,
-          universityIsHovered,
-          experienceIsHovered,
-        },
+      hoverLocationActions.setHoverLocation({
+        hoverStates,
       })
     );
   }, [
@@ -79,7 +106,7 @@ const MainResume = () => {
         </section>
 
         <section
-          style={{ border: "1px solid orange", zIndex: 30 }}
+          style={{ border: "1px solid orange" }}
           id="projects"
           className={classes.sectionContainer}
           ref={projectsRef}

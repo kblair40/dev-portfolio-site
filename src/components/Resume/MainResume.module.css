@@ -9,6 +9,10 @@
   font-weight: 600;
 }
 
+.container section {
+  z-index: 10;
+}
+
 .themeSwitchContainer {
   position: absolute;
   right: 0;

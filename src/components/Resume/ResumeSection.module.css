@@ -2,6 +2,10 @@
   margin-bottom: -1rem;
 }
 
+.sectionContent:not(a) {
+  /* pointer-events: none; */
+}
+
 .bullets {
   margin-top: -0.5rem;
 }
