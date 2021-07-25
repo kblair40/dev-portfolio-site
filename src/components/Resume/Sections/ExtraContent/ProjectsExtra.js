@@ -1,20 +1,10 @@
 import React from "react";
-import CreateIcon from "@material-ui/icons/Create";
 
-import ExtraContentContainer from "./ExtraContent/ExtraContentContainer";
-import CustomIcon from "../CustomIcon";
-import SectionDivider from "../SectionDivider";
-import ResumeSection from "../ResumeSection";
-import classes from "./Projects.module.css";
-import {
-  MEMORY_TEXT,
-  MEMORY_BULLETS,
-  WATCHLIST_TEXT,
-  WATCHLIST_BULLETS,
-} from "../../../constants";
+import classes from "./ProjectsExtra.module.css";
 
-const Projects = ({ isHovered, mutingIsActive, hoverLocation }) => {
+const ProjectsExtra = () => {
   return (
+    //   <div className={classes.container}>
     <React.Fragment>
       <div
         className={
@@ -53,4 +43,4 @@ const Projects = ({ isHovered, mutingIsActive, hoverLocation }) => {
   );
 };
 
-export default Projects;
+export default ProjectsExtra;

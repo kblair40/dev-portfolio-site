@@ -1,0 +1,59 @@
+.root {
+  margin-top: 2rem;
+  position: relative;
+  right: 1rem;
+  width: calc(100% + 3.5rem);
+  height: 1.5rem;
+  height: 100%;
+  padding: 0 1rem;
+}
+
+.root svg {
+  color: white;
+  margin-left: 1rem;
+}
+
+.summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.summaryText {
+  font-family: Open Sans;
+  margin: 0;
+  width: 5rem;
+}
+
+.expandIcon {
+  width: 2.5rem;
+  position: relative;
+}
+
+.opening {
+  animation-name: open;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes open {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(180deg);
+  }
+}
+
+.closing {
+  animation: close 1s forwards;
+}
+@keyframes close {
+  0% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}

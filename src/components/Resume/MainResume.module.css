@@ -32,16 +32,3 @@
 .sectionContainer:hover svg {
   transform: scale(1.15);
 }
-
-.bgOverlay {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 2;
-  /* border: 1px solid orange; */
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.hidden {
-  display: none;
-}

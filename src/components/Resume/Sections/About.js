@@ -9,7 +9,8 @@ import classes from "./About.module.css";
 
 const About = ({ isHovered, mutingIsActive }) => {
   return (
-    <React.Fragment>
+    // <React.Fragment>
+    <div className={classes.aboutContainer}>
       <div
         className={
           !isHovered && mutingIsActive ? classes.bgOverlay : classes.hidden
@@ -26,7 +27,8 @@ const About = ({ isHovered, mutingIsActive }) => {
         <p style={{ margin: 0 }}>{ABOUT_TEXT}</p>
         <SectionDivider topMargin="1rem" />
       </div>
-    </React.Fragment>
+    </div>
+    // {/* </React.Fragment> */}
   );
 };
 
