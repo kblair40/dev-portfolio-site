@@ -39,5 +39,9 @@
   width: 100%;
   z-index: 2;
   /* border: 1px solid orange; */
-  /* background-color: rgba(0, 0, 0, 0.5); */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+  display: none;
 }

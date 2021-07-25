@@ -6,9 +6,14 @@ import SectionDivider from "../SectionDivider";
 import ResumeSection from "../ResumeSection";
 import classes from "./Coursework.module.css";
 
-const Coursework = () => {
+const Coursework = ({ isHovered, mutingIsActive }) => {
   return (
     <React.Fragment>
+      <div
+        className={
+          !isHovered && mutingIsActive ? classes.bgOverlay : classes.hidden
+        }
+      />
       <div className={classes.sectionHeader}>
         <CustomIcon
           className={classes.customIcon}

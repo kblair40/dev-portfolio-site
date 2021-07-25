@@ -12,9 +12,14 @@ import {
   WATCHLIST_BULLETS,
 } from "../../../constants";
 
-const Projects = () => {
+const Projects = ({ isHovered, mutingIsActive, hoverLocation }) => {
   return (
     <React.Fragment>
+      <div
+        className={
+          !isHovered && mutingIsActive ? classes.bgOverlay : classes.hidden
+        }
+      />
       <div className={classes.sectionHeader}>
         <CustomIcon
           className={classes.customIcon}

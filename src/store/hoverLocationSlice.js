@@ -1,5 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const locMap = {
+  aboutIsHovered: "about",
+  skillsIsHovered: "skills",
+  projectsIsHovered: "projects",
+};
+
 const hoverLocationSlice = createSlice({
   name: "hoverLocation",
   initialState: {
@@ -16,7 +22,7 @@ const hoverLocationSlice = createSlice({
       if (Object.values(hoverStates).some((val) => Boolean(val))) {
         for (let hoverState in hoverStates) {
           if (hoverStates[hoverState]) {
-            state.hoverLocation = hoverState;
+            state.hoverLocation = locMap[hoverState];
           }
         }
       }

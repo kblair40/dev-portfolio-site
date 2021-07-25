@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import classNames from "classnames";
 
 import { hoverLocationActions } from "../../store/hoverLocationSlice";
 import useHover from "../../hooks/useHover";
@@ -19,36 +20,18 @@ import classes from "./MainResume.module.css";
 const MainResume = () => {
   const dispatch = useDispatch();
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
+  const hoverLocation = useSelector(
+    (state) => state.hoverLocation.hoverLocation
+  );
+  const mutingIsActive = useSelector(
+    (state) => state.hoverLocation.mutingIsActive
+  );
   const [aboutRef, aboutIsHovered] = useHover();
   const [skillsRef, skillsIsHovered] = useHover();
   const [projectsRef, projectsIsHovered] = useHover();
   const [courseworkRef, courseworkIsHovered] = useHover();
   const [universityRef, universityIsHovered] = useHover();
   const [experienceRef, experienceIsHovered] = useHover();
-
-  // const handleMouseEnter = (e) => {
-  //   console.log("\n\nENTERED\n\n");
-  //   dispatch(
-  //     hoverLocationActions.setMutingIsActive({
-  //       resumeIsHovered: true,
-  //     })
-  //   );
-  // };
-
-  // const handleMouseLeave = (e) => {
-  //   const validTargets = ["about", "skills", "projects"];
-  //   console.log("LEFT RESUME FOR", e.target.id);
-  //   if (validTargets.includes(e.target.id)) {
-  //     console.log("DOING NOTHING:", e.target.id);
-  //   } else {
-  //     dispatch(
-  //       hoverLocationActions.setMutingIsActive({
-  //         resumeIsHovered: false,
-  //       })
-  //     );
-  //   }
-  //   console.log("\n\nLEAVING\n\n");
-  // };
 
   useEffect(() => {
     const hoverStates = {
@@ -59,7 +42,6 @@ const MainResume = () => {
       universityIsHovered,
       experienceIsHovered,
     };
-    // console.log("OBJECT VALUES:", Object.values(hoverStates));
 
     dispatch(
       hoverLocationActions.setHoverLocation({
@@ -89,29 +71,35 @@ const MainResume = () => {
         </section>
 
         <section id="about" className={classes.sectionContainer} ref={aboutRef}>
-          <div className={classes.bgOverlay} />
-          <About />
+          <About
+            isHovered={aboutIsHovered}
+            mutingIsActive={mutingIsActive}
+            hoverLocation={hoverLocation}
+          />
         </section>
 
         <section
-          style={{
-            border: "1px solid red",
-          }}
           id="skills"
           className={classes.sectionContainer}
           ref={skillsRef}
         >
-          <Skills />
-          <div className={classes.bgOverlay} />
+          <Skills
+            isHovered={skillsIsHovered}
+            mutingIsActive={mutingIsActive}
+            hoverLocation={hoverLocation}
+          />
         </section>
 
         <section
-          style={{ border: "1px solid orange" }}
           id="projects"
           className={classes.sectionContainer}
           ref={projectsRef}
         >
-          <Projects />
+          <Projects
+            isHovered={projectsIsHovered}
+            mutingIsActive={mutingIsActive}
+            hoverLocation={hoverLocation}
+          />
         </section>
 
         <section
@@ -119,7 +107,11 @@ const MainResume = () => {
           className={classes.sectionContainer}
           ref={courseworkRef}
         >
-          <Coursework />
+          <Coursework
+            isHovered={courseworkIsHovered}
+            mutingIsActive={mutingIsActive}
+            hoverLocation={hoverLocation}
+          />
         </section>
 
         <section
@@ -127,7 +119,11 @@ const MainResume = () => {
           className={classes.sectionContainer}
           ref={universityRef}
         >
-          <University />
+          <University
+            isHovered={universityIsHovered}
+            mutingIsActive={mutingIsActive}
+            hoverLocation={hoverLocation}
+          />
         </section>
 
         <section
@@ -135,7 +131,11 @@ const MainResume = () => {
           className={classes.sectionContainer}
           ref={experienceRef}
         >
-          <Experience />
+          <Experience
+            isHovered={experienceIsHovered}
+            mutingIsActive={mutingIsActive}
+            hoverLocation={hoverLocation}
+          />
         </section>
       </ResumeContainer>
     </div>

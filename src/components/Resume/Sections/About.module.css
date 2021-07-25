@@ -15,3 +15,15 @@
   width: calc(100% - 1.5rem);
   align-self: flex-end;
 }
+
+.bgOverlay {
+  position: absolute;
+  width: calc(100% + 2rem);
+  height: 100%;
+  left: -1rem;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hidden {
+  display: none;
+}

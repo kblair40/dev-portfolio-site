@@ -5,9 +5,14 @@ import ResumeSection from "../ResumeSection";
 import CustomIcon from "../CustomIcon";
 import classes from "./Experience.module.css";
 
-const Experience = () => {
+const Experience = ({ isHovered, mutingIsActive }) => {
   return (
     <React.Fragment>
+      <div
+        className={
+          !isHovered && mutingIsActive ? classes.bgOverlay : classes.hidden
+        }
+      />
       <div className={classes.sectionHeader}>
         <CustomIcon
           className={classes.customIcon}

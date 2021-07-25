@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Paper from "@material-ui/core/Paper";
 import classNames from "classnames";
 import { useDispatch } from "react-redux";
@@ -9,7 +9,6 @@ import classes from "./ResumeContainer.module.css";
 const ResumeContainer = ({ children, isDarkMode }) => {
   const dispatch = useDispatch();
   const containerRef = useRef();
-  const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = (e) => {
     console.log("MOUSE ENTERED");

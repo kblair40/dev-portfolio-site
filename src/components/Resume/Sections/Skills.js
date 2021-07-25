@@ -6,9 +6,14 @@ import CustomIcon from "../CustomIcon";
 import SectionDivider from "../SectionDivider";
 import classes from "./Skills.module.css";
 
-const Skills = () => {
+const Skills = ({ isHovered, mutingIsActive, hoverLocation }) => {
   return (
     <React.Fragment>
+      <div
+        className={
+          !isHovered && mutingIsActive ? classes.bgOverlay : classes.hidden
+        }
+      />
       <div className={classes.sectionHeader}>
         <CustomIcon
           className={classes.customIcon}
