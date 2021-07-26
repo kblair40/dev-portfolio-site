@@ -6,6 +6,7 @@ import { hoverLocationActions } from "../../store/hoverLocationSlice";
 import useHover from "../../hooks/useHover";
 import ResumeContainer from "./ResumeContainer";
 import ThemeSwitch from "./ThemeSwitch";
+import BackToHome from "./BackToHome";
 import Contact from "./Contact";
 import About from "./Sections/About";
 import Skills from "./Sections/Skills";
@@ -13,7 +14,6 @@ import Projects from "./Sections/Projects";
 import Coursework from "./Sections/Coursework";
 import University from "./Sections/University";
 import Experience from "./Sections/Experience";
-
 import classes from "./MainResume.module.css";
 
 const MainResume = () => {
@@ -87,6 +87,9 @@ const MainResume = () => {
       <ResumeContainer isDarkMode={isDarkMode}>
         <div className={classes.themeSwitchContainer}>
           <ThemeSwitch isDarkMode={isDarkMode} />
+        </div>
+        <div className={classes.backToHomeContainer}>
+          <BackToHome />
         </div>
 
         {/* Dont't dynamically style Contact - change from section to header element */}

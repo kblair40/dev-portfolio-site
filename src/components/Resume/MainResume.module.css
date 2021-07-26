@@ -26,6 +26,12 @@
   top: 0.5rem;
 }
 
+.backToHomeContainer {
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+}
+
 .sectionContainer {
   position: relative;
 }

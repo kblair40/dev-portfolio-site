@@ -24,6 +24,7 @@
   transform: scale(0.5);
   margin: 0;
   z-index: 11;
+  border: 1px solid green;
 }
 
 .light .container {

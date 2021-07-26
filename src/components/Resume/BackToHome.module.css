@@ -1,0 +1,49 @@
+.container {
+  width: 9rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  font-family: Open Sans;
+  position: relative;
+  z-index: 11;
+}
+
+.arrowContainer {
+  height: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  animation: point-right 1s infinite;
+  display: flex;
+  align-items: center;
+}
+
+.textContainer {
+  height: 1.5rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 1rem;
+  padding: 0;
+}
+
+.textDark {
+  color: #ffffffde;
+}
+
+.textLight {
+  color: black;
+  opacity: 0.87;
+}
+
+@keyframes point-right {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 0.25rem;
+  }
+  100% {
+    left: 0;
+  }
+}

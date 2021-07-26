@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 import classes from "./Skill.module.css";
 
-const Skills = ({ title, skillLevel, isLastSkill = false }) => {
+const Skills = ({ title, skillLevel }) => {
   const isDarkMode = useSelector((state) => state.theme.isDarkMode);
 
   return (
