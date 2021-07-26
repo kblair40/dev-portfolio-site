@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Collapse from "@material-ui/core/Collapse";
+import { useSelector } from "react-redux";
 import classNames from "classnames";
 
 import classes from "./ExtraContentContainer.module.css";
@@ -8,6 +9,7 @@ import classes from "./ExtraContentContainer.module.css";
 const ExtraContentContainer = (props) => {
   const expandIconRef = useRef();
   const [expanded, setExpanded] = useState(false);
+  const isDarkMode = useSelector((st) => st.theme.isDarkMode);
 
   const toggleExtraContent = () => {
     if (!expanded) {
@@ -21,7 +23,12 @@ const ExtraContentContainer = (props) => {
   };
 
   return (
-    <div className={classes.root}>
+    <div
+      className={classNames(
+        classes.root,
+        isDarkMode ? classes.rootDark : classes.rootLight
+      )}
+    >
       <div className={classes.summary} onClick={toggleExtraContent}>
         <p className={classes.summaryText}>{expanded ? "Close" : "See More"}</p>
         <div

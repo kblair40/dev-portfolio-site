@@ -23,7 +23,7 @@
 .bgOverlayDark {
   position: absolute;
   width: calc(100% + 2rem);
-  height: 100%;
+  height: calc(100% + 1rem);
   left: -1rem;
   top: 0;
   background-color: black;
@@ -32,7 +32,7 @@
 .bgOverlayLight {
   position: absolute;
   width: calc(100% + 2rem);
-  height: 100%;
+  height: calc(100% + 1rem);
   left: -1rem;
   top: 0;
   background-color: black;

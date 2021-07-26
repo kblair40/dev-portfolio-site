@@ -7,7 +7,6 @@ import useHover from "../../hooks/useHover";
 import ResumeContainer from "./ResumeContainer";
 import ThemeSwitch from "./ThemeSwitch";
 import Contact from "./Contact";
-import SectionDivider from "./SectionDivider";
 import About from "./Sections/About";
 import Skills from "./Sections/Skills";
 import Projects from "./Sections/Projects";
@@ -93,7 +92,6 @@ const MainResume = () => {
         {/* Dont't dynamically style Contact - change from section to header element */}
         <section id="contact" className={classes.sectionContainer}>
           <Contact isDarkMode={isDarkMode} />
-          {/* <SectionDivider topMargin="1rem" /> */}
         </section>
 
         <div className={classes.bgOverlayContainer} ref={containerRef}>

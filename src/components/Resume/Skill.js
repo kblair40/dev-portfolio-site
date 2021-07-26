@@ -13,7 +13,12 @@ const Skills = ({ title, skillLevel, isLastSkill = false }) => {
       <div className={classes.container}>
         <div className={classes.skillTitle}>{title}</div>
         <div className={classes.progressContainer}>
-          <div className={classes.progressBg} />
+          <div
+            className={classNames(
+              classes.progressBg,
+              isDarkMode ? classes.bgDark : classes.bgLight
+            )}
+          />
           <div
             style={{ width: skillLevel }}
             className={classNames(
