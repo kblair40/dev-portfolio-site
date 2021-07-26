@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import classNames from "classnames";
 
@@ -32,6 +32,27 @@ const MainResume = () => {
   const [courseworkRef, courseworkIsHovered] = useHover();
   const [universityRef, universityIsHovered] = useHover();
   const [experienceRef, experienceIsHovered] = useHover();
+
+  const containerRef = useRef();
+
+  const handleMouseEnter = (e) => {
+    console.log("MOUSE ENTERED");
+    dispatch(hoverLocationActions.setMutingIsActive({ resumeIsHovered: true }));
+  };
+
+  const handleMouseLeave = (e) => {
+    console.log("MOUSE LEFT");
+    dispatch(
+      hoverLocationActions.setMutingIsActive({ resumeIsHovered: false })
+    );
+  };
+
+  useEffect(() => {
+    if (containerRef && containerRef.current) {
+      containerRef.current.addEventListener("mouseenter", handleMouseEnter);
+      containerRef.current.addEventListener("mouseleave", handleMouseLeave);
+    }
+  }, []);
 
   useEffect(() => {
     const hoverStates = {
@@ -75,79 +96,85 @@ const MainResume = () => {
           {/* <SectionDivider topMargin="1rem" /> */}
         </section>
 
-        <section id="about" className={classes.sectionContainer} ref={aboutRef}>
-          <About
-            isHovered={aboutIsHovered}
-            mutingIsActive={mutingIsActive}
-            hoverLocation={hoverLocation}
-            isDarkMode={isDarkMode}
-          />
-        </section>
+        <div className={classes.bgOverlayContainer} ref={containerRef}>
+          <section
+            id="about"
+            className={classes.sectionContainer}
+            ref={aboutRef}
+          >
+            <About
+              isHovered={aboutIsHovered}
+              mutingIsActive={mutingIsActive}
+              hoverLocation={hoverLocation}
+              isDarkMode={isDarkMode}
+            />
+          </section>
 
-        <section
-          id="skills"
-          className={classes.sectionContainer}
-          ref={skillsRef}
-        >
-          <Skills
-            isHovered={skillsIsHovered}
-            mutingIsActive={mutingIsActive}
-            hoverLocation={hoverLocation}
-            isDarkMode={isDarkMode}
-          />
-        </section>
+          <section
+            id="skills"
+            className={classes.sectionContainer}
+            ref={skillsRef}
+          >
+            <Skills
+              isHovered={skillsIsHovered}
+              mutingIsActive={mutingIsActive}
+              hoverLocation={hoverLocation}
+              isDarkMode={isDarkMode}
+            />
+          </section>
 
-        <section
-          id="projects"
-          className={classes.sectionContainer}
-          ref={projectsRef}
-        >
-          <Projects
-            isHovered={projectsIsHovered}
-            mutingIsActive={mutingIsActive}
-            hoverLocation={hoverLocation}
-            isDarkMode={isDarkMode}
-          />
-        </section>
+          <section
+            id="projects"
+            className={classes.sectionContainer}
+            ref={projectsRef}
+          >
+            <Projects
+              isHovered={projectsIsHovered}
+              mutingIsActive={mutingIsActive}
+              hoverLocation={hoverLocation}
+              isDarkMode={isDarkMode}
+            />
+          </section>
 
-        <section
-          id="coursework"
-          className={classes.sectionContainer}
-          ref={courseworkRef}
-        >
-          <Coursework
-            isHovered={courseworkIsHovered}
-            mutingIsActive={mutingIsActive}
-            hoverLocation={hoverLocation}
-            isDarkMode={isDarkMode}
-          />
-        </section>
+          <section
+            id="coursework"
+            className={classes.sectionContainer}
+            ref={courseworkRef}
+          >
+            <Coursework
+              isHovered={courseworkIsHovered}
+              mutingIsActive={mutingIsActive}
+              hoverLocation={hoverLocation}
+              isDarkMode={isDarkMode}
+            />
+          </section>
 
-        <section
-          id="university"
-          className={classes.sectionContainer}
-          ref={universityRef}
-        >
-          <University
-            isHovered={universityIsHovered}
-            mutingIsActive={mutingIsActive}
-            hoverLocation={hoverLocation}
-            isDarkMode={isDarkMode}
-          />
-        </section>
+          <section
+            id="university"
+            className={classes.sectionContainer}
+            ref={universityRef}
+          >
+            <University
+              isHovered={universityIsHovered}
+              mutingIsActive={mutingIsActive}
+              hoverLocation={hoverLocation}
+              isDarkMode={isDarkMode}
+            />
+          </section>
 
-        <section
-          id="experience"
-          className={classes.sectionContainer}
-          ref={experienceRef}
-        >
-          <Experience
-            isHovered={experienceIsHovered}
-            mutingIsActive={mutingIsActive}
-            hoverLocation={hoverLocation}
-            isDarkMode={isDarkMode}
-          />
-        </section>
+          <section
+            id="experience"
+            className={classes.sectionContainer}
+            ref={experienceRef}
+          >
+            <Experience
+              isHovered={experienceIsHovered}
+              mutingIsActive={mutingIsActive}
+              hoverLocation={hoverLocation}
+              isDarkMode={isDarkMode}
+            />
+          </section>
+        </div>
       </ResumeContainer>
     </div>
   );

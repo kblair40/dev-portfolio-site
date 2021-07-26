@@ -1,9 +1,12 @@
+.universityContainer {
+  padding-top: 1rem;
+}
+
 .sectionHeader {
   font-family: Montserrat;
   font-size: 1.4rem;
   display: flex;
   align-items: center;
-  margin-top: 1rem;
 }
 
 .sectionHeader h3 {
@@ -21,6 +24,7 @@
   width: calc(100% + 2rem);
   height: 100%;
   left: -1rem;
+  top: 0;
   background-color: black;
   opacity: 0.3;
 }
@@ -29,6 +33,7 @@
   width: calc(100% + 2rem);
   height: 100%;
   left: -1rem;
+  top: 0;
   background-color: black;
   opacity: 0.1;
 }

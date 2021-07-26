@@ -12,7 +12,6 @@ const About = ({ isHovered, mutingIsActive, isDarkMode }) => {
     <div className={classes.aboutContainer}>
       <div
         className={
-          // !isHovered && mutingIsActive ? classes.bgOverlay : classes.hidden
           !isHovered && mutingIsActive
             ? isDarkMode
               ? classes.bgOverlayDark

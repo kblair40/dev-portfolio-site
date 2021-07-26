@@ -8,7 +8,7 @@ import classes from "./Experience.module.css";
 
 const Experience = ({ isHovered, mutingIsActive, isDarkMode }) => {
   return (
-    <React.Fragment>
+    <div className={classes.experienceContainer}>
       <div
         className={
           !isHovered && mutingIsActive
@@ -37,7 +37,7 @@ const Experience = ({ isHovered, mutingIsActive, isDarkMode }) => {
 
         <ExperienceExtra />
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 

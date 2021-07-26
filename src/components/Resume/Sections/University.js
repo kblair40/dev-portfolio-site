@@ -8,7 +8,7 @@ import SectionDivider from "../SectionDivider";
 
 const University = ({ isHovered, mutingIsActive, isDarkMode }) => {
   return (
-    <React.Fragment>
+    <div className={classes.universityContainer}>
       <div
         className={
           !isHovered && mutingIsActive
@@ -37,7 +37,7 @@ const University = ({ isHovered, mutingIsActive, isDarkMode }) => {
         />
         <SectionDivider topMargin="2rem" />
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 

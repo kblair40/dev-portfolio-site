@@ -31,34 +31,10 @@
   font-weight: 300;
 }
 
-.lightText {
-  animation: to-light-text 0.5s forwards;
-}
-
-.darkText {
-  animation: to-dark-text 0.5s forwards;
-}
-
-@keyframes to-light-text {
-  0% {
-    color: rgba(255, 255, 255, 0.87);
-  }
-  100% {
-    color: #222222;
-  }
-}
-@keyframes to-dark-text {
-  0% {
-    color: #222222;
-  }
-  100% {
-    color: rgba(255, 255, 255, 0.87);
-  }
-}
-
+/* DARK MODE STYLING */
 /* DarkMode Blue - #90caf9 */
 
-.link {
+.linkDark {
   font-size: 14px;
   width: 4.5rem;
   height: 1.5rem;
@@ -71,8 +47,8 @@
   z-index: 2;
 }
 
-.link:before,
-.link:after {
+.linkDark:before,
+.linkDark:after {
   position: absolute;
   content: "";
   width: 20%;
@@ -82,7 +58,7 @@
   transition: all 0.3s ease;
 }
 
-.link:before {
+.linkDark:before {
   top: 0;
   left: 0;
   border-bottom-color: transparent;
@@ -91,7 +67,7 @@
   border-left-color: #90caf9;
 }
 
-.link:after {
+.linkDark:after {
   bottom: 0;
   right: 0;
   border-top-color: transparent;
@@ -100,45 +76,62 @@
   border-right-color: #90caf9;
 }
 
-.link:hover:before,
-.link:hover:after {
+.linkDark:hover:before,
+.linkDark:hover:after {
   border-color: #90caf9;
   height: 100%;
   width: 100%;
   box-shadow: 0 0 4px #90caf9, 0 0 4px #90caf9 inset;
 }
 
-/* a.link:hover .live1,
-.live2  */
-/* a.link:hover {
-  animation: flicker 0.01s infinite;
-  text-shadow: 0 0 2px #fff;
-  box-shadow: 0 0 3px #fff;
-} */
-/* a.link:hover span {
-  animation: flicker 0.03s infinite;
-} */
+/* LIGHT MODE STYLING */
+/* LightMode Blue - #0069c0 */
+.linkLight {
+  font-size: 14px;
+  width: 4.5rem;
+  height: 1.5rem;
+  text-align: center;
+  font-weight: 400 !important;
+  color: #0069c0 !important;
+  padding: 2px;
+  position: relative;
+  border: none;
+  z-index: 2;
+}
 
-@keyframes flicker {
-  75% {
-    opacity: 0.7;
-  }
-  /* 0% {
-    opacity: 0.2;
-  }
-  8% {
-    opacity: 1;
-  }
-  28% {
-    opacity: 1;
-  }
-  62% {
-    opacity: 0.2;
-  }
-  64% {
-    opacity: 0.1;
-  }
-  100% {
-    opacity: 0.8;
-  } */
+.linkLight:before,
+.linkLight:after {
+  position: absolute;
+  content: "";
+  width: 20%;
+  height: 20%;
+  border: 1px solid #0069c0;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.linkLight:before {
+  top: 0;
+  left: 0;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: #0069c0;
+  border-left-color: #0069c0;
+}
+
+.linkLight:after {
+  bottom: 0;
+  right: 0;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #0069c0;
+  border-right-color: #0069c0;
+}
+
+.linkLight:hover:before,
+.linkLight:hover:after {
+  border-color: #0069c0;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 4px #0069c0, 0 0 4px #0069c0 inset;
 }

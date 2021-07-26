@@ -28,8 +28,7 @@ const ProjectLinks = ({
           <a
             className={classNames(
               classes.liveLink,
-              classes.link,
-              isDarkMode ? classes.darkText : classes.lightText
+              isDarkMode ? classes.linkDark : classes.linkLight
             )}
             href={liveLink}
             target="blank"
@@ -39,8 +38,7 @@ const ProjectLinks = ({
           <a
             className={classNames(
               classes.githubLink,
-              classes.link,
-              isDarkMode ? classes.darkText : classes.lightText
+              isDarkMode ? classes.linkDark : classes.linkLight
             )}
             href={githubLink}
             target="blank"

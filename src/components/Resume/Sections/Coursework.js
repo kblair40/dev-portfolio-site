@@ -8,7 +8,7 @@ import classes from "./Coursework.module.css";
 
 const Coursework = ({ isHovered, mutingIsActive, isDarkMode }) => {
   return (
-    <React.Fragment>
+    <div className={classes.courseworkContainer}>
       <div
         className={
           !isHovered && mutingIsActive
@@ -66,7 +66,7 @@ const Coursework = ({ isHovered, mutingIsActive, isDarkMode }) => {
         />
         <SectionDivider topMargin="2rem" />
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 

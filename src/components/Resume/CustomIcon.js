@@ -22,7 +22,12 @@ const useStyles = makeStyles({
     color: "#212121",
     boxShadow: "0 0 4px 0.5px #6ec6ff",
   },
-  containerLight: {},
+  containerLight: {
+    border: "1px solid #0069c0",
+    backgroundColor: "#fff",
+    color: "#212121",
+    boxShadow: "0 0 4px 0.5px #2196f3",
+  },
 });
 
 const CustomIcon = ({ icon }) => {

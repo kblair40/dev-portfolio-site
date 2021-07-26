@@ -8,7 +8,7 @@ import classes from "./Skills.module.css";
 
 const Skills = ({ isHovered, mutingIsActive, isDarkMode }) => {
   return (
-    <React.Fragment>
+    <div className={classes.skillsContainer}>
       <div
         className={
           !isHovered && mutingIsActive
@@ -35,7 +35,7 @@ const Skills = ({ isHovered, mutingIsActive, isDarkMode }) => {
         <Skill title="MongoDB" skillLevel="68%" />
         <SectionDivider topMargin="1rem" />
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 

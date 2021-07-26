@@ -23,6 +23,7 @@
   position: absolute;
   width: calc(100% + 2rem);
   height: 100%;
+  top: 0;
   left: -1rem;
   background-color: black;
   opacity: 0.3;

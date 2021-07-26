@@ -15,7 +15,8 @@ import {
 
 const Projects = ({ isHovered, mutingIsActive, isDarkMode }) => {
   return (
-    <React.Fragment>
+    <div className={classes.projectsContainer}>
+      {" "}
       <div
         className={
           !isHovered && mutingIsActive
@@ -54,7 +55,7 @@ const Projects = ({ isHovered, mutingIsActive, isDarkMode }) => {
         <ProjectsExtra />
         <SectionDivider topMargin="2rem" />
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 
