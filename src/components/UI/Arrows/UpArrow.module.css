@@ -1,13 +1,3 @@
-/* .container {
-  position: absolute;
-  width: 100vw;
-  height: 10vh;
-  top: 1rem;
-  display: flex;
-  justify-content: center;
-  z-index: 50;
-} */
-
 .arrowContainer {
   z-index: 20;
   height: 100%;
@@ -15,7 +5,6 @@
   display: flex;
   justify-content: center;
   position: absolute;
-  /* top: 0; */
   animation: arrow-movement 2s ease-in-out infinite;
 }
 
@@ -24,7 +13,6 @@
   width: 3.5rem;
   height: 3.5rem;
   z-index: 2;
-  /* border: 1px solid white !important; */
 }
 .iconBtnRoot:hover {
   background-color: transparent !important;
@@ -32,16 +20,13 @@
 
 @keyframes arrow-movement {
   0% {
-    bottom: 0;
-    /* top: 0; */
+    top: 0;
   }
   50% {
-    bottom: 0.5rem;
-    /* top: 0.5rem; */
+    top: -0.5rem;
   }
   100% {
-    bottom: 0;
-    /* top: 0; */
+    top: 0;
   }
 }
 

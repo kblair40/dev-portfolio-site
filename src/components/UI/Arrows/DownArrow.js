@@ -8,6 +8,7 @@ import { use100vh } from "react-div-100vh";
 
 import { hiddenActions } from "../../../store/hiddenSlice";
 import classes from "./DownArrow.module.css";
+import { orange } from "@material-ui/core/colors";
 
 const useStyles = makeStyles({
   container: {
