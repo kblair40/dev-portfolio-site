@@ -3,8 +3,7 @@ TODO
 3. Nav links for resume, github, linkedin and contact
 4. Add info modal with mat-UI 'i' icon ( or modal with preview image(s)? )for project cards on screen widths below
 5. Project cards should display links on wider screens in case mobile device is tilted horizontal, OR prevent tilting (if possible).
-6. setDirectionUp and setDirectionDown functions should be moved to UpArrow and DownArrow components.
-7. Give menu icons brand colors on hover - maybe tooltips also
+f7. Give menu icons brand colors on hover - maybe tooltips also
 8. If screen is horizontal (mobile), either display github and live link instead of background image, or add link to navbar or toggle to navbar to show links
 
 Less Important

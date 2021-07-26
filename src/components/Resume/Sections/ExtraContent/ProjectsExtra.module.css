@@ -1,0 +1,5 @@
+.sectionContent {
+  margin-top: 1.5rem;
+  width: calc(100% - 1.5rem);
+  align-self: flex-end;
+}

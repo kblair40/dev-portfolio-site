@@ -9,7 +9,6 @@ import classes from "./About.module.css";
 
 const About = ({ isHovered, mutingIsActive }) => {
   return (
-    // <React.Fragment>
     <div className={classes.aboutContainer}>
       <div
         className={
@@ -28,7 +27,6 @@ const About = ({ isHovered, mutingIsActive }) => {
         <SectionDivider topMargin="1rem" />
       </div>
     </div>
-    // {/* </React.Fragment> */}
   );
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import CreateIcon from "@material-ui/icons/Create";
 
-import ExtraContentContainer from "./ExtraContent/ExtraContentContainer";
+import ProjectsExtra from "./ExtraContent/ProjectsExtra";
 import CustomIcon from "../CustomIcon";
 import SectionDivider from "../SectionDivider";
 import ResumeSection from "../ResumeSection";
@@ -46,7 +46,7 @@ const Projects = ({ isHovered, mutingIsActive, hoverLocation }) => {
           githubLink="https://github.com/kblair40/watchlist"
           needsDivider={true}
         />
-        <ExtraContentContainer />
+        <ProjectsExtra />
         <SectionDivider topMargin="2rem" />
       </div>
     </React.Fragment>

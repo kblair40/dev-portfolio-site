@@ -32,7 +32,7 @@ const ExtraContentContainer = (props) => {
         </div>
       </div>
       <Collapse in={expanded} timeout={500} unmountOnExit>
-        content content content content content content content
+        {/* content content content content content content content */}
         {props.children}
       </Collapse>
     </div>

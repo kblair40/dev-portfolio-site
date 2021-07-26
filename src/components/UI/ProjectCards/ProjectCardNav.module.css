@@ -13,7 +13,7 @@
 .btnContainer {
   display: flex;
   position: absolute;
-  margin-left: 1rem;
+  left: 1rem;
 }
 
 .button {
@@ -38,6 +38,15 @@
   font-family: Open Sans;
   width: 100%;
   text-align: center;
+}
+
+.infoIconContainer {
+  position: absolute;
+  right: 1rem;
+}
+
+.iconBtn:hover {
+  background: transparent !important;
 }
 
 @media screen and (max-width: 500px) {
