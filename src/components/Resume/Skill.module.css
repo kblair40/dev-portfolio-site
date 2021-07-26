@@ -4,7 +4,6 @@
   align-items: center;
   width: 100%;
   height: 24px;
-  /* border: 1px solid green; */
   position: relative;
 }
 
@@ -17,7 +16,6 @@
 
 .progressContainer {
   width: 82%;
-  /* border: 1px solid red; */
   height: 12px;
   display: flex;
   align-items: center;

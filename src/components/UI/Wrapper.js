@@ -42,10 +42,14 @@ const Wrapper = (props) => {
           dispatch(hiddenActions.hideHomeUnhideAbout());
         }
       } else if (currentPage === "about") {
+        console.log("DELTA Y:", deltaY);
         if (deltaY > 0) {
           dispatch(hiddenActions.hideAboutUnhideHome());
           dispatch(hiddenActions.setAboutDirection({ direction: "up" }));
-        } else {
+          // make sure the user swiped and didn't just touch the screen...
+          //   If user just taps the screen, deltaY will be undefined (falsy).
+          //   Do nothing if that is the case.
+        } else if (deltaY) {
           dispatch(hiddenActions.setAboutDirection({ direction: "down" }));
           dispatch(hiddenActions.hideAboutUnhideWork());
         }
