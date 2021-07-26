@@ -6,14 +6,12 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import Button from "@material-ui/core/Button";
-import CloseIcon from "@material-ui/icons/Close";
 import classNames from "classnames";
 
 import classes from "./LinkModal.module.css";
 
 const LinkModal = ({ open, handleClose, githubLink, liveLink }) => {
   return (
-    // <div>
     <Modal
       className={classes.modal}
       open={open}
@@ -29,7 +27,7 @@ const LinkModal = ({ open, handleClose, githubLink, liveLink }) => {
           <div className={classes.links}>
             <a
               className={classNames(classes.githubLink, classes.link)}
-              //   href={githubLink}
+              href={githubLink}
               target="blank"
             >
               <IconButton className={classes.iconBtn}>
@@ -43,7 +41,7 @@ const LinkModal = ({ open, handleClose, githubLink, liveLink }) => {
 
             <a
               className={classNames(classes.liveLink, classes.link)}
-              //   href={liveLink}
+              href={liveLink}
               target="blank"
             >
               <IconButton className={classes.iconBtn}>
@@ -61,7 +59,6 @@ const LinkModal = ({ open, handleClose, githubLink, liveLink }) => {
         </div>
       </Fade>
     </Modal>
-    // </div>
   );
 };
 

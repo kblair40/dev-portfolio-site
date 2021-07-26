@@ -22,18 +22,12 @@ const Home = () => {
   const [aboutIsShowing, setAboutIsShowing] = useState(!aboutIsHidden);
   const [workIsShowing, setWorkIsShowing] = useState(!workIsHidden);
 
-  console.log("homeIsShowing", homeIsShowing);
-  console.log("aboutIsShowing", aboutIsShowing);
-  console.log("workIsShowing", workIsShowing);
   const first = useRef(true);
   useEffect(() => {
     if (first.current) {
-      console.log("FIRST!");
       first.current = false;
       return;
     }
-    console.log("NOT FIRST");
-    console.log("CURRENT PAGE:", curPage);
     if (curPage === "home") {
       setHomeIsShowing(true);
       setTimeout(() => {
@@ -50,10 +44,10 @@ const Home = () => {
 
   const enableScrolling = () => {
     // uncomment settimeout for production
-    // setTimeout(() => {
-    dispatch(hiddenActions.enableScrolling());
-    // The delay felt too long at 1000ms (matching animation time);
-    // }, 500);
+    setTimeout(() => {
+      dispatch(hiddenActions.enableScrolling());
+      // The delay felt too long at 1000ms (matching animation time);
+    }, 500);
   };
   const disableScrolling = () => {
     dispatch(hiddenActions.disableScrolling());

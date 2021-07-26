@@ -48,7 +48,11 @@ const ProjectCard = ({ name, liveLink, githubLink }) => {
 
   return (
     <Card square={true} className={classes.projectCard}>
-      <ProjectCardNav title={name} />
+      <ProjectCardNav
+        title={name}
+        githubLink={githubLink}
+        liveLink={liveLink}
+      />
       <div
         ref={removeBgRef}
         className={classNames(
