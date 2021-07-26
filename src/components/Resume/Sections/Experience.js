@@ -3,6 +3,7 @@ import WorkIcon from "@material-ui/icons/Work";
 
 import ResumeSection from "../ResumeSection";
 import CustomIcon from "../CustomIcon";
+import ExperienceExtra from "./ExtraContent/ExperienceExtra";
 import classes from "./Experience.module.css";
 
 const Experience = ({ isHovered, mutingIsActive }) => {
@@ -29,6 +30,8 @@ const Experience = ({ isHovered, mutingIsActive }) => {
             "Assisted in the implementation of EPM software for multiple Fortune 500 companies",
           ]}
         />
+
+        <ExperienceExtra />
       </div>
     </React.Fragment>
   );

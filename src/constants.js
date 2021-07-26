@@ -6,21 +6,26 @@ export const SKILLS_TEXT =
 
 export const MEMORY_TEXT =
   "A web-based version of the classic 1-player card game, built with ReactJS and Material-UI";
-
 export const MEMORY_BULLETS = [
-  "Leveraged Material-UI framework to deliver a responsive app with DRY code.",
+  "Leveraged Material-UI framework to deliver a responsive app with DRY code",
   "Designed the app using JSS and Material-UI’s ‘withStyles’ API to give each component it’s own local scope and prevent any potential class naming conflicts",
 ];
 
-export const WATCHLIST_TEXT =
-  "A web app that allows users to add stocks of their choosing and query those stocks for specific details and price history";
-
-export const WATCHLIST_BULLETS = [
-  "Integrated Yahoo-Finance API with Recharts to display a stock’s price history dynamically according to the historical timeframe specified by the user.",
-  "Built UI by leveraging Material-UI’s ‘withStyles’ API and custom JSS to reduce file structure complexity",
-  "Overcame a major CORS issue preventing data retrieval with 3rd party browser extensions, and will ultimately setup a proxy server to make the API calls as a permanent fix.",
+export const ECOMMERCE_TEXT =
+  "A web-app that consumes the fake-store API and displays a minimal, fully-responsive e-commerce site";
+export const ECOMMERCE_BULLETS = [
+  "Implemented Redux and React-Redux to keep app-wide state management scalable and maintainable",
+  "Built UI by leveraging Material-UI’s ‘withStyles’ and ‘makeStyles’ API, and custom JSS to reduce file structure complexity",
 ];
-//   Memory Card Game ReactJS, Material-UI, Axios, JSS live | github A web-based version of the classic 1-player card game, built with ReactJS and Material-UI
-// ● Leveraged Material-UI framework to deliver a responsive app with DRY code.
-// ● Designed the app using JSS and Material-UI’s ‘withStyles’ API to give each component it’s own local scope and prevent
-// any potential class naming conflicts
+
+export const SIGNUP_TEXT =
+  "Minimalist app offering users multiple ways of creating accounts and signing in";
+export const SIGNUP_BULLETS = [
+  "Implemented the OAuth standard to allow users to create accounts and sign in with standard email/password, or with Twitter, Github or Google",
+];
+
+export const TODOS_TEXT =
+  "It's a Todo app.  I had recently completed a tutorial on creating custom hooks and saw a Todo app as a good way to practice them on my own.";
+export const TODOS_BULLETS = [
+  "Created custom hooks for handling form input, local storage loading/saving, and toggling a todo's status between complete and incomplete",
+];

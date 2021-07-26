@@ -6,8 +6,8 @@ import classes from "./ProjectsExtra.module.css";
 import {
   MEMORY_TEXT,
   MEMORY_BULLETS,
-  WATCHLIST_TEXT,
-  WATCHLIST_BULLETS,
+  TODOS_TEXT,
+  TODOS_BULLETS,
 } from "../../../../constants";
 
 const ProjectsExtra = () => {
@@ -24,12 +24,12 @@ const ProjectsExtra = () => {
             githubLink="https://github.com/kblair40/memory"
           />
           <ResumeSection
-            subheader="Stock Watchlist"
-            subheaderDetails="ReactJS, Material-UI, Recharts, JSS"
-            content={WATCHLIST_TEXT}
-            bullets={WATCHLIST_BULLETS}
-            liveLink="https://watchlistkab.netlify.app"
-            githubLink="https://github.com/kblair40/watchlist"
+            subheader="Todo"
+            subheaderDetails="ReactJS, Hooks, UUID"
+            content={TODOS_TEXT}
+            bullets={TODOS_BULLETS}
+            liveLink="https://todos-kb.netlify.app/"
+            githubLink="https://github.com/kblair40/todo"
             needsDivider={true}
           />
         </div>

@@ -71,7 +71,9 @@ const Wrapper = (props) => {
       }, 500);
 
       return () => {
-        wrapperRef.current.removeEventListener("wheel", changePagesCallback);
+        wrapperRef &&
+          wrapperRef.current &&
+          wrapperRef.current.removeEventListener("wheel", changePagesCallback);
       };
     }
   }, [scrollingIsEnabled, changePagesCallback]);

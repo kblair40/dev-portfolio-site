@@ -7,10 +7,10 @@ import SectionDivider from "../SectionDivider";
 import ResumeSection from "../ResumeSection";
 import classes from "./Projects.module.css";
 import {
-  MEMORY_TEXT,
-  MEMORY_BULLETS,
-  WATCHLIST_TEXT,
-  WATCHLIST_BULLETS,
+  SIGNUP_TEXT,
+  SIGNUP_BULLETS,
+  ECOMMERCE_TEXT,
+  ECOMMERCE_BULLETS,
 } from "../../../constants";
 
 const Projects = ({ isHovered, mutingIsActive, hoverLocation }) => {
@@ -30,20 +30,21 @@ const Projects = ({ isHovered, mutingIsActive, hoverLocation }) => {
       </div>
       <div className={classes.sectionContent}>
         <ResumeSection
-          subheader="Memory Card Game"
-          subheaderDetails="ReactJS, Material-UI, Axios, JSS"
-          content={MEMORY_TEXT}
-          bullets={MEMORY_BULLETS}
-          liveLink="https://memory-6fc80b.netlify.app"
-          githubLink="https://github.com/kblair40/memory"
+          subheader="Ecommerce"
+          subheaderDetails="ReactJS, Redux, Fetch API, React-Router, Material-UI"
+          content={ECOMMERCE_TEXT}
+          bullets={ECOMMERCE_BULLETS}
+          liveLink="https://ecommerce-kb.netlify.app"
+          githubLink="https://github.com/kblair40/ecommerce"
+          needsDivider={true}
         />
         <ResumeSection
-          subheader="Stock Watchlist"
-          subheaderDetails="ReactJS, Material-UI, Recharts, JSS"
-          content={WATCHLIST_TEXT}
-          bullets={WATCHLIST_BULLETS}
-          liveLink="https://watchlistkab.netlify.app"
-          githubLink="https://github.com/kblair40/watchlist"
+          subheader="User Auth"
+          subheaderDetails="ReactJS, Firebase, Redux, React-Router"
+          content={SIGNUP_TEXT}
+          bullets={SIGNUP_BULLETS}
+          liveLink="https://signup-kb.netlify.app"
+          githubLink="https://github.com/kblair40/signup"
           needsDivider={true}
         />
         <ProjectsExtra />
