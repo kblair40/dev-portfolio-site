@@ -56,7 +56,7 @@ const ProjectCard = ({ name, liveLink, githubLink }) => {
       <div
         ref={removeBgRef}
         className={classNames(
-          smallScreen ? classes.hidden : classes.contentContainer,
+          classes.contentContainer,
           classes.background,
           backgroundClass
         )}
