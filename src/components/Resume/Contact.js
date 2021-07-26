@@ -3,6 +3,7 @@ import IconButton from "@material-ui/core/IconButton";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
+import SectionDivider from "./SectionDivider";
 import CustomIcon from "./CustomIcon";
 import classes from "./Contact.module.css";
 
@@ -41,6 +42,7 @@ const Contact = ({ isDarkMode }) => {
             </div>
           </div>
         </div>
+        <SectionDivider topMargin="1rem" />
       </div>
     </React.Fragment>
   );

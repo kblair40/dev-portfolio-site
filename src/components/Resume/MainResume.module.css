@@ -1,7 +1,14 @@
 .container {
   position: relative;
   padding: 2rem;
+}
+
+.darkBg {
   background-color: #121212;
+}
+
+.lightBg {
+  background-color: white;
 }
 
 .container a {

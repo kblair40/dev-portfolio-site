@@ -6,12 +6,16 @@ import SectionDivider from "../SectionDivider";
 import ResumeSection from "../ResumeSection";
 import classes from "./Coursework.module.css";
 
-const Coursework = ({ isHovered, mutingIsActive }) => {
+const Coursework = ({ isHovered, mutingIsActive, isDarkMode }) => {
   return (
     <React.Fragment>
       <div
         className={
-          !isHovered && mutingIsActive ? classes.bgOverlay : classes.hidden
+          !isHovered && mutingIsActive
+            ? isDarkMode
+              ? classes.bgOverlayDark
+              : classes.bgOverlayLight
+            : classes.hidden
         }
       />
       <div className={classes.sectionHeader}>

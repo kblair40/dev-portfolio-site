@@ -6,12 +6,16 @@ import CustomIcon from "../CustomIcon";
 import ExperienceExtra from "./ExtraContent/ExperienceExtra";
 import classes from "./Experience.module.css";
 
-const Experience = ({ isHovered, mutingIsActive }) => {
+const Experience = ({ isHovered, mutingIsActive, isDarkMode }) => {
   return (
     <React.Fragment>
       <div
         className={
-          !isHovered && mutingIsActive ? classes.bgOverlay : classes.hidden
+          !isHovered && mutingIsActive
+            ? isDarkMode
+              ? classes.bgOverlayDark
+              : classes.bgOverlayLight
+            : classes.hidden
         }
       />
       <div className={classes.sectionHeader}>

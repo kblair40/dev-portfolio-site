@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   transition: 0.5s;
+  z-index: 10;
 }
 
 .outerContainer.light {
@@ -22,6 +23,7 @@
   cursor: pointer;
   transform: scale(0.5);
   margin: 0;
+  z-index: 11;
 }
 
 .light .container {

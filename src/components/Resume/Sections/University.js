@@ -6,12 +6,16 @@ import ResumeSection from "../ResumeSection";
 import CustomIcon from "../CustomIcon";
 import SectionDivider from "../SectionDivider";
 
-const University = ({ isHovered, mutingIsActive }) => {
+const University = ({ isHovered, mutingIsActive, isDarkMode }) => {
   return (
     <React.Fragment>
       <div
         className={
-          !isHovered && mutingIsActive ? classes.bgOverlay : classes.hidden
+          !isHovered && mutingIsActive
+            ? isDarkMode
+              ? classes.bgOverlayDark
+              : classes.bgOverlayLight
+            : classes.hidden
         }
       />
       <div className={classes.sectionHeader}>

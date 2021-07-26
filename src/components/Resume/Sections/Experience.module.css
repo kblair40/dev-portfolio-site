@@ -16,12 +16,21 @@
   align-self: flex-end;
 }
 
-.bgOverlay {
+.bgOverlayDark {
   position: absolute;
   width: calc(100% + 2rem);
   height: 100%;
   left: -1rem;
-  background: rgba(0, 0, 0, 0.3);
+  background-color: black;
+  opacity: 0.3;
+}
+.bgOverlayLight {
+  position: absolute;
+  width: calc(100% + 2rem);
+  height: 100%;
+  left: -1rem;
+  background-color: black;
+  opacity: 0.1;
 }
 
 .hidden {

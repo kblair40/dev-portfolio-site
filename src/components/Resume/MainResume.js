@@ -58,7 +58,12 @@ const MainResume = () => {
   ]);
 
   return (
-    <div className={classes.container}>
+    <div
+      className={classNames(
+        classes.container,
+        isDarkMode ? classes.darkBg : classes.lightBg
+      )}
+    >
       <ResumeContainer isDarkMode={isDarkMode}>
         <div className={classes.themeSwitchContainer}>
           <ThemeSwitch isDarkMode={isDarkMode} />
@@ -67,7 +72,7 @@ const MainResume = () => {
         {/* Dont't dynamically style Contact - change from section to header element */}
         <section id="contact" className={classes.sectionContainer}>
           <Contact isDarkMode={isDarkMode} />
-          <SectionDivider />
+          {/* <SectionDivider topMargin="1rem" /> */}
         </section>
 
         <section id="about" className={classes.sectionContainer} ref={aboutRef}>
@@ -75,6 +80,7 @@ const MainResume = () => {
             isHovered={aboutIsHovered}
             mutingIsActive={mutingIsActive}
             hoverLocation={hoverLocation}
+            isDarkMode={isDarkMode}
           />
         </section>
 
@@ -87,6 +93,7 @@ const MainResume = () => {
             isHovered={skillsIsHovered}
             mutingIsActive={mutingIsActive}
             hoverLocation={hoverLocation}
+            isDarkMode={isDarkMode}
           />
         </section>
 
@@ -99,6 +106,7 @@ const MainResume = () => {
             isHovered={projectsIsHovered}
             mutingIsActive={mutingIsActive}
             hoverLocation={hoverLocation}
+            isDarkMode={isDarkMode}
           />
         </section>
 
@@ -111,6 +119,7 @@ const MainResume = () => {
             isHovered={courseworkIsHovered}
             mutingIsActive={mutingIsActive}
             hoverLocation={hoverLocation}
+            isDarkMode={isDarkMode}
           />
         </section>
 
@@ -123,6 +132,7 @@ const MainResume = () => {
             isHovered={universityIsHovered}
             mutingIsActive={mutingIsActive}
             hoverLocation={hoverLocation}
+            isDarkMode={isDarkMode}
           />
         </section>
 
@@ -135,6 +145,7 @@ const MainResume = () => {
             isHovered={experienceIsHovered}
             mutingIsActive={mutingIsActive}
             hoverLocation={hoverLocation}
+            isDarkMode={isDarkMode}
           />
         </section>
       </ResumeContainer>

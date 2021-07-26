@@ -1,9 +1,12 @@
+.aboutContainer {
+  padding-top: 1rem;
+}
+
 .sectionHeader {
   font-family: Montserrat;
   font-size: 1.4rem;
   display: flex;
   align-items: center;
-  margin-top: 1rem;
 }
 
 .sectionHeader h3 {
@@ -16,13 +19,22 @@
   align-self: flex-end;
 }
 
-.bgOverlay {
+.bgOverlayDark {
   position: absolute;
   width: calc(100% + 2rem);
   height: 100%;
   left: -1rem;
   background-color: black;
   opacity: 0.3;
+}
+.bgOverlayLight {
+  position: absolute;
+  width: calc(100% + 2rem);
+  height: 100%;
+  top: 0;
+  left: -1rem;
+  background-color: black;
+  opacity: 0.1;
 }
 
 .hidden {

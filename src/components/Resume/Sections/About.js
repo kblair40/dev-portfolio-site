@@ -1,18 +1,23 @@
 import React from "react";
 import InfoIcon from "@material-ui/icons/Info";
-// import { useSelector } from "react-redux";
 
 import SectionDivider from "../SectionDivider";
 import CustomIcon from "../CustomIcon";
 import { ABOUT_TEXT } from "../../../constants";
 import classes from "./About.module.css";
 
-const About = ({ isHovered, mutingIsActive }) => {
+const About = ({ isHovered, mutingIsActive, isDarkMode }) => {
+  console.log("ABOUT: isDarkMode?", isDarkMode);
   return (
     <div className={classes.aboutContainer}>
       <div
         className={
-          !isHovered && mutingIsActive ? classes.bgOverlay : classes.hidden
+          // !isHovered && mutingIsActive ? classes.bgOverlay : classes.hidden
+          !isHovered && mutingIsActive
+            ? isDarkMode
+              ? classes.bgOverlayDark
+              : classes.bgOverlayLight
+            : classes.hidden
         }
       />
       <div className={classes.sectionHeader}>
