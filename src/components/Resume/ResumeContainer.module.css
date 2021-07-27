@@ -29,7 +29,6 @@
   flex-direction: column;
   position: relative; /* Allows theme switch to be positioned in upper-right corner */
   overflow-x: hidden;
-  /* overflow-y: scroll !important; */
 }
 
 .paperLight {

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import classNames from "classnames";
 
@@ -45,6 +45,8 @@ const MainResume = () => {
   };
 
   useEffect(() => {
+    const numOfTouchpoints = navigator.maxTouchPoints;
+    dispatch(hoverLocationActions.setUserIsOnMobile({ numOfTouchpoints }));
     if (containerRef && containerRef.current) {
       containerRef.current.addEventListener("mouseenter", handleMouseEnter);
       containerRef.current.addEventListener("mouseleave", handleMouseLeave);

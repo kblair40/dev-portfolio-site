@@ -1,5 +1,6 @@
 import React from "react";
 import SchoolIcon from "@material-ui/icons/School";
+import { useSelector } from "react-redux";
 
 import classes from "./University.module.css";
 import ResumeSection from "../ResumeSection";
@@ -7,11 +8,12 @@ import CustomIcon from "../CustomIcon";
 import SectionDivider from "../SectionDivider";
 
 const University = ({ isHovered, mutingIsActive, isDarkMode }) => {
+  const userIsOnMobile = useSelector((st) => st.hoverLocation.userIsOnMobile);
   return (
     <div className={classes.universityContainer}>
       <div
         className={
-          !isHovered && mutingIsActive
+          !isHovered && mutingIsActive && !userIsOnMobile
             ? isDarkMode
               ? classes.bgOverlayDark
               : classes.bgOverlayLight

@@ -1,6 +1,7 @@
 import React from "react";
 import DeveloperModeIcon from "@material-ui/icons/DeveloperMode";
 import classNames from "classnames";
+import { useSelector } from "react-redux";
 
 import Skill from "../Skill";
 import CustomIcon from "../CustomIcon";
@@ -8,11 +9,12 @@ import SectionDivider from "../SectionDivider";
 import classes from "./Skills.module.css";
 
 const Skills = ({ isHovered, mutingIsActive, isDarkMode }) => {
+  const userIsOnMobile = useSelector((st) => st.hoverLocation.userIsOnMobile);
   return (
     <div className={classes.skillsContainer}>
       <div
         className={
-          !isHovered && mutingIsActive
+          !isHovered && mutingIsActive && !userIsOnMobile
             ? isDarkMode
               ? classes.bgOverlayDark
               : classes.bgOverlayLight

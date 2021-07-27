@@ -1,5 +1,6 @@
 import React from "react";
 import WorkIcon from "@material-ui/icons/Work";
+import { useSelector } from "react-redux";
 
 import ResumeSection from "../ResumeSection";
 import CustomIcon from "../CustomIcon";
@@ -7,11 +8,12 @@ import ExperienceExtra from "./ExtraContent/ExperienceExtra";
 import classes from "./Experience.module.css";
 
 const Experience = ({ isHovered, mutingIsActive, isDarkMode }) => {
+  const userIsOnMobile = useSelector((st) => st.hoverLocation.userIsOnMobile);
   return (
     <div className={classes.experienceContainer}>
       <div
         className={
-          !isHovered && mutingIsActive
+          !isHovered && mutingIsActive && !userIsOnMobile
             ? isDarkMode
               ? classes.bgOverlayDark
               : classes.bgOverlayLight

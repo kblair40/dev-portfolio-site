@@ -11,6 +11,7 @@ const hoverLocationSlice = createSlice({
   initialState: {
     mutingIsActive: false,
     hoverLocation: undefined,
+    userIsOnMobile: false,
   },
   reducers: {
     setMutingIsActive(state, action) {
@@ -25,6 +26,13 @@ const hoverLocationSlice = createSlice({
             state.hoverLocation = locMap[hoverState];
           }
         }
+      }
+    },
+    setUserIsOnMobile(state, action) {
+      const { numOfTouchpoints } = action.payload;
+      console.log("NUM OF TOUCHPOINTS:", numOfTouchpoints);
+      if (numOfTouchpoints > 0) {
+        state.userIsOnMobile = true;
       }
     },
   },

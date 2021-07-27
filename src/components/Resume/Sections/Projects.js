@@ -1,5 +1,6 @@
 import React from "react";
 import CreateIcon from "@material-ui/icons/Create";
+import { useSelector } from "react-redux";
 
 import ProjectsExtra from "./ExtraContent/ProjectsExtra";
 import CustomIcon from "../CustomIcon";
@@ -14,12 +15,12 @@ import {
 } from "../../../constants";
 
 const Projects = ({ isHovered, mutingIsActive, isDarkMode }) => {
+  const userIsOnMobile = useSelector((st) => st.hoverLocation.userIsOnMobile);
   return (
     <div className={classes.projectsContainer}>
-      {" "}
       <div
         className={
-          !isHovered && mutingIsActive
+          !isHovered && mutingIsActive && !userIsOnMobile
             ? isDarkMode
               ? classes.bgOverlayDark
               : classes.bgOverlayLight
