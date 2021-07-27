@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Backdrop from "@material-ui/core/Backdrop";
 import SpeedDial from "@material-ui/lab/SpeedDial";
 import SpeedDialIcon from "@material-ui/lab/SpeedDialIcon";
@@ -13,6 +13,7 @@ import classNames from "classnames";
 import classes from "./MenuDial.module.css";
 
 const MenuDial = () => {
+  const menuDialRef = useRef();
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -77,6 +78,7 @@ const MenuDial = () => {
     <div className={classes.container}>
       <Backdrop open={open} classes={{ root: classes.backdropRoot }} />
       <SpeedDial
+        ref={menuDialRef}
         ariaLabel="Home page menu"
         classes={{ root: classes.speedDial, fab: classes.fab }}
         icon={

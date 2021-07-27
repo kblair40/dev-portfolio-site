@@ -5,6 +5,7 @@
   min-height: 240px;
   display: inline-block;
   margin: 0.5rem 0;
+  z-index: 5;
 }
 .projectCard:hover {
   cursor: pointer;
@@ -98,6 +99,7 @@
   background-position: center 0;
   background-size: cover;
   background-repeat: no-repeat;
+  z-index: 2;
 }
 .background:hover {
   animation: hide-bg 0.5s;

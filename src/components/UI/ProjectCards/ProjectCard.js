@@ -3,14 +3,12 @@ import Card from "@material-ui/core/Card";
 import IconButton from "@material-ui/core/IconButton";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import OfflineBoltIcon from "@material-ui/icons/OfflineBolt";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import classNames from "classnames";
 
 import ProjectCardNav from "./ProjectCardNav";
 import classes from "./ProjectCard.module.css";
 
 const ProjectCard = ({ name, liveLink, githubLink }) => {
-  const smallScreen = useMediaQuery("(max-width: 400px)");
   const projectLinksRef = useRef();
   const removeBgRef = useRef();
 
@@ -53,14 +51,6 @@ const ProjectCard = ({ name, liveLink, githubLink }) => {
         githubLink={githubLink}
         liveLink={liveLink}
       />
-      <div
-        ref={removeBgRef}
-        className={classNames(
-          classes.contentContainer,
-          classes.background,
-          backgroundClass
-        )}
-      ></div>
       <div ref={projectLinksRef} className={classNames(classes.links)}>
         <div className={classes.linkContainer}>
           <a
@@ -91,6 +81,14 @@ const ProjectCard = ({ name, liveLink, githubLink }) => {
           </a>
         </div>
       </div>
+      <div
+        ref={removeBgRef}
+        className={classNames(
+          classes.contentContainer,
+          classes.background,
+          backgroundClass
+        )}
+      />
     </Card>
   );
 };

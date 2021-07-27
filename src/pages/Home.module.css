@@ -1,6 +1,6 @@
 .container {
   max-width: 100vw;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   margin: 0;
   z-index: 1;
 }
@@ -13,5 +13,5 @@
 }
 
 .hidden {
-  display: none;
+  /* display: none; */
 }

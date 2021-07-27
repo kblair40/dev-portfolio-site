@@ -13,7 +13,7 @@ const ProjectCardNav = ({ title, githubLink, liveLink }) => {
   useEffect(() => {
     const touchPointsCount = navigator.maxTouchPoints;
     setTouchPoints(touchPointsCount);
-    console.log("touchPointsCount:", touchPointsCount);
+    // console.log("touchPointsCount:", touchPointsCount);
   }, []);
 
   const handleOpen = () => {
@@ -21,9 +21,6 @@ const ProjectCardNav = ({ title, githubLink, liveLink }) => {
   };
 
   const handleClose = (e) => {
-    // e.stopPropagation();
-    // console.log("PARENT ID:", e.target.parentElement.id);
-    // console.log("EL ID:", e.target.id);
     setModalOpen(false);
   };
 

@@ -2,7 +2,5 @@ TODO
 3. Nav link for contact
 4. Replace PerfectScrollbar with a 3d-carousel ON WORK PAGE for ProjectCards
 5. Resume needs to be responsive
-6. Load resume with dark mode by default
-    - Save user preference to local storage and load with the preference on subsequent loads
-    - Prevent flash of white before colors transition to dark when resume is initially loaded
+
 7. Page scrolls from 'Work' to 'About' when close button on ProjectCard Modal is clicked

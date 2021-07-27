@@ -9,7 +9,6 @@ import { hiddenActions } from "../store/hiddenSlice";
 import classes from "./Home.module.css";
 import DownArrow from "../components/UI/Arrows/DownArrow";
 import UpArrow from "../components/UI/Arrows/UpArrow";
-import Wrapper from "../components/UI/Wrapper";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -26,6 +25,7 @@ const Home = () => {
   useEffect(() => {
     if (first.current) {
       first.current = false;
+      console.log("first render - returning early");
       return;
     }
     if (curPage === "home") {
@@ -40,7 +40,6 @@ const Home = () => {
       }, 1000);
     }
   }, [curPage]);
-  // }, [homeIsHidden, aboutIsHidden, workIsHidden]);
 
   const enableScrolling = () => {
     // uncomment settimeout for production
@@ -55,23 +54,13 @@ const Home = () => {
 
   return (
     <div className={classNames(classes.container)}>
-      <div
-        className={classNames(
-          classes.pageContainer
-          // !homeIsShowing && classes.hidden
-        )}
-      >
+      <div className={classNames(classes.pageContainer)}>
         <HomePage
           enableScrolling={enableScrolling}
           disableScrolling={disableScrolling}
         />
       </div>
-      <div
-        className={classNames(
-          classes.pageContainer,
-          !aboutIsShowing && classes.hidden
-        )}
-      >
+      <div className={classNames(classes.pageContainer)}>
         <AboutPage
           enableScrolling={enableScrolling}
           disableScrolling={disableScrolling}
@@ -83,6 +72,7 @@ const Home = () => {
           disableScrolling={disableScrolling}
         />
       </div>
+
       {curPage !== "work" && <DownArrow />}
       {curPage !== "home" && <UpArrow />}
     </div>

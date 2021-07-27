@@ -22,22 +22,38 @@ const MePixelized = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("mousemove", trackMouse);
-    window.addEventListener("animationstart", () => {
+    containerRef.current.addEventListener("mousemove", trackMouse);
+    containerRef.current.addEventListener("animationstart", () => {
       setAnimationActive(true);
     });
-    window.addEventListener("animationend", () => {
+    containerRef.current.addEventListener("animationend", () => {
       setAnimationActive(false);
     });
+    // window.addEventListener("mousemove", trackMouse);
+    // window.addEventListener("animationstart", () => {
+    //   setAnimationActive(true);
+    // });
+    // window.addEventListener("animationend", () => {
+    //   setAnimationActive(false);
+    // });
 
     return () => {
-      window.removeEventListener("mousemove", trackMouse);
-      window.removeEventListener("animationstart", () => {
-        setAnimationActive(true);
-      });
-      window.removeEventListener("animationend", () => {
-        setAnimationActive(false);
-      });
+      // window.removeEventListener("mousemove", trackMouse);
+      // window.removeEventListener("animationstart", () => {
+      //   setAnimationActive(true);
+      // });
+      // window.removeEventListener("animationend", () => {
+      //   setAnimationActive(false);
+      // });
+      if (containerRef && containerRef.current) {
+        containerRef.current.removeEventListener("mousemove", trackMouse);
+        containerRef.current.removeEventListener("animationstart", () => {
+          setAnimationActive(true);
+        });
+        containerRef.current.removeEventListener("animationend", () => {
+          setAnimationActive(false);
+        });
+      }
     };
   });
 

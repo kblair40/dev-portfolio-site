@@ -4,7 +4,6 @@ import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
-import { use100vh } from "react-div-100vh";
 
 import { hiddenActions } from "../../../store/hiddenSlice";
 import classes from "./DownArrow.module.css";
@@ -22,8 +21,6 @@ const useStyles = makeStyles({
 });
 
 const DownArrow = () => {
-  const height = use100vh();
-
   const styles = useStyles();
   const curPage = useSelector((state) => state.hidden.currentPage);
   const dispatch = useDispatch();

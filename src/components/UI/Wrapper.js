@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useCallback, useState } from "react";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import { useDispatch, useSelector } from "react-redux";
-import Div100vh from "react-div-100vh";
 
 import Navbar from "./Navbar/Navbar";
 import { hiddenActions } from "../../store/hiddenSlice";
@@ -15,7 +14,7 @@ const Wrapper = (props) => {
   const dispatch = useDispatch();
   const currentPage = useSelector((state) => state.hidden.currentPage);
   const [touchStartY, setTouchStartY] = useState(undefined);
-  const [yScrollSuppressed, setYScrollSuppressed] = useState(true);
+  const [scrollSuppressed, setScrollSuppressed] = useState(true);
 
   const changePagesCallback = useCallback(
     (event, delta = null) => {
@@ -44,10 +43,13 @@ const Wrapper = (props) => {
           //   If user just taps the screen, deltaY will be undefined (falsy).
           //   Do nothing if that is the case.
         } else if (deltaY) {
+          // console.log("deltaY:", deltaY);
+          // console.log("hiding about and unhiding work");
           dispatch(hiddenActions.setAboutDirection({ direction: "down" }));
           dispatch(hiddenActions.hideAboutUnhideWork());
         }
-      } else {
+      } else if (currentPage === "work") {
+        console.log("EVENT:", event);
         if (deltaY > 0) {
           const tgt = event.target;
 
@@ -71,7 +73,7 @@ const Wrapper = (props) => {
       wrapperRef.current.addEventListener("wheel", changePagesCallback);
 
       setTimeout(() => {
-        setYScrollSuppressed(false);
+        setScrollSuppressed(false);
       }, 500);
 
       return () => {
@@ -85,12 +87,14 @@ const Wrapper = (props) => {
   const handleTouchStart = (e) => {
     // Prevent user scrolling on cards from changing the page
     e.stopPropagation();
+    // console.log("TOUCH START:", e);
 
     const initY = e.touches[0].clientY;
     setTouchStartY(initY);
   };
 
   const handleTouchEnd = (e) => {
+    // console.log("TOUCH END:", e);
     if (
       e.target.parentElement.id === "close-btn" ||
       e.target.id === "close-btn" ||
@@ -104,27 +108,17 @@ const Wrapper = (props) => {
   };
 
   return (
-    <PerfectScrollbar
-      className={classes.scrollbar}
-      options={{
-        suppressScrollX: true,
-        suppressScrollY: yScrollSuppressed,
-        wheelPropagation: false,
-      }}
+    <div
+      ref={wrapperRef}
       onTouchStart={handleTouchStart}
+      onTouchEnd={(e) => handleTouchEnd(e)}
+      className={classes.wrapper}
     >
-      <Div100vh
-        onTouchStart={(e) => handleTouchStart(e)}
-        onTouchEnd={(e) => handleTouchEnd(e)}
-        ref={wrapperRef}
-        className={classes.wrapperContainer}
-      >
-        <div className={classes.navbar}>
-          <Navbar />
-        </div>
-        {props.children}
-      </Div100vh>
-    </PerfectScrollbar>
+      <div className={classes.navbar}>
+        <Navbar />
+      </div>
+      {props.children}
+    </div>
   );
 };
 

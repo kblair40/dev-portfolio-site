@@ -1,17 +1,23 @@
 .container {
   transform: translateZ(0px);
-  z-index: 60 !important;
+  z-index: 21;
+  /* border: 2px solid orange; */
+}
+
+.container svg {
+  pointer-events: bounding-box;
 }
 
 /* SPEED DIAL */
 .speedDial {
   margin: 1.5rem 1rem 0 0;
+  z-index: 50 !important;
 }
 
 .fab {
   height: 3rem !important;
   width: 3rem !important;
-  background-color: rgba(255, 255, 255, 0.9) !important;
+  background-color: rgba(255, 255, 255, 1) !important;
 }
 
 /* SPEED DIAL ICON */
@@ -27,7 +33,7 @@
 }
 .speedDialIcon {
   color: #0c0c0d;
-  font-size: 42px !important;
+  font-size: 48px !important;
 }
 
 .speedDialOpen {
@@ -45,7 +51,6 @@
   align-items: center;
   height: 3.25rem !important;
   width: 3.25rem !important;
-  z-index: 200;
 }
 
 .actionFab:hover {
@@ -57,7 +62,6 @@
   padding: 0;
   width: 7rem;
   background-color: rgba(255, 255, 255, 1) !important ;
-  /* z-index: 100; */
 }
 .tooltip-hover {
   background-color: white !important;

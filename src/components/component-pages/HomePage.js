@@ -26,8 +26,8 @@ const HomePage = ({ disableScrolling, enableScrolling }) => {
         unmountOnExit
         in={!homeIsHidden}
         timeout={1000}
-        direction={slideDirection}
-        // direction="down"
+        // direction={slideDirection}
+        direction="down"
         onEntered={enableScrolling}
         onExit={disableScrolling}
       >

@@ -43,11 +43,11 @@
 }
 
 .lookRight {
-  animation: look-right 1s forwards linear;
+  animation: look-right 0.75s forwards linear;
 }
 
 .lookLeft {
-  animation: look-left 1s forwards linear;
+  animation: look-left 0.75s forwards linear;
 }
 @keyframes look-right {
   0% {
