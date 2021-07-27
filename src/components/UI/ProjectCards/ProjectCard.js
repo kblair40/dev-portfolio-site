@@ -47,7 +47,7 @@ const ProjectCard = ({ name, liveLink, githubLink }) => {
   }
 
   return (
-    <Card square={true} className={classes.projectCard}>
+    <Card id="project-card" square={true} className={classes.projectCard}>
       <ProjectCardNav
         title={name}
         githubLink={githubLink}

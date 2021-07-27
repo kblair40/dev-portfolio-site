@@ -53,7 +53,11 @@ const LinkModal = ({ open, handleClose, githubLink, liveLink }) => {
               Live Project
             </a>
           </div>
-          <Button onClick={handleClose} classes={{ root: classes.closeBtn }}>
+          <Button
+            id="close-btn"
+            onClick={handleClose}
+            classes={{ root: classes.closeBtn }}
+          >
             Close
           </Button>
         </div>

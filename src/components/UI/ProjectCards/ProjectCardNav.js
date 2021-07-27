@@ -13,18 +13,22 @@ const ProjectCardNav = ({ title, githubLink, liveLink }) => {
   useEffect(() => {
     const touchPointsCount = navigator.maxTouchPoints;
     setTouchPoints(touchPointsCount);
+    console.log("touchPointsCount:", touchPointsCount);
   }, []);
 
   const handleOpen = () => {
     setModalOpen(true);
   };
 
-  const handleClose = () => {
+  const handleClose = (e) => {
+    // e.stopPropagation();
+    // console.log("PARENT ID:", e.target.parentElement.id);
+    // console.log("EL ID:", e.target.id);
     setModalOpen(false);
   };
 
   return (
-    <div className={classes.container}>
+    <div className={classes.container} id="project-card-nav">
       <div className={classes.btnContainer}>
         <div className={classNames(classes.close, classes.button)}></div>
         <div className={classNames(classes.minus, classes.button)}></div>

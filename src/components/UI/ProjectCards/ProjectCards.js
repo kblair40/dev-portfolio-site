@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import PerfectScrollbar from "react-perfect-scrollbar";
 
@@ -6,8 +6,11 @@ import ProjectCard from "./ProjectCard";
 import classes from "./ProjectCards.module.css";
 
 const ProjectCards = () => {
+  const projectCardsRef = useRef();
+
   const handleTouchStart = (e) => {
     // Prevent user scrolling on cards from changing the page
+    // console.log("PROJECT CARDS TOUCHED!");
     e.stopPropagation();
   };
 
@@ -17,8 +20,10 @@ const ProjectCards = () => {
       options={{
         suppressScrollX: true,
         wheelPropagation: false,
+        touchPropagation: false,
       }}
       onTouchStart={handleTouchStart}
+      ref={projectCardsRef}
     >
       <div className={classes.container} id="work-page-container">
         <ProjectCard

@@ -23,12 +23,7 @@ const Wrapper = (props) => {
         return;
       }
       event.stopPropagation();
-      if (
-        currentPage === "work" &&
-        !event.target.id === "work-page-container"
-      ) {
-        return;
-      }
+      event.preventDefault();
 
       let deltaY;
       if (delta) {
@@ -42,7 +37,6 @@ const Wrapper = (props) => {
           dispatch(hiddenActions.hideHomeUnhideAbout());
         }
       } else if (currentPage === "about") {
-        console.log("DELTA Y:", deltaY);
         if (deltaY > 0) {
           dispatch(hiddenActions.hideAboutUnhideHome());
           dispatch(hiddenActions.setAboutDirection({ direction: "up" }));
@@ -55,6 +49,16 @@ const Wrapper = (props) => {
         }
       } else {
         if (deltaY > 0) {
+          const tgt = event.target;
+
+          if (
+            tgt.id === "work-page-container" ||
+            tgt.parentElement.id === "project-card" ||
+            tgt.parentElement.id === "project-card-nav"
+          ) {
+            return;
+          }
+
           dispatch(hiddenActions.hideWorkUnhideAbout());
         }
       }
@@ -87,7 +91,13 @@ const Wrapper = (props) => {
   };
 
   const handleTouchEnd = (e) => {
-    console.log("TOUCHED!");
+    if (
+      e.target.parentElement.id === "close-btn" ||
+      e.target.id === "close-btn" ||
+      e.target.tagName === "path"
+    ) {
+      return;
+    }
     const touchEndY = e.changedTouches[0].clientY;
 
     changePagesCallback(e, touchEndY - touchStartY);
