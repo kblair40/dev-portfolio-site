@@ -8,19 +8,18 @@
 }
 
 .subheaderContent {
-  /* border: 1px solid red; */
   margin: 0;
   flex-grow: 1;
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
   font-family: "Open Sans";
 }
 .subheaderContent p {
   margin: 0;
-  /* border: 1px solid orange; */
 }
-.subheaderContent h4 {
-  /* border: 1px solid green; */
+.subheader h4 {
   margin: 0 1rem 0 0;
 }
 
