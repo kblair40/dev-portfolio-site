@@ -7,7 +7,6 @@ import { ABOUT_TEXT } from "../../../constants";
 import classes from "./About.module.css";
 
 const About = ({ isHovered, mutingIsActive, isDarkMode }) => {
-  console.log("ABOUT: isDarkMode?", isDarkMode);
   return (
     <div className={classes.aboutContainer}>
       <div

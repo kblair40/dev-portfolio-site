@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useCallback, useState } from "react";
-import PerfectScrollbar from "react-perfect-scrollbar";
 import { useDispatch, useSelector } from "react-redux";
 
 import Navbar from "./Navbar/Navbar";
@@ -49,7 +48,7 @@ const Wrapper = (props) => {
           dispatch(hiddenActions.hideAboutUnhideWork());
         }
       } else if (currentPage === "work") {
-        console.log("EVENT:", event);
+        // console.log("EVENT:", event);
         if (deltaY > 0) {
           const tgt = event.target;
 

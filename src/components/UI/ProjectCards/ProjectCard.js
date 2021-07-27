@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Card from "@material-ui/core/Card";
 import IconButton from "@material-ui/core/IconButton";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -11,12 +11,25 @@ import classes from "./ProjectCard.module.css";
 const ProjectCard = ({ name, liveLink, githubLink }) => {
   const projectLinksRef = useRef();
   const removeBgRef = useRef();
+  const [touchPoints, setTouchPoints] = useState(0);
 
   useEffect(() => {
+    // removeBgRef.current.addEventListener("mouseover", addBgClass);
+    // removeBgRef.current.addEventListener("animationend", logEnd);
+    // projectLinksRef.current.addEventListener("mouseleave", showBg);
+
+    const touchPointsCount = navigator.maxTouchPoints;
+    if (touchPointsCount === 0) {
+      setListeners();
+    }
+    setTouchPoints(touchPointsCount);
+  }, []);
+
+  const setListeners = () => {
     removeBgRef.current.addEventListener("mouseover", addBgClass);
     removeBgRef.current.addEventListener("animationend", logEnd);
     projectLinksRef.current.addEventListener("mouseleave", showBg);
-  }, []);
+  };
 
   const showBg = () => {
     removeBgRef.current.classList.remove(classes.hidden);
@@ -51,40 +64,43 @@ const ProjectCard = ({ name, liveLink, githubLink }) => {
         githubLink={githubLink}
         liveLink={liveLink}
       />
-      <div ref={projectLinksRef} className={classNames(classes.links)}>
-        <div className={classes.linkContainer}>
-          <a
-            className={classNames(classes.githubLink, classes.link)}
-            href={githubLink}
-            target="blank"
-          >
-            <IconButton className={classes.iconBtn}>
-              <GitHubIcon
-                fontSize="large"
-                className={classNames(classes.iconLink, classes.githubIcon)}
-              />
-            </IconButton>
-            Github Repo
-          </a>
-          <a
-            className={classNames(classes.liveLink, classes.link)}
-            href={liveLink}
-            target="blank"
-          >
-            <IconButton className={classes.iconBtn}>
-              <OfflineBoltIcon
-                fontSize="large"
-                className={classNames(classes.iconLink, classes.liveIcon)}
-              />
-            </IconButton>
-            Live Project
-          </a>
+      {touchPoints === 0 && (
+        <div ref={projectLinksRef} className={classNames(classes.links)}>
+          <div className={classes.linkContainer}>
+            <a
+              className={classNames(classes.githubLink, classes.link)}
+              href={githubLink}
+              target="blank"
+            >
+              <IconButton className={classes.iconBtn}>
+                <GitHubIcon
+                  fontSize="large"
+                  className={classNames(classes.iconLink, classes.githubIcon)}
+                />
+              </IconButton>
+              Github Repo
+            </a>
+            <a
+              className={classNames(classes.liveLink, classes.link)}
+              href={liveLink}
+              target="blank"
+            >
+              <IconButton className={classes.iconBtn}>
+                <OfflineBoltIcon
+                  fontSize="large"
+                  className={classNames(classes.iconLink, classes.liveIcon)}
+                />
+              </IconButton>
+              Live Project
+            </a>
+          </div>
         </div>
-      </div>
+      )}
       <div
         ref={removeBgRef}
         className={classNames(
           classes.contentContainer,
+          touchPoints === 0 && classes.backgroundHide,
           classes.background,
           backgroundClass
         )}

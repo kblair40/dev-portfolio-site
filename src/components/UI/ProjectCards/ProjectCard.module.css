@@ -101,7 +101,7 @@
   background-repeat: no-repeat;
   z-index: 2;
 }
-.background:hover {
+.backgroundHide:hover {
   animation: hide-bg 0.5s;
   animation-fill-mode: forwards;
 }

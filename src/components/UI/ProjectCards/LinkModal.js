@@ -4,7 +4,6 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import OfflineBoltIcon from "@material-ui/icons/OfflineBolt";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
-import Link from "@material-ui/core/Link";
 import Fade from "@material-ui/core/Fade";
 import Button from "@material-ui/core/Button";
 import classNames from "classnames";
@@ -12,11 +11,7 @@ import classNames from "classnames";
 import classes from "./LinkModal.module.css";
 
 const LinkModal = ({ open, handleClose, githubLink, liveLink }) => {
-  const preventDefault = (event) => event.preventDefault();
-
   const handleTouch = (e, link) => {
-    console.log("TOUCHED", e);
-    console.log("link", link, "\n\n");
     window.open(link, "_blank");
   };
 
@@ -39,14 +34,7 @@ const LinkModal = ({ open, handleClose, githubLink, liveLink }) => {
               href={githubLink}
               target="blank"
               onTouchStart={(e) => handleTouch(e, githubLink)}
-              // onClick={preventDefault}
             >
-              {/* <Link
-              // onClick={preventDefault}
-              className={classNames(classes.githubLink, classes.link)}
-              href={githubLink}
-              target="blank"
-            > */}
               <IconButton
                 className={classes.iconBtn}
                 disableFocusRipple
@@ -58,7 +46,6 @@ const LinkModal = ({ open, handleClose, githubLink, liveLink }) => {
                 />
               </IconButton>
               Github Repo
-              {/* </Link> */}
             </a>
 
             <a
@@ -66,7 +53,6 @@ const LinkModal = ({ open, handleClose, githubLink, liveLink }) => {
               href={liveLink}
               target="blank"
               onTouchStart={(e) => handleTouch(e, liveLink)}
-              // onClick={handleClick}
             >
               <IconButton
                 className={classes.iconBtn}

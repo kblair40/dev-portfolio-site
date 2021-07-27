@@ -19,12 +19,17 @@
   justify-content: center;
 }
 
+.resumeContainer {
+  /* overflow: scroll !important; */
+}
+
 .paperRoot {
   padding: 1rem 1rem 1rem 1rem;
   display: flex;
   flex-direction: column;
   position: relative; /* Allows theme switch to be positioned in upper-right corner */
   overflow-x: hidden;
+  /* overflow-y: scroll !important; */
 }
 
 .paperLight {

@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import classNames from "classnames";
+import "react-perfect-scrollbar/dist/css/styles.css";
+import PerfectScrollbar from "react-perfect-scrollbar";
 
 import { hoverLocationActions } from "../../store/hoverLocationSlice";
 import useHover from "../../hooks/useHover";
@@ -35,12 +37,10 @@ const MainResume = () => {
   const containerRef = useRef();
 
   const handleMouseEnter = (e) => {
-    console.log("MOUSE ENTERED");
     dispatch(hoverLocationActions.setMutingIsActive({ resumeIsHovered: true }));
   };
 
   const handleMouseLeave = (e) => {
-    console.log("MOUSE LEFT");
     dispatch(
       hoverLocationActions.setMutingIsActive({ resumeIsHovered: false })
     );
@@ -78,12 +78,18 @@ const MainResume = () => {
   ]);
 
   return (
-    <div
+    <PerfectScrollbar
       className={classNames(
         classes.container,
         isDarkMode ? classes.darkBg : classes.lightBg
       )}
     >
+      {/* <div
+      className={classNames(
+        classes.container,
+        isDarkMode ? classes.darkBg : classes.lightBg
+      )}
+    > */}
       <ResumeContainer isDarkMode={isDarkMode}>
         <div className={classes.themeSwitchContainer}>
           <ThemeSwitch isDarkMode={isDarkMode} />
@@ -177,7 +183,8 @@ const MainResume = () => {
           </section>
         </div>
       </ResumeContainer>
-    </div>
+      {/* </div> */}
+    </PerfectScrollbar>
   );
 };
 

@@ -4,12 +4,10 @@
   box-sizing: border-box !important;
 }
 
+/* html, */
 html,
 body {
-  /* height: 100%; */
-  /* max-width: 100%; */
-  /* min-width: 300px; */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 body {
