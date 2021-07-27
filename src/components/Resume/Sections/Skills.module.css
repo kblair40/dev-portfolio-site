@@ -41,3 +41,19 @@
 .hidden {
   display: none;
 }
+
+.otherSkillsContainer {
+}
+
+.otherSkillsContainer h4 {
+  font-size: 1.15rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.skillsList li {
+  margin-left: 2.75rem;
+}

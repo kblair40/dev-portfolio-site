@@ -1,11 +1,11 @@
 .sectionContent {
-  margin-bottom: -1rem;
+  /* margin-bottom: -1rem; */
 }
 
-.sectionContent:not(a) {
-  /* pointer-events: none; */
+.sectionContent p {
+  margin: 0;
 }
 
 .bullets {
-  margin-top: -0.5rem;
+  margin-top: 0.5rem;
 }

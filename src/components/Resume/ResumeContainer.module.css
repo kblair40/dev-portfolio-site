@@ -27,11 +27,45 @@
   overflow-x: hidden;
 }
 
-.paperLight {
+/* .paperLight {
   animation: to-light-bg 0.5s forwards;
 }
 .paperDark {
   animation: to-dark-bg 0.5s forwards;
+} */
+
+/* @keyframes to-light-bg {
+  0% {
+    background-color: #212121;
+    color: rgba(255, 255, 255, 0.87);
+  }
+  100% {
+    background-color: #f7f7f7;
+    color: #000;
+  }
+}
+@keyframes to-dark-bg {
+  0% {
+    background-color: rgb(255, 255, 255);
+    color: #000;
+  }
+  100% {
+    background-color: #1e1e1e;
+    color: rgba(255, 255, 255, 0.87);
+  }
+} */
+
+.paperLight {
+  background-color: #f7f7f7 !important;
+  color: #000 !important;
+  transition: color 1s linear;
+  /* animation: to-light-bg 0.5s forwards; */
+}
+.paperDark {
+  background-color: #1e1e1e !important;
+  color: rgba(255, 255, 255, 0.87) !important;
+  transition: color 1s linear;
+  /* animation: to-dark-bg 0.5s forwards; */
 }
 
 @keyframes to-light-bg {

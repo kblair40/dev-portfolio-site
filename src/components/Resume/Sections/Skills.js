@@ -37,9 +37,16 @@ const Skills = ({ isHovered, mutingIsActive, isDarkMode }) => {
         <Skill title="Node.js" skillLevel="72%" />
         <Skill title="Material-UI" skillLevel="90%" />
         <Skill title="MongoDB" skillLevel="68%" />
-        <Skill title="Firebase" skillLevel="55%" />
+        <Skill title="React-Router" skillLevel="82%" />
         <div className={classNames(classes.otherSkillsContainer)}>
           <h4>Others...</h4>
+          <ul className={classes.skillsList}>
+            <li>Bootstrap</li>
+            <li>Git/Github</li>
+            <li>AJAX</li>
+            <li>AWS</li>
+            <li>Firebase</li>
+          </ul>
         </div>
         <SectionDivider topMargin="1rem" />
       </div>

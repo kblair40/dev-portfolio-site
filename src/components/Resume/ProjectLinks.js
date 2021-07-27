@@ -13,10 +13,7 @@ const ProjectLinks = ({
 }) => {
   const isDarkMode = useSelector((st) => st.theme.isDarkMode);
   return (
-    <div
-      className={classes.subheader}
-      style={{ marginBottom: hasContent ? "-2rem" : "-1.5rem" }}
-    >
+    <div className={classes.subheader}>
       <div className={classes.subheaderContent}>
         <h4>{subheader}</h4>
         <p>

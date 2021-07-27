@@ -4,25 +4,30 @@
   align-items: center;
   width: 100%;
   flex-wrap: wrap;
-  margin: -1.5rem 0 0 0;
   font-family: "Open Sans";
 }
 
 .subheaderContent {
+  /* border: 1px solid red; */
   margin: 0;
   flex-grow: 1;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   font-family: "Open Sans";
 }
 .subheaderContent p {
-  margin-left: 1rem;
+  margin: 0;
+  /* border: 1px solid orange; */
+}
+.subheaderContent h4 {
+  /* border: 1px solid green; */
+  margin: 0 1rem 0 0;
 }
 
 .links {
   display: flex;
   align-items: center;
-  margin: 0;
+  margin: 0.25rem 0;
   width: 10rem;
   justify-content: space-between;
 }
