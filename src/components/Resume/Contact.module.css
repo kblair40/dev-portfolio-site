@@ -7,6 +7,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  /* height: 100%; */
 }
 
 .headerContact {
@@ -39,4 +41,10 @@
 }
 .iconBtn:hover {
   background-color: transparent !important;
+}
+
+@media screen and (max-width: 550px) {
+  .header {
+    margin-top: 2.5rem;
+  }
 }
