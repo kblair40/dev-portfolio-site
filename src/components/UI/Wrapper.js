@@ -42,20 +42,18 @@ const Wrapper = (props) => {
           //   If user just taps the screen, deltaY will be undefined (falsy).
           //   Do nothing if that is the case.
         } else if (deltaY) {
-          // console.log("deltaY:", deltaY);
-          // console.log("hiding about and unhiding work");
           dispatch(hiddenActions.setAboutDirection({ direction: "down" }));
           dispatch(hiddenActions.hideAboutUnhideWork());
         }
       } else if (currentPage === "work") {
-        // console.log("EVENT:", event);
         if (deltaY > 0) {
           const tgt = event.target;
 
           if (
             tgt.id === "work-page-container" ||
             tgt.parentElement.id === "project-card" ||
-            tgt.parentElement.id === "project-card-nav"
+            tgt.parentElement.id === "project-card-nav" ||
+            tgt.id === "safari-nav-btns"
           ) {
             return;
           }
@@ -86,14 +84,12 @@ const Wrapper = (props) => {
   const handleTouchStart = (e) => {
     // Prevent user scrolling on cards from changing the page
     e.stopPropagation();
-    // console.log("TOUCH START:", e);
 
     const initY = e.touches[0].clientY;
     setTouchStartY(initY);
   };
 
   const handleTouchEnd = (e) => {
-    // console.log("TOUCH END:", e);
     if (
       e.target.parentElement.id === "close-btn" ||
       e.target.id === "close-btn" ||

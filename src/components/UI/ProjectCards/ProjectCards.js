@@ -1,12 +1,19 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import PerfectScrollbar from "react-perfect-scrollbar";
+import classNames from "classnames";
 
 import ProjectCard from "./ProjectCard";
 import classes from "./ProjectCards.module.css";
 
 const ProjectCards = () => {
   const projectCardsRef = useRef();
+  const [touchpoints, setTouchpoints] = useState(0);
+
+  useEffect(() => {
+    const numOfTouchpoints = navigator.maxTouchPoints;
+    setTouchpoints(numOfTouchpoints);
+  });
 
   const handleTouchStart = (e) => {
     // Prevent user scrolling on cards from changing the page
@@ -25,7 +32,13 @@ const ProjectCards = () => {
       onTouchStart={handleTouchStart}
       ref={projectCardsRef}
     >
-      <div className={classes.container} id="work-page-container">
+      <div
+        className={classNames(
+          classes.container,
+          touchpoints > 0 && classes.mobileMarginBottom
+        )}
+        id="work-page-container"
+      >
         <ProjectCard
           name="ecommerce"
           liveLink="https://ecommerce-kb.netlify.app/"

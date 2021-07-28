@@ -15,17 +15,14 @@ const Home = () => {
   const curPage = useSelector((state) => state.hidden.currentPage);
   const homeIsHidden = useSelector((state) => state.hidden.home);
   const aboutIsHidden = useSelector((state) => state.hidden.about);
-  const workIsHidden = useSelector((state) => state.hidden.work);
 
   const [homeIsShowing, setHomeIsShowing] = useState(!homeIsHidden);
   const [aboutIsShowing, setAboutIsShowing] = useState(!aboutIsHidden);
-  const [workIsShowing, setWorkIsShowing] = useState(!workIsHidden);
 
   const first = useRef(true);
   useEffect(() => {
     if (first.current) {
       first.current = false;
-      console.log("first render - returning early");
       return;
     }
     if (curPage === "home") {
@@ -42,7 +39,6 @@ const Home = () => {
   }, [curPage]);
 
   const enableScrolling = () => {
-    // uncomment settimeout for production
     setTimeout(() => {
       dispatch(hiddenActions.enableScrolling());
       // The delay felt too long at 1000ms (matching animation time);

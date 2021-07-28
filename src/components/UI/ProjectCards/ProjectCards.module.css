@@ -15,15 +15,16 @@
   align-items: center;
 }
 
-/* .hidden {
-  display: none;
-} */
+.mobileMarginBottom {
+  margin-bottom: 2rem;
+}
 
 @media screen and (max-width: 800px) {
   .scrollbar {
     width: 60vw;
     box-shadow: 0px 2px 7px 0px #000;
     max-width: 440px;
+    /* border: 1px solid red; */
   }
 }
 @media screen and (max-width: 750px) {

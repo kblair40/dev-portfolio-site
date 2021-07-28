@@ -1,6 +1,7 @@
 TODO
 3. Nav link for contact
 4. Replace PerfectScrollbar with a 3d-carousel ON WORK PAGE for ProjectCards
-5. When Link Modal is open, page will scroll if 'touched' outside of LinkModal
+6. See about getting rid of useEffect and all variables with it in Home.js
+  - Also potentially clean up redux state
+7. ProjectCards on mobile need to be raised from bottom so they are not hidden behind browser's bottom bar
 
-7. Page scrolls from 'Work' to 'About' when close button on ProjectCard Modal is clicked

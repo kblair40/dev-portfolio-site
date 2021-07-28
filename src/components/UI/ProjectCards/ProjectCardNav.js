@@ -31,7 +31,7 @@ const ProjectCardNav = ({ title, githubLink, liveLink }) => {
 
   return (
     <div className={classes.container} id="project-card-nav">
-      <div className={classes.btnContainer}>
+      <div className={classes.btnContainer} id="safari-nav-btns">
         <div className={classNames(classes.close, classes.button)}></div>
         <div className={classNames(classes.minus, classes.button)}></div>
         <div className={classNames(classes.expand, classes.button)}></div>
