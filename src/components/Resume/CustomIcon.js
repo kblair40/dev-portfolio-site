@@ -7,6 +7,8 @@ const useStyles = makeStyles({
   container: {
     height: "3.5rem",
     width: "3.5rem",
+    minWidth: "3.5rem",
+    minHeight: "3.5rem",
     borderRadius: "50%",
     display: "flex",
     justifyContent: "center",

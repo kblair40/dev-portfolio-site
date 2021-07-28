@@ -1,6 +1,6 @@
 TODO
 3. Nav link for contact
 4. Replace PerfectScrollbar with a 3d-carousel ON WORK PAGE for ProjectCards
-5. Resume needs to be responsive
+5. When Link Modal is open, page will scroll if 'touched' outside of LinkModal
 
 7. Page scrolls from 'Work' to 'About' when close button on ProjectCard Modal is clicked

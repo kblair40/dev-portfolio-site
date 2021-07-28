@@ -2,13 +2,16 @@ import React, { useState, useEffect } from "react";
 import classNames from "classnames";
 import InfoIcon from "@material-ui/icons/Info";
 import IconButton from "@material-ui/core/IconButton";
+import { useDispatch } from "react-redux";
 
 import LinkModal from "./LinkModal";
+import { hiddenActions } from "../../../store/hiddenSlice";
 import classes from "./ProjectCardNav.module.css";
 
 const ProjectCardNav = ({ title, githubLink, liveLink }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [touchPoints, setTouchPoints] = useState(0);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const touchPointsCount = navigator.maxTouchPoints;
@@ -17,10 +20,12 @@ const ProjectCardNav = ({ title, githubLink, liveLink }) => {
   }, []);
 
   const handleOpen = () => {
+    dispatch(hiddenActions.disableScrolling());
     setModalOpen(true);
   };
 
   const handleClose = (e) => {
+    dispatch(hiddenActions.enableScrolling());
     setModalOpen(false);
   };
 
