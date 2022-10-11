@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Backdrop from "@material-ui/core/Backdrop";
 import SpeedDial from "@material-ui/lab/SpeedDial";
 import SpeedDialIcon from "@material-ui/lab/SpeedDialIcon";
@@ -6,7 +6,6 @@ import SpeedDialAction from "@material-ui/lab/SpeedDialAction";
 import ResumeIcon from "@material-ui/icons/Description";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import RingVolumeIcon from "@material-ui/icons/RingVolume";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
 
@@ -53,10 +52,6 @@ const MenuDial = () => {
     {
       icon: withLink("/resume", <ResumeIcon fontSize="large" />),
       name: "Resume",
-    },
-    {
-      icon: withLink("/contact", <RingVolumeIcon fontSize="large" />),
-      name: "Contact",
     },
     {
       icon: withLink(

@@ -17,7 +17,6 @@ const ProjectCards = () => {
 
   const handleTouchStart = (e) => {
     // Prevent user scrolling on cards from changing the page
-    // console.log("PROJECT CARDS TOUCHED!");
     e.stopPropagation();
   };
 

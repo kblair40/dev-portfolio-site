@@ -18,8 +18,8 @@ const ResumeSection = (props) => {
     if (bullets) {
       return (
         <ul className={classes.bullets}>
-          {bullets.map((bullet) => (
-            <li>{bullet}</li>
+          {bullets.map((bullet, idx) => (
+            <li key={idx}>{bullet}</li>
           ))}
         </ul>
       );

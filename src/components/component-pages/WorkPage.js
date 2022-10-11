@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 
 import Wrapper from "../UI/Wrapper";
 import ProjectCards from "../UI/ProjectCards/ProjectCards";
+import CarouselContainer from "../UI/Carousel/CarouselContainer";
+
 import classes from "./WorkPage.module.css";
 
 const WorkPage = ({ disableScrolling, enableScrolling }) => {
@@ -22,6 +24,7 @@ const WorkPage = ({ disableScrolling, enableScrolling }) => {
       >
         <div className={classes.container}>
           <h1 className={classes.header}>My Work</h1>
+          <CarouselContainer />
           <ProjectCards />
         </div>
       </Slide>

@@ -1,12 +1,9 @@
 import React from "react";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import SpeedIcon from "@material-ui/icons/Speed";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import AssessmentIcon from "@material-ui/icons/Assessment";
-import StarBorderIcon from "@material-ui/icons/StarBorder";
+import PeopleIcon from "@material-ui/icons/People";
 import SchoolIcon from "@material-ui/icons/School";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMedal } from "@fortawesome/free-solid-svg-icons";
+import HelpIcon from "@material-ui/icons/Help";
+import SearchIcon from "@material-ui/icons/Search";
 import classNames from "classnames";
 
 import classes from "./AboutIcons.module.css";
@@ -19,32 +16,32 @@ const AboutIcons = () => {
     <div className={classes.container}>
       <div className={classes.iconContainer}>
         <div className={classes.item}>
-          <StarBorderIcon
+          <HelpIcon
             size="large"
-            classes={{ root: classNames(classes.muiIcon, classes.starIcon) }}
+            classes={{ root: classNames(classes.muiIcon, classes.helpIcon) }}
           />
-          <p>First-Rate Apps</p>
+          <p>Naturally Curious</p>
+        </div>
+        <div className={classes.item}>
+          <PeopleIcon
+            size="large"
+            classes={{ root: classNames(classes.muiIcon, classes.peopleIcon) }}
+          />
+          <p>Team Player</p>
         </div>
         <div className={classes.item}>
           <SchoolIcon
             size="large"
-            classes={{ root: classNames(classes.muiIcon, classes.speedIcon) }}
+            classes={{ root: classNames(classes.muiIcon, classes.schoolIcon) }}
           />
           <p>Constantly Learning</p>
         </div>
         <div className={classes.item}>
-          <AssessmentIcon
+          <SearchIcon
             size="large"
-            classes={{ root: classNames(classes.muiIcon, classes.graphIcon) }}
+            classes={{ root: classNames(classes.muiIcon, classes.searchIcon) }}
           />
-          <p>Pixel-Perfect Code</p>
-        </div>
-        <div className={classes.item}>
-          <FavoriteIcon
-            size="large"
-            classes={{ root: classNames(classes.muiIcon, classes.heartIcon) }}
-          />
-          <p>Built With Love</p>
+          <p>Attention to Detail</p>
         </div>
       </div>
     </div>

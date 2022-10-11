@@ -15,7 +15,7 @@ export const ECOMMERCE_TEXT =
   "A web-app that consumes the fake-store API and displays a minimal, fully-responsive e-commerce site";
 export const ECOMMERCE_BULLETS = [
   "Implemented Redux and React-Redux to keep app-wide state management scalable and maintainable",
-  "Built UI by leveraging Material-UI’s ‘withStyles’ and ‘makeStyles’ API, and custom JSS to reduce file structure complexity",
+  "Managed screen size breakpoints by leveraging Material-UI's custom theme creation and ‘makeStyles’ API to enforce consistency across entire site",
 ];
 
 export const SIGNUP_TEXT =

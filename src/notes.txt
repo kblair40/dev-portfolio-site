@@ -4,4 +4,5 @@ TODO
 6. See about getting rid of useEffect and all variables with it in Home.js
   - Also potentially clean up redux state
 7. ProjectCards on mobile need to be raised from bottom so they are not hidden behind browser's bottom bar
-
+8. Get touchpoints from hoverLocationSlice (userIsOnMobile)
+9. HIDE CONTACT PAGE!! Until it is ready.

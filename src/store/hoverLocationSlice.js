@@ -30,7 +30,6 @@ const hoverLocationSlice = createSlice({
     },
     setUserIsOnMobile(state, action) {
       const { numOfTouchpoints } = action.payload;
-      console.log("NUM OF TOUCHPOINTS:", numOfTouchpoints);
       if (numOfTouchpoints > 0) {
         state.userIsOnMobile = true;
       }

@@ -9,6 +9,7 @@ import { hiddenActions } from "../store/hiddenSlice";
 import classes from "./Home.module.css";
 import DownArrow from "../components/UI/Arrows/DownArrow";
 import UpArrow from "../components/UI/Arrows/UpArrow";
+import CarouselContainer from "../components/UI/Carousel/CarouselContainer";
 
 const Home = () => {
   const dispatch = useDispatch();
